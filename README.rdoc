@@ -30,6 +30,6 @@ Dzięki tej aplikacji użytkownik z każdego miejsca na świecie może sprawdzi�
 	
 == Aplikacja w trakcie tworzenia!
 
-Wersja :: 0.0.0
+Wersja :: 0.0.1
 Podgląd online :: https://inwentarz-rodzynbwa1.c9users.io
 Autorzy :: {Dawid Rodzyn Tomas}[http://rodzyn.pl]  :: {Lukas Levvy}[https://github.com/Levvy055]

@@ -31,6 +31,7 @@ gem 'bootstrap-sass'
 gem 'faker'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
+gem 'rails-i18n'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

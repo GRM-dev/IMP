@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Inwentarz sprzętu komputerowego dla twojej szkoły i firmy!</p>
+        </div>
+        <div class="col-md-6">
+            <nav class="navbar " role="navigation">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#inwentarz">
+                    <span class="sr-only">Rozwiń nawigację</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="inwentarz">
+                  <ul class="nav navbar-nav">
+                    <li><%= link_to "Strona główna", root_path %></li>
+                    <li><%= link_to "O projekcie", about_path %></li>
+                    <li><%= link_to "Galeria", galery_path %></li>
+                    <li><%= link_to "Kontakt", contact_path %></li>
+                  </ul>
+                </div>
+            </nav>
+          
+        </div>
+    </div>
+</div>

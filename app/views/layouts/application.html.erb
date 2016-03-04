@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Inwentarz</title>
+  <title>Inwentarz sprzętu komputerowego</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Dawid 'Rodzyn' Tomas, Lukas Levvy">
+  <meta name="description" content="Inwentarz sprzętu komputerowego dla Twojej szkoły!">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <header id="header" class="navbar-fixed-top">
+       <%= render template: "layouts/unsigned_header" %>
+    </header>
+    <div id="content">
+      <%= content_for?(:content) ?  yield(:content) : yield %>
+    </div>
+    <footer id="footer">
+       <%= render template: "layouts/unsigned_footer" %>
+    </footer>
 </body>
 </html>
