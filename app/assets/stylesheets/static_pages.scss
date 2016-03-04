@@ -3,7 +3,79 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $url_1: asset-url('background.jpg');
+$color_white: rgba(255,255,255,1);
+$color_header_home_page: #005b7f;
+
+@mixin transition() {
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+}
+
 
 body {
   background-image: $url_1;
+  background-position-y: -35px;
+  
+  .center-text {text-align:center;}
+  
+  #header {
+        background-color:$color_header_home_page;
+        
+        .navbar {
+            margin-bottom:0px !important;
+            
+            ul {
+                li {
+                    a {
+                        color: rgba(255,255,255,1);
+                        @include transition;
+                        
+                        &:hover {
+                            background-color: rgba(255, 255, 255, 0.25) !important;
+                            color: rgb(255, 255, 255) !important;
+                            box-shadow: none !important;
+                            @include transition;
+                        }
+                    }
+                }
+            }
+        }
+        
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0px;
+            padding: 16px;
+            color: $color_white;
+        }
+    }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 91, 127);
+    
+    p {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        margin-bottom: 0px;
+        padding: 10px;
+        color: $color_white;
+        
+        a {
+            color:$color_white;
+            @include transition();
+            
+            &:hover, &:focus {
+                color: #0ED1E6;
+                text-decoration:none;
+                @include transition();
+            }
+        }
+    }
+  }
 }

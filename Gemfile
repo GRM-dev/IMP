@@ -26,11 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'faker'
+
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass'
-gem 'faker'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
+gem 'bootstrap-modal-rails'
+
 gem 'rails-i18n'
 
 # Use Unicorn as the app server
