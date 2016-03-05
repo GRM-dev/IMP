@@ -40,5 +40,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   # localization
-  #config.i18n.available_locales = ['pl', :pl]
+  #config.i18n.available_locales = [:en, :pl]
 end

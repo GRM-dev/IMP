@@ -1,5 +1,17 @@
 pl:
   hello: "Hejka"
+  title_page: "Inwentarz sprzętu komputerowego"
+  header_unsigned_text: "Inwentarz sprzętu komputerowego dla twojej szkoły i firmy!"
+  menu:
+    home: "Strona główna"
+    about: "O projekcie"
+    galery: "Galeria"
+    contact: "Kontakt"
+    login: "Logowanie"
+  footer:
+    copyright: "Inwentarz Sprzętu Komputerowego"
+    version: "Wersja:"
+    authors: "Autorzy:"
   activerecord:
     errors:
       messages:

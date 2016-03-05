@@ -21,6 +21,18 @@
 
 en:
   hello: "Hello world"
+  title_page: "Inventory of computer equipment"
+  header_unsigned_text: "Inventory of computer equipment for your school and company!"
+  menu:
+    home: "Home"
+    about: "About project"
+    galery: "Galery"
+    contact: "Contact"
+    login: "Log in"
+  footer:
+    copyright: "Inventory of Computer Equipment"
+    version: "Version:"
+    authors: "Authors:"
   activerecord:
     errors:
       messages:

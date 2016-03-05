@@ -33,6 +33,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
 gem 'bootstrap-modal-rails'
+gem "nested_form"
 
 gem 'rails-i18n'
 

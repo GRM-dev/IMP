@@ -18,6 +18,7 @@ $color_header_home_page: #005b7f;
 body {
   background-image: $url_1;
   background-position-y: -35px;
+  background-size: cover;
   
   .center-text {text-align: center;}
   
@@ -31,15 +32,24 @@ body {
             ul {
                 li {
                     a {
+                        font-family: 'Roboto', sans-serif;
                         color: rgba(255,255,255,1);
                         @include transition;
                         
-                        &:hover {
+                        &:hover, &:focus {
                             background-color: rgba(255, 255, 255, 0.25);
                             color: rgb(255, 255, 255) !important;
                             box-shadow: none !important;
                             @include transition;
                         }
+                    }
+                    
+                    button.select_lang {
+                        padding: 14px;
+                        border-radius: 0px;
+                        background-color: rgb(0, 146, 203);
+                        color: rgba(255,255,255,1);
+                        text-transform: uppercase;
                     }
                     
                     &.active {
@@ -51,6 +61,33 @@ body {
                     &.login {
                         a {
                             background-color: #1A7B1A;
+                        }
+                    }
+                }
+                
+                &.select_lang_list {
+                    padding: 0px !important;
+                    min-width: 60px !important;
+                    
+                    li {
+                        a {
+                            border-radius: 0px; 
+                            text-transform: uppercase;
+                            padding: 5px 14px;
+                            
+                            &:hover, &:focus {
+                                background-color: #3DA3CB;
+                                background-image: none;
+                            }
+                        }
+                        
+                        &.btn-primary.active {
+                            background-color: #0092CB !important;
+                            
+                            &:hover, &:focus {
+                                background-color: #3DA3CB;
+                                background-image: none;
+                            }
                         }
                     }
                 }
@@ -67,7 +104,7 @@ body {
     }
     
     #content {
-        margin-top: 52px;
+        margin-top: 50px;
     }
   
     #footer {

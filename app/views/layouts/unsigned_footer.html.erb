@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-            <p>Copyright &copy; <%= Time.now.year %> - Inwentarz Sprzętu Komputerowego</p>
+            <p>Copyright &copy; <%= Time.now.year %> - <%= t('footer.copyright') %></p>
         </div>
         <div class="col-md-2">
-            <p class="center-text">Wersja: 0.0.1</p>
+            <p class="center-text"><%= t('footer.version') %> 0.0.1</p>
         </div>
         <div class="col-md-5">
-            <p class="center-text">Autorzy: <%= link_to 'Rodzyn', 'http://rodzyn.pl', target: "_blank" %>, <%= link_to 'Lucas Levvy', 'https://player.me/levvy', target: "_blank" %></p>
+            <p class="center-text"><%= t('footer.authors') %> <%= link_to 'Rodzyn', 'http://rodzyn.pl', target: "_blank" %>, <%= link_to 'Lucas Levvy', 'https://player.me/levvy', target: "_blank" %></p>
         </div>
     </div>
 </div>

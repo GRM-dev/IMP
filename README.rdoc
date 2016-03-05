@@ -1,6 +1,6 @@
-= \Inwentarz sprzętu komputerowego
+= \Inventory Management Platform (Inwentarz sprzętu komputerowego)
 
-==Opis
+== Description
 
 Aplikacja webowa jaką jest inwentarz sprzętu komputerowego umozliwia 
 podgląd podzespołów komputerowych w
@@ -16,9 +16,9 @@ Dzięki tej aplikacji użytkownik z każdego miejsca na świecie może sprawdzi�
 * System operacyjny
 * Obudowa 
 	
-== Wykorzystane technologie
+== Used technologies
 
-* Ruby on Rails
+* Ruby on Rails + gems
 * HTML 5
 * SASS
 * CSS 3
@@ -28,8 +28,9 @@ Dzięki tej aplikacji użytkownik z każdego miejsca na świecie może sprawdzi�
 * Responsive Web Design
 * Bootstrap
 	
-== Aplikacja w trakcie tworzenia!
+== Application under construction!
 
-Wersja :: 0.0.1
-Podgląd online :: https://inwentarz-rodzynbwa1.c9users.io
+Version :: 0.0.1:11
+Website :: https://inwentarz-rodzynbwa1.c9users.io
+Supported Languages :: PL, EN
 Autorzy :: {Rodzyn}[http://rodzyn.pl]  :: {Lukas Levvy}[https://player.me/levvy]
