@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  root 'home_pages#index'
   
-  get '/oprojekcie' => 'static_pages#about', as: :about
-  get '/galeria' => 'static_pages#galery', as: :galery
-  get '/kontakt' => 'static_pages#contact', as: :contact
-  get '/logowanie' => 'static_pages#login', as: :login
+  scope '/:locale', :locale => /#{I18n.available_locales.join("|")}/ do
+    root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
+    get '/home' => 'home_pages#index', as: :home
+    get '/about' => 'static_pages#about', as: :about
+    get '/galery' => 'static_pages#galery', as: :galery
+    get '/contact' => 'static_pages#contact', as: :contact
+    get '/login' => 'static_pages#login', as: :login 
+  end
+  
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+  get '*path' => redirect('/404')
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
