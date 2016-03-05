@@ -15,10 +15,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="inwentarz">
                   <ul class="nav navbar-nav">
-                    <li><%= link_to "Strona główna", root_path %></li>
-                    <li><%= link_to "O projekcie", about_path %></li>
-                    <li><%= link_to "Galeria", galery_path %></li>
-                    <li><%= link_to "Kontakt", contact_path %></li>
+                    <li <%= 'class=active' if current_page?(controller: 'home_pages') %>><%= link_to "Strona główna", root_path %> </li>
+                    <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'about') %>><%= link_to "O projekcie", about_path %> </li>
+                    <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'galery') %>><%= link_to "Galeria", galery_path %> </li>
+                    <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'contact') %>><%= link_to "Kontakt", contact_path %> </li>
+                    <li <%= 'class=login' %>><%= link_to "Logowanie", login_path %></li>
                   </ul>
                 </div>
             </nav>

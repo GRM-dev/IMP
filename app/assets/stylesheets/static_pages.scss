@@ -19,13 +19,14 @@ body {
   background-image: $url_1;
   background-position-y: -35px;
   
-  .center-text {text-align:center;}
+  .center-text {text-align: center;}
   
   #header {
-        background-color:$color_header_home_page;
+        background-color: $color_header_home_page;
         
         .navbar {
-            margin-bottom:0px !important;
+            margin-bottom: 0px !important;
+            border: none !important;
             
             ul {
                 li {
@@ -34,10 +35,22 @@ body {
                         @include transition;
                         
                         &:hover {
-                            background-color: rgba(255, 255, 255, 0.25) !important;
+                            background-color: rgba(255, 255, 255, 0.25);
                             color: rgb(255, 255, 255) !important;
                             box-shadow: none !important;
                             @include transition;
+                        }
+                    }
+                    
+                    &.active {
+                        a {
+                            background-color:#0179A9;
+                        }
+                    }
+                    
+                    &.login {
+                        a {
+                            background-color: #1A7B1A;
                         }
                     }
                 }
@@ -48,34 +61,38 @@ body {
             font-family: 'Open Sans', sans-serif;
             font-weight: 700;
             margin-bottom: 0px;
-            padding: 16px;
+            padding: 15px;
             color: $color_white;
         }
     }
-  
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(0, 91, 127);
     
-    p {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400;
-        margin-bottom: 0px;
-        padding: 10px;
-        color: $color_white;
-        
-        a {
-            color:$color_white;
-            @include transition();
+    #content {
+        margin-top: 52px;
+    }
+  
+    #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(0, 91, 127);
+    
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            margin-bottom: 0px;
+            padding: 10px;
+            color: $color_white;
             
-            &:hover, &:focus {
-                color: #0ED1E6;
-                text-decoration:none;
+            a {
+                color:$color_white;
                 @include transition();
+                
+                &:hover, &:focus {
+                    color: #0ED1E6;
+                    text-decoration:none;
+                    @include transition();
+                }
             }
         }
     }
-  }
 }

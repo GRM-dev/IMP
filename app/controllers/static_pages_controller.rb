@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
   
   def gallery
   end
+  
+  def login
+  end
 end

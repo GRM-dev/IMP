@@ -15,9 +15,9 @@
     <header id="header" class="navbar-fixed-top">
        <%= render template: "layouts/unsigned_header" %>
     </header>
-    <div id="content">
+    <section id="content">
       <%= content_for?(:content) ?  yield(:content) : yield %>
-    </div>
+    </section>
     <footer id="footer">
        <%= render template: "layouts/unsigned_footer" %>
     </footer>
