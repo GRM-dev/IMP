@@ -19,7 +19,7 @@
                     <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'about') %>><%= link_to t('menu.about'), about_path %> </li>
                     <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'galery') %>><%= link_to t('menu.galery'), galery_path %> </li>
                     <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'contact') %>><%= link_to t('menu.contact'), contact_path %> </li>
-                    <li class="login"><%= link_to t('menu.login'), login_path %></li>
+                    <li class="login"><%= link_to t('menu.login'), "#", {'data-toggle': "modal", 'data-target': "#login_modal"} %></li>
                     <li class="dropdown"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang", 'data-toggle': "dropdown"} do %>
                       <%= I18n.locale %> <i class="fa fa-caret-down"></i>
                       <% end %>

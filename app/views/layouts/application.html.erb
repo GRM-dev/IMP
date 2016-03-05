@@ -15,6 +15,9 @@
     <header id="header" class="navbar-fixed-top">
        <%= render template: "layouts/unsigned_header" %>
     </header>
+    <section id="log_in">
+      <%= render template: "static_pages/login" %>
+    </section>
     <section id="content">
       <%= content_for?(:content) ?  yield(:content) : yield %>
     </section>

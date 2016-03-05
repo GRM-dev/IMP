@@ -29,6 +29,16 @@ en:
     galery: "Galery"
     contact: "Contact"
     login: "Log in"
+  login_form:
+    welcome: "Welcome."
+    please: "Please login"
+    password: "Password"
+    signin: "Sign in"
+    forgetpass: "Forget password"
+  about:
+    header_text: "About project"
+  contact:
+    header_text: "Contact"
   footer:
     copyright: "Inventory of Computer Equipment"
     version: "Version:"

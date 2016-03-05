@@ -8,6 +8,16 @@ pl:
     galery: "Galeria"
     contact: "Kontakt"
     login: "Logowanie"
+  login_form:
+    welcome: "Witaj."
+    please: "Zaloguj się proszę"
+    password: "Hasło"
+    signin: "Zaloguj"
+    forgetpass: "Przypomnij hasło"
+  about:
+    header_text: "O projekcie"
+  contact:
+    header_text: "Kontakt"
   footer:
     copyright: "Inwentarz Sprzętu Komputerowego"
     version: "Wersja:"

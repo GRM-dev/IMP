@@ -34,6 +34,7 @@ gem 'font-awesome-rails'
 gem 'bootstrap_form'
 gem 'bootstrap-modal-rails'
 gem "nested_form"
+gem 'compass-rails'
 
 gem 'rails-i18n'
 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visible_name: MyString
+  email: MyString
+  password_digest: MyString
+  was_activated: false
+  active: false
+
+two:
+  visible_name: MyString
+  email: MyString
+  password_digest: MyString
+  was_activated: false
+  active: false

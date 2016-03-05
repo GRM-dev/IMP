@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Visible name:</strong>
+  <%= @user.visible_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Was activated:</strong>
+  <%= @user.was_activated %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @user.active %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user.id, locale: I18n.locale) %> |
+<%= link_to 'Back', users_path %>

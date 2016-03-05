@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     get '/about' => 'static_pages#about', as: :about
     get '/galery' => 'static_pages#galery', as: :galery
     get '/contact' => 'static_pages#contact', as: :contact
-    get '/login' => 'static_pages#login', as: :login 
+    get '/user/:id' => 'users#show', as: :account
+    resources :users
   end
   
   root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
