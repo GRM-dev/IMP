@@ -28,12 +28,14 @@ en:
     about: "About project"
     galery: "Galery"
     contact: "Contact"
-    login: "Log in"
+    panel: "Panel"
+  session:
+    login: "Login"
+    logout: "Logout"
   login_form:
     welcome: "Welcome."
     please: "Please login"
     password: "Password"
-    signin: "Sign in"
     forgetpass: "Forget password"
   about:
     header_text: "About project"

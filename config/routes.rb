@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   scope '/:locale', :locale => /#{I18n.available_locales.join("|")}/ do
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
+    post '/login' => 'sessions#create'
+    delete '/logout' => 'sessions#destroy'
     get '/home' => 'home_pages#index', as: :home
     get '/about' => 'static_pages#about', as: :about
     get '/galery' => 'static_pages#galery', as: :galery

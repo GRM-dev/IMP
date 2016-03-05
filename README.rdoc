@@ -6,15 +6,16 @@ Aplikacja webowa jaką jest inwentarz sprzętu komputerowego umozliwia
 podgląd podzespołów komputerowych w
 poszególnych stacjach roboczych w wybranej pracownii komputerowej. 
 
-Dzięki tej aplikacji użytkownik z każdego miejsca na świecie może sprawdzić takie parametry jak:
-* Płyta główna
-* Procesor 	
-* Pamięć RAM 	
-* Zasilacz 	
-* Karta graficzna 	
-* Dysk twardy 	
-* System operacyjny
-* Obudowa 
+By this application you can check parameters of every computer at your school or company from anywhere, everywhere in the world.
+You can check a parameters such as :
+* Motherboard
+* Processor 	
+* Random Access Memory	
+* Power Supply Unit	
+* Graphics Processing Unit 	
+* Hard Disks	
+* Operating System
+* Case
 	
 == Used technologies
 
@@ -30,7 +31,7 @@ Dzięki tej aplikacji użytkownik z każdego miejsca na świecie może sprawdzi�
 	
 == Application under construction!
 
-Version :: 0.0.1:12
+Version :: 0.0.2:13
 Website :: https://inwentarz-rodzynbwa1.c9users.io
 Supported Languages :: PL, EN
 Autorzy :: {Rodzyn}[http://rodzyn.pl]  :: {Lukas Levvy}[https://player.me/levvy]

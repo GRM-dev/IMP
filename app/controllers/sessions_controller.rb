@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      redirect_to '/login', alert: "Bad mail/password!"
+      redirect_to root_path, alert: "Bad mail/password!"
     end
   end
 

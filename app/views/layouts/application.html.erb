@@ -16,7 +16,7 @@
        <%= render template: "layouts/unsigned_header" %>
     </header>
     <section id="log_in">
-      <%= render template: "static_pages/login" %>
+      <%= render partial: "sessions/new" %>
     </section>
     <section id="content">
       <%= content_for?(:content) ?  yield(:content) : yield %>

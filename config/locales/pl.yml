@@ -8,11 +8,14 @@ pl:
     galery: "Galeria"
     contact: "Kontakt"
     login: "Logowanie"
+    panel: "Panel"
+  session:
+    login: "Zaloguj się"
+    logout: "Wyloguj się"
   login_form:
     welcome: "Witaj."
     please: "Zaloguj się proszę"
     password: "Hasło"
-    signin: "Zaloguj"
     forgetpass: "Przypomnij hasło"
   about:
     header_text: "O projekcie"

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :setup_locales
   before_action :set_locale
+  helper_method :current_user
  
   def set_locale(locale = nil)
     I18n.locale = (locale == nil ? extract_locale_from_tld : extract_locale_from_tld(locale))
@@ -21,5 +22,11 @@ class ApplicationController < ActionController::Base
   #  { locale: I18n.locale }.merge options
   #end
   
-  
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def require_user
+    redirect_to root_path unless current_user
+  end
 end
