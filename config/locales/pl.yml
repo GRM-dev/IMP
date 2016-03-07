@@ -25,6 +25,7 @@ pl:
     copyright: "Inwentarz Sprzętu Komputerowego"
     version: "Wersja:"
     authors: "Autorzy:"
+    designer: "Design:"
   activerecord:
     errors:
       messages:

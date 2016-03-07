@@ -13,16 +13,24 @@
 </head>
 <body>
     <header id="header" class="navbar-fixed-top">
-       <%= render template: "layouts/unsigned_header" %>
+      <% if current_user && params['dashboard'] != nil %>
+        <%= render template: "layouts/dashboard_header" %>
+      <% else %>
+         <%= render template: "layouts/static_header" %>
+       <% end %>
     </header>
     <section id="log_in">
       <%= render partial: "sessions/new" %>
     </section>
     <section id="content">
-      <%= content_for?(:content) ?  yield(:content) : yield %>
+      <%= yield %>
     </section>
     <footer id="footer">
-       <%= render template: "layouts/unsigned_footer" %>
+      <% if current_user  && params['dashboard'] != nil %>
+        <%= render template: "layouts/dashboard_header" %>
+      <% else %>
+        <%= render template: "layouts/static_footer" %>
+      <% end %>
     </footer>
 </body>
 </html>

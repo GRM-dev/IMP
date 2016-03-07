@@ -223,16 +223,22 @@ body {
             margin-bottom: 0px;
             padding: 10px;
             color: $color_white;
+            font-size: 12px;
             
             a {
                 color:$color_white;
                 @include transition();
+                padding: 3px;
                 
                 &:hover, &:focus {
                     color: #0ED1E6;
                     text-decoration:none;
                     @include transition();
                 }
+            }
+            
+            &.center-height {
+                margin-top: 10px;
             }
         }
     }

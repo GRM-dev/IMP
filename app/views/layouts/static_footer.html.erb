@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p class="center-height">Copyright &copy; <%= Time.now.year %> - <%= t('footer.copyright') %></p>
+        </div>
+        <div class="col-md-4">
+            <p class="center-text"><%= t('footer.version') %> Pre-Alpha 0.0.2 <br><i>Dev Demo Preview</i></p>
+        </div>
+        <div class="col-md-4">
+            <p class="center-text">
+                <%= t('footer.authors') %> <%= link_to 'Rodzyn', 'http://rodzyn.pl', target: "_blank" %>, 
+                <%= link_to 'Lucas Levvy', 'https://player.me/levvy', target: "_blank" %>
+                <br>
+                <%= t('footer.designer') %> <%= mail_to "tomekbrylinski.39@gmail.com", 'Tomasz Bryliński' %>
+            </p>
+        </div>
+    </div>
+</div>

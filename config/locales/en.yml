@@ -45,6 +45,7 @@ en:
     copyright: "Inventory of Computer Equipment"
     version: "Version:"
     authors: "Authors:"
+    designer: "Design:"
   activerecord:
     errors:
       messages:
