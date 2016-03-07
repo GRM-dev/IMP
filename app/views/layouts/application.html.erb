@@ -11,26 +11,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-    <header id="header" class="navbar-fixed-top">
-      <% if current_user && current_page?(:controller => 'dashboard') %>
-        <%= render template: "layouts/dashboard_header" %>
-      <% else %>
-         <%= render template: "layouts/static_header" %>
-       <% end %>
-    </header>
-    <section id="log_in">
-      <%= render partial: "sessions/new" %>
-    </section>
+<body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= params[:controller] == 'dashboard' ? ' dashboard' : ''  %>">
+    <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
+     <%= yield :header %>
     <section id="content">
-      <%= yield %>
+      <%=content_for?(:content) ? yield(:content) : yield %>
     </section>
     <footer id="footer">
-      <% if current_user  && current_page?(:controller => 'dashboard') %>
-        <%= render template: "layouts/dashboard_header" %>
-      <% else %>
-        <%= render template: "layouts/static_footer" %>
-      <% end %>
+      <%= yield :footer %>
     </footer>
+    <% if content_for?(:alert) %>
+    <div id="modals" >
+      <div id="alert">
+        <%= yield :alert %>
+      </div>
+      <div id="notice">
+        <%= yield :notice %>
+      </div>
+    </div>
+    <% end %>
 </body>
 </html>

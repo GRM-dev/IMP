@@ -32,6 +32,7 @@ en:
   session:
     login: "Login"
     logout: "Logout"
+    login_alert: "You need to sign in to access this page!"
   login_form:
     welcome: "Welcome."
     please: "Please login"

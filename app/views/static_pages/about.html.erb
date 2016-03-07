@@ -1,12 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="about">
-        <h2><%= t('about.header_text') %></h2>
-        <p>
-          
-        </p>
+<%= content_for :header do
+  render template: "layouts/static_header"
+end %>
+
+<%= content_for :content do %>
+  <%= flash[:alert] %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="about">
+          <h2><%= t('about.header_text') %></h2>
+          <p>
+            <%= t('about.body_text_1') %>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>>
+<% end %>
+
+<%= content_for :footer do
+  render template: "layouts/static_footer"
+end %>
+

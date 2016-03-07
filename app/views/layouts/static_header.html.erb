@@ -1,52 +1,57 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-5">
-            <p><%= t('header_unsigned_text') %></p>
-        </div>
-        <div class="col-md-7">
-            <nav class="navbar pull-right" role="navigation">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#inventory">
-                    <span class="sr-only">Rozwiń nawigację</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                </div>
-                <div class="collapse navbar-collapse" id="inventory">
-                  <ul class="nav navbar-nav">
-                    <li <%= 'class=active' if current_page?(controller: 'home_pages') %>><%= link_to t('menu.home'), root_path %> </li>
-                    <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'about') %>><%= link_to t('menu.about'), about_path %> </li>
-                    <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'galery') %>><%= link_to t('menu.galery'), galery_path %> </li>
-                    <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'contact') %>><%= link_to t('menu.contact'), contact_path %> </li>
-                    <li class="login">
-                      <% if !current_user %>
-                      <%= link_to t('session.login'),"#", {'data-toggle': "modal", 'data-target': "#login_modal"} %>
-                      <% else %>
-                      <%= link_to t('menu.panel'), dashboard_index_path %>
-                      <% end %>
-                    </li>
-                    <% if current_user %>
-                    <li><%= link_to t('session.logout'), logout_path, method: 'delete' %></li>
-                    <% end %>
-                    <li class="dropdown"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang", 'data-toggle': "dropdown"} do %>
-                      <%= I18n.locale %> <i class="fa fa-caret-down"></i>
-                      <% end %>
-                      <ul class="dropdown-menu select_lang_list">
-                        <% @locales.each do |l| %>
-                          <li>
-                            <% if I18n.locale.to_s == l.to_s %>
-                                <%= link_to '#', {class: 'btn btn-primary lang active'} do l.to_s end %>
-                              <% else %>
-                                <%= link_to params.merge({:locale => l.to_s}), {class: 'btn btn-primary lang'} do l.to_s end %>
-                              <% end %>
-                          </li>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5">
+              <p><%= t('header_unsigned_text') %></p>
+          </div>
+          <div class="col-md-7">
+              <nav class="navbar pull-right" role="navigation">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#inventory">
+                      <span class="sr-only">Rozwiń nawigację</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="collapse navbar-collapse" id="inventory">
+                    <ul class="nav navbar-nav">
+                      <li <%= 'class=active' if current_page?(controller: 'home_pages') %>><%= link_to t('menu.home'), root_path %> </li>
+                      <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'about') %>><%= link_to t('menu.about'), about_path %> </li>
+                      <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'galery') %>><%= link_to t('menu.galery'), galery_path %> </li>
+                      <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'contact') %>><%= link_to t('menu.contact'), contact_path %> </li>
+                      <li class="login">
+                        <% if !current_user %>
+                        <%= link_to t('session.login'),"#", {'data-toggle': "modal", 'data-target': "#login_modal"} %>
+                        <% else %>
+                        <%= link_to t('menu.panel'), dashboard_index_path %>
                         <% end %>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>
+                      </li>
+                      <% if current_user %>
+                      <li><%= link_to t('session.logout'), logout_path, method: 'delete' %></li>
+                      <% end %>
+                      <li class="dropdown"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang", 'data-toggle': "dropdown"} do %>
+                        <%= I18n.locale %> <i class="fa fa-caret-down"></i>
+                        <% end %>
+                        <ul class="dropdown-menu select_lang_list">
+                          <% @locales.each do |l| %>
+                            <li>
+                              <% if I18n.locale.to_s == l.to_s %>
+                                  <%= link_to '#', {class: 'btn btn-primary lang active'} do l.to_s end %>
+                                <% else %>
+                                  <%= link_to params.merge({:locale => l.to_s}), {class: 'btn btn-primary lang'} do l.to_s end %>
+                                <% end %>
+                            </li>
+                          <% end %>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+
+<section id="log_in">
+  <%= render partial: "sessions/new" %>
+</section>

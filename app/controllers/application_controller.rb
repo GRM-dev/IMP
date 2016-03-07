@@ -27,6 +27,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    redirect_to root_path unless current_user
+    redirect_to root_path, :alert => t('session.login_alert') unless current_user
   end
 end

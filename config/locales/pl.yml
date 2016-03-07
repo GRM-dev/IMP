@@ -12,6 +12,7 @@ pl:
   session:
     login: "Zaloguj się"
     logout: "Wyloguj się"
+    login_alert: "Musisz być zalogowanym, aby otrzymać dostęp do tej strony!"
   login_form:
     welcome: "Witaj."
     please: "Zaloguj się proszę"
