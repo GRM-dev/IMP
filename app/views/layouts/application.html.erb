@@ -13,7 +13,7 @@
 </head>
 <body>
     <header id="header" class="navbar-fixed-top">
-      <% if current_user && params['dashboard'] != nil %>
+      <% if current_user && current_page?(:controller => 'dashboard') %>
         <%= render template: "layouts/dashboard_header" %>
       <% else %>
          <%= render template: "layouts/static_header" %>
@@ -26,7 +26,7 @@
       <%= yield %>
     </section>
     <footer id="footer">
-      <% if current_user  && params['dashboard'] != nil %>
+      <% if current_user  && current_page?(:controller => 'dashboard') %>
         <%= render template: "layouts/dashboard_header" %>
       <% else %>
         <%= render template: "layouts/static_footer" %>

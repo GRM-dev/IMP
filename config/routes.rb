@@ -8,10 +8,9 @@ Rails.application.routes.draw do
     get '/galery' => 'static_pages#galery', as: :galery
     get '/contact' => 'static_pages#contact', as: :contact
     get '/user/:id' => 'users#show', as: :account
-    resources :users
     
     resources :dashboard, only: [:index] do
-      
+      resources :users
     end
     
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}

@@ -1,5 +1,7 @@
 class DashboardController < ApplicationController
+  before_action :current_user
+  
   def index
-    @dashboards = Dashboard.all
+    
   end
 end

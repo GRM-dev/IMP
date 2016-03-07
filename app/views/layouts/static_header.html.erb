@@ -23,7 +23,7 @@
                       <% if !current_user %>
                       <%= link_to t('session.login'),"#", {'data-toggle': "modal", 'data-target': "#login_modal"} %>
                       <% else %>
-                      <%= link_to t('menu.panel'), "#" %>
+                      <%= link_to t('menu.panel'), dashboard_index_path %>
                       <% end %>
                     </li>
                     <% if current_user %>
