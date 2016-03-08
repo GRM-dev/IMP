@@ -16,3 +16,9 @@
 //= require jquery_nested_form
 //= require turbolinks
 //= require_tree .
+
+function showModalNotice() {
+  $('#modalNotification').click();
+}
+
+$(window).load(showModalNotice());
