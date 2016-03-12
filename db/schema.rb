@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 20160306232318) do
   add_index "buildings", ["user_id"], name: "index_buildings_on_user_id"
 
   create_table "company_types", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                       null: false
+    t.boolean  "installed",  default: false, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "dashboards", force: :cascade do |t|

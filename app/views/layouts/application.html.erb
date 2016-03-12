@@ -14,33 +14,53 @@
 <body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= params[:controller] == 'dashboard' ? ' dashboard' : ''  %>">
     <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
      <%= yield :header %>
+    </header>
+    <section id="log_in">
+      <%= render partial: "sessions/new" %>
+    </section>
     <section id="content">
       <%=content_for?(:content) ? yield(:content) : yield %>
     </section>
     <footer id="footer">
       <%= yield :footer %>
     </footer>
-    <% if content_for?(:alert) %>
-    <div class="modal show" id="modalNotification" tabindex="-1" role="dialog">
+  <% if flash[:alert] || content_for?(:alertbody) %>
+    <div class="modal fade hide" id="modalNotification" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg">
          <div class="modal-content">
-         <div class="modal-header">
-             <h4 class="modal-title">Modal title</h4>
-         </div>
-         <div class="modal-body">
-             <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown
-                 printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                 remaining essentially unchanged.</p>
-         </div>
-         <div class="modal-footer">
+           <div class="modal-header">
+            <h4 class="modal-title"><%= yield :alerttitle %></h4>
+           </div>
+           <div class="modal-body">
+             <p><% yield :alertbody %></p>
+             <p><% yield flash[:alert] %></p>
+           </div>
+           <div class="modal-footer">
              <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
-             <button type="button" class="btn btn-primary" ng-click="ok()">Save changes</button>
+             <button type="button" class="btn btn-primary" ng-click="ok()">Ok</button>
+           </div>
          </div>
-       </div>
+      </div>
     </div>
-            <%= yield :alert %>
-        
-            <%= yield :notice %>
-    <% end %>
+  <% end %>
+  <% if flash[:notice] || content_for?(:noticebody) %>
+      <div class="modal fade hide" id="modalNotification" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+            <h4 class="modal-title"><%= yield :noticetitle %></h4>
+           </div>
+           <div class="modal-body">
+             <p><% yield :noticebody %></p>
+             <p><% flash[:notice] %></p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
+             <button type="button" class="btn btn-primary" ng-click="ok()">Ok</button>
+           </div>
+         </div>
+      </div>
+    </div>
+  <% end %>
 </body>
 </html>

@@ -18,7 +18,7 @@
 //= require_tree .
 
 function showModalNotice() {
-  $('#modalNotification').click();
+  $('#modalNotification').modal('show');
 }
 
 $(window).load(showModalNotice());
