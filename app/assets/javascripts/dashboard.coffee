@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+dashboard = ->
+  $('body.dashboard').each ->
+    getTotalHeight = $(window).height()
+    getHeaderHeight = $('#header').height()
+    $('.dashboard_menu').each ->
+      $(this).height getTotalHeight - getHeaderHeight
+      return
+    return
+  return
+
+$(document).ready dashboard
+$(window).resize dashboard

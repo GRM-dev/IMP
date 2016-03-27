@@ -2,6 +2,18 @@
     render template: "layouts/dashboard_header"
 end %>
 
-<%= content_for :alert do 
-  render template: "layouts/dashboard_view" 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 db-background-menu">
+      <div class="dashboard_menu">
+      </div>
+    </div>
+    <div class="col-md-10 db-background-person">
+      
+    </div>
+  </div>
+</div>
+
+<%= content_for :footer do
+    render template: "layouts/dashboard_footer"
 end %>
