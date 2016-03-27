@@ -17,8 +17,6 @@
 //= require turbolinks
 //= require_tree .
 
-function showModalNotice() {
-  $('#modalNotification').modal('show');
-}
-
-$(window).load(showModalNotice());
+$(function() {
+   $("#modalinfo").modal();
+});

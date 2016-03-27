@@ -27,6 +27,9 @@ pl:
     version: "Wersja:"
     authors: "Autorzy:"
     designer: "Design:"
+  dashboard:
+    header:
+      title: "Dane szkoły"
   activerecord:
     errors:
       messages:

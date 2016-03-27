@@ -47,6 +47,9 @@ en:
     version: "Version:"
     authors: "Authors:"
     designer: "Design:"
+  dashboard:
+    header:
+      title: "Data of school"
   activerecord:
     errors:
       messages:

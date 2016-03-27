@@ -14,8 +14,8 @@ Rails.application.routes.draw do
       
     end
     
-    get 'dashboard/install' => 'building#new', as: :building
-    
+    # get 'dashboard/install' => 'building#new', as: :building
+    get '/dashboard' => 'dashboard#index', as: :dashboard
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end
   

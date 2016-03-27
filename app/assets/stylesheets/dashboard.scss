@@ -2,6 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$color_header_title: rgba(40,171,227,1);
+$color_header_person_info: rgba(249,249,249,1);
+
 body.dashboard {
-  background: none;
+  background:none !important;
+  
+  #header {
+    background:none !important;
+    
+    .db-background-title {
+      background-color: $color_header_title;
+      border-bottom:2px solid rgba(45,45,52,1);
+      
+      p {
+        font-size:24px;
+        font-family: 'Open Sans', sans-serif;
+      }
+    }
+    
+    .db-background-person {
+      background-color: $color_header_person_info;
+      border-bottom:2px solid rgba(201,202,207,1);
+      min-height:50px;
+    }
+  }
+  
+  .dashboard {
+    background: none;
+  }
+  
 }

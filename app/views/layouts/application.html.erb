@@ -15,9 +15,11 @@
     <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
      <%= yield :header %>
     </header>
-    <section id="log_in">
-      <%= render partial: "sessions/new" %>
-    </section>
+    <% if params[:controller] != 'dashboard' %>
+        <section id="log_in">
+          <%= render partial: "sessions/new" %>
+        </section>
+    <% end %>
     <section id="content">
       <%=content_for?(:content) ? yield(:content) : yield %>
     </section>
@@ -25,7 +27,7 @@
       <%= yield :footer %>
     </footer>
   <% if flash[:alert] || content_for?(:alertbody) %>
-    <div class="modal fade hide" id="modalNotification" tabindex="-1" role="dialog">
+    <div class="modal fade" id="modalinfo" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg">
          <div class="modal-content">
            <div class="modal-header">
@@ -44,7 +46,7 @@
     </div>
   <% end %>
   <% if flash[:notice] || content_for?(:noticebody) %>
-      <div class="modal fade hide" id="modalNotification" tabindex="-1" role="dialog">
+      <div class="modal fade" id="modalinfo" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
          <div class="modal-content">
            <div class="modal-header">
