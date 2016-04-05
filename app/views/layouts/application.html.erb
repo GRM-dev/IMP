@@ -31,16 +31,18 @@
       <div class="modal-dialog modal-lg">
          <div class="modal-content">
            <div class="modal-header">
-            <h4 class="modal-title"><%= yield :alerttitle %></h4>
+            <h4 class="modal-title">
+            <%= if content_for?(:alerttitle)
+                  yield :alerttitle
+                else
+                  t 'errors.no_access_title'
+                end %></h4>
            </div>
            <div class="modal-body">
-             <p><% yield :alertbody %></p>
-             <p><% yield flash[:alert] %></p>
+             <p><%= yield :alertbody %></p>
+             <p><%= flash[:alert] %></p>
            </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
-             <button type="button" class="btn btn-primary" ng-click="ok()">Ok</button>
-           </div>
+           
          </div>
       </div>
     </div>

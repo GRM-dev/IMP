@@ -6,7 +6,9 @@
       </div>
     </div>
     <div class="col-md-10 db-background-person">
-      
+      <% @users.each do |user| %>
+        <p class="user-show-name"><%= user.visible_name %></p>
+      <% end %>
     </div>
   </div>
 </div>

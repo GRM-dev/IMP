@@ -155,7 +155,9 @@ en:
       year: Year
   errors:
     format: "%{attribute} %{message}"
+    no_access_title: "You don't have permission"
     messages:
+      not_logged_in: "You need to sign in to get access to this page!"
       accepted: must be accepted
       blank: can't be blank
       present: must be blank

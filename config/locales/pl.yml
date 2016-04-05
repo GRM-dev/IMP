@@ -12,7 +12,6 @@ pl:
   session:
     login: "Zaloguj się"
     logout: "Wyloguj się"
-    login_alert: "Musisz być zalogowanym, aby otrzymać dostęp do tej strony!"
   login_form:
     welcome: "Witaj."
     please: "Zaloguj się proszę"
@@ -157,7 +156,9 @@ pl:
       year: Rok
   errors:
     format: "%{attribute} %{message}"
+    no_access_title: "Brak uprawnień"
     messages:
+      not_logged_in: "Musisz być zalogowanym, aby otrzymać dostęp do tej strony!"
       accepted: musi zostać zaakceptowane
       blank: nie może być puste
       confirmation: nie zgadza się z polem %{attribute}
