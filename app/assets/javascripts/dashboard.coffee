@@ -8,5 +8,5 @@ dashboard = ->
     return
   return
 
-$(document).ready dashboard
+$('.dashboard_menu').ready dashboard
 $(window).resize dashboard

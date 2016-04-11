@@ -1,3 +1,11 @@
+@mixin transition() {
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+}
+
 $color_header_title: rgba(40,171,227,1);
 $color_header_person_info: rgba(249,249,249,1);
 
@@ -22,8 +30,20 @@ body.dashboard {
       border-bottom:2px solid rgba(201,202,207,1);
       min-height:50px;
       
-      p.user-show-name {
+      p.user-show-name, p.user-show-logout {
         color:rgba(71, 67, 67, 0.9);
+        
+        a {
+          color:rgba(71, 67, 67, 0.9);
+          @include transition;
+        }
+       
+        a:hover {
+          background:none;
+          color:$color_header_title;
+          text-decoration:none;
+          @include transition;
+        }
       }
     }
   }

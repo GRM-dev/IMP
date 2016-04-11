@@ -6,9 +6,10 @@
       </div>
     </div>
     <div class="col-md-10 db-background-person">
-      <% @users.each do |user| %>
-        <p class="user-show-name"><%= user.visible_name %></p>
-      <% end %>
+        <p class="user-show-name pull-left"><%= @current_user.visible_name %></p>
+        <% if current_user %>
+          <p class="user-show-name pull-right"><%= link_to t('session.logout'), logout_path, method: 'delete' %></p>
+        <% end %>
     </div>
   </div>
 </div>
