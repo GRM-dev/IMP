@@ -1,12 +1,13 @@
 dashboard = ->
-  $('body.dashboard').each ->
-    getTotalHeight = $(window).height()
+  console.log('refresh invoked')
+  $('.body-dashboard').each ->
+    console.log('refresh_invoking')
+    getTotalHeight = $(document).height()
     getHeaderHeight = $('#header').height()
-    $('.dashboard_menu').each ->
-      $(this).height getTotalHeight - getHeaderHeight
-      return
+    $('.dashboard_menu').height getTotalHeight - getHeaderHeight
     return
   return
 
-$('.dashboard_menu').ready dashboard
+$(document).ready dashboard
 $(window).resize dashboard
+$(document).on('page:load', dashboard)

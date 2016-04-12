@@ -1,41 +1,78 @@
 pl:
-  hello: "Hejka"
-  title_page: "Inwentarz sprzętu komputerowego"
-  header_unsigned_text: "Inwentarz sprzętu komputerowego dla twojej szkoły i firmy!"
-  menu:
-    home: "Strona główna"
-    about: "O projekcie"
-    galery: "Galeria"
-    contact: "Kontakt"
-    login: "Logowanie"
-    panel: "Panel"
-  session:
-    login: "Zaloguj się"
-    logout: "Wyloguj się"
-  login_form:
-    welcome: "Witaj."
-    please: "Zaloguj się proszę"
-    password: "Hasło"
-    forgetpass: "Przypomnij hasło"
-  about:
-    header_text: "O projekcie"
-  contact:
-    header_text: "Kontakt"
-  footer:
-    copyright: "Inwentarz Sprzętu Komputerowego"
-    version: "Wersja:"
-    authors: "Autorzy:"
-    designer: "Design:"
-  dashboard:
-    header:
-      title: "Dane szkoły"
   activerecord:
+    models:
+      building:
+        one: Budynek
+        other: Budynki
+      dashboard:
+        one: Panel
+        other: Panele
+      user:
+        one: Użytkonwik
+        other: Użytkownicy
+      company_type:
+        one: Typ firmy
+        other: Typy firm
+    atributes:
+        building:
+          name: Nazwa
+          city: Miasto
+          street: Ulica
+        dashboard:
+          
+        user:
+          email: E-mail
+          visible_name: Widoczna nazwa
+          password: Hasło
+        company_type:
+          name: Nazwa
     errors:
       messages:
         record_invalid: 'Negatywne sprawdzenie poprawności: %{errors}'
         restrict_dependent_destroy:
           has_many: Nie może zostać usunięte, gdyż istnieją zależne od niego %{record}
           has_one: Nie może zostać usunięte, gdyż istnieje zależny od niego %{record}
+  layouts:
+    application:
+      title_page: Inwentarz sprzętu komputerowego
+      close: Zamknij
+      ok: Ok
+    static_header:
+      hello: Hejka
+      header_unsigned_text: Inwentarz sprzętu komputerowego dla twojej szkoły i firmy!
+      expand: Rozwiń nawigację
+      home: Strona główna
+      about: O projekcie
+      galery: Galeria
+      contact: Kontakt
+      login: Logowanie
+      panel: Panel
+      logout: Wyloguj się
+    static_footer:
+      copyright: Inwentarz Sprzętu Komputerowego
+      version: "Wersja:"
+      authors: "Autorzy:"
+      designer: "Design:"
+    dashboard_header:
+      logout: Wyloguj się
+  sessions:
+    new:
+      login: Zaloguj się
+      email: E-mail
+      welcome: Witaj.
+      please: Zaloguj się proszę
+      password: Hasło
+      forgetpass: Przypomnij hasło
+  home_pages:
+    
+  static_pages:
+    contact:
+      header_text: Kontakt
+    about:
+      header_text: O projekcie
+  dashboard:
+    header:
+      title: Dane szkoły
   date:
     abbr_day_names:
     - nie

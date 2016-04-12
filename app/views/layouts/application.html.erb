@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t('title_page') %></title>
+  <title><%= t('.title_page') %></title>
   <meta charset="utf-8">
   <meta name="author" content="Dawid 'Rodzyn' Tomas, Lukas Levvy">
   <meta name="description" content="Inwentarz sprzętu komputerowego dla Twojej szkoły i firmy!">
@@ -11,7 +11,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= params[:controller] == 'dashboard' ? ' dashboard' : ''  %>">
+<body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= params[:controller] == 'dashboard' ? ' body-dashboard' : ''  %>">
     <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
      <%= yield :header %>
     </header>
@@ -59,8 +59,8 @@
              <p><% flash[:notice] %></p>
            </div>
            <div class="modal-footer">
-             <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
-             <button type="button" class="btn btn-primary" ng-click="ok()">Ok</button>
+             <button type="button" class="btn btn-white" ng-click="cancel()"><%= t('.close') %></button>
+             <button type="button" class="btn btn-primary" ng-click="ok()"><%= t('.ok')%></button>
            </div>
          </div>
       </div>

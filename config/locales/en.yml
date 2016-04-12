@@ -1,62 +1,78 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
-  title_page: "Inventory of computer equipment"
-  header_unsigned_text: "Inventory of computer equipment for your school and company!"
-  menu:
-    home: "Home"
-    about: "About project"
-    galery: "Galery"
-    contact: "Contact"
-    panel: "Panel"
-  session:
-    login: "Login"
-    logout: "Logout"
-    login_alert: "You need to sign in to access this page!"
-  login_form:
-    welcome: "Welcome."
-    please: "Please login"
-    password: "Password"
-    forgetpass: "Forget password"
-  about:
-    header_text: "About project"
-  contact:
-    header_text: "Contact"
-  footer:
-    copyright: "Inventory of Computer Equipment"
-    version: "Version:"
-    authors: "Authors:"
-    designer: "Design:"
-  dashboard:
-    header:
-      title: "Data of school"
   activerecord:
+    models:
+      bulding:
+        one: Building
+        other: Buildings
+      dashboard:
+        one: Panel
+        other: Panels
+      user:
+        one: User
+        other: Users
+      company_type:
+        one: Company type
+        other: Company types
+    atributes:
+      building:
+        name: Name
+        city: City
+        street: Street
+      dashboard:
+      
+      user:
+        email: E-mail
+        visible_name: Visible name
+        password: Password
+      company_type:
+        name: Name
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"
+  layouts:
+    application:
+      title_page: Inventory of computer equipment
+      close: Close
+      ok: Ok
+    static_header:
+      hello: Hello
+      header_unsigned_text: Inventory of computer equipment for your school and company!
+      expand: Expand the navigation
+      home: Home
+      about: About project
+      galery: Galery
+      contact: Contact
+      login: Login
+      panel: Dashboard
+      logout: Logout
+    static_footer:
+      copyright: Inventory of computer equipment
+      version: "Version:"
+      authors: "Authors:"
+      designer: "Design:"
+    dashboard_header:
+      logout: Logout
+  sessions:
+    new:
+      login: Login
+      email: E-mail
+      welcome: Welcome
+      please: Login please
+      password: Password
+      forgetpass: Forgot your password
+  home_pages:
+  
+  static_pages:
+    contact:
+      header_text: Contact
+    about: 
+      header_text: About project
+  dashboard:
+    header:
+      title: Data of school
   date:
     abbr_day_names:
     - Sun

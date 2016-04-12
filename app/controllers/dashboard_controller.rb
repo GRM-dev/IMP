@@ -7,5 +7,5 @@ class DashboardController < ApplicationController
     if Dashboard.all.empty?
       redirect_to '/dashboard/install'
     end
-  end
+   end
 end
