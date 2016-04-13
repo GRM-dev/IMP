@@ -13,9 +13,10 @@ pl:
       company_type:
         one: Typ firmy
         other: Typy firm
-    atributes:
+    attributes:
         building:
-          name: Nazwa
+          name: Nazwa budynku
+          shortname: Skrócona nazwa
           city: Miasto
           street: Ulica
         dashboard:
@@ -73,6 +74,10 @@ pl:
   dashboard:
     header:
       title: Dane szkoły
+  building:
+    new:
+      title: Dodaj budynek
+      add: Dodaj
   date:
     abbr_day_names:
     - nie

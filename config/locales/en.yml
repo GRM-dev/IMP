@@ -13,9 +13,10 @@ en:
       company_type:
         one: Company type
         other: Company types
-    atributes:
+    attributes:
       building:
-        name: Name
+        name: Name of building
+        shortname: Short name
         city: City
         street: Street
       dashboard:
@@ -73,6 +74,10 @@ en:
   dashboard:
     header:
       title: Data of school
+  building:
+    new:
+      title: Add building
+      add: Add
   date:
     abbr_day_names:
     - Sun

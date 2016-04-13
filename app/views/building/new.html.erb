@@ -1,0 +1,33 @@
+<% cc = Building -%>
+<div class="main">
+  <div class="container">
+    <div class="form">
+      <h1><%= t('.title') %></h1>
+      <div class="notice">
+        <div class="alert-info">
+          <%= flash[:notice] %>
+        </div>
+        <div class="alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      </div>
+      <%= bootstrap_form_for(@building, label_col: "col-sm-2", control_col: "col-sm-4", layout: :horizontal) do |f| %>
+          <div class="field">
+              <%= f.form_group :company_type_id, label: {text: CompanyType.model_name.human } do %>
+                <% CompanyType.all.each do |ct| %>
+                  <%= f.radio_button :company_type_id, ct.id, label: ct.name %>
+                <% end %>
+              <% end %>
+              <%= f.text_field :name, :placeholder => cc.human_attribute_name('name') %>
+              <%= f.text_field :shortname, :placeholder => cc.human_attribute_name('shortname') %>
+              <%= f.text_field :city, :placeholder => cc.human_attribute_name('city') %>
+              <%= f.text_field :street, :placeholder => cc.human_attribute_name('street') %>
+          </div>
+          <%= f.error_summary %>
+          <div class="actions">
+            <%= f.submit t('.add'), :class => "btn btn-default" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= params[:controller] == 'dashboard' ? ' body-dashboard' : ''  %>">
+<body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= is_dashboard ? ' body-dashboard' : ''  %>">
     <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
      <%= yield :header %>
     </header>

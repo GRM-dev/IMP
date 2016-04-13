@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :setup_locales
   before_action :set_locale
-  helper_method :current_user
+  helper_method :current_user, :is_dashboard
  
   def set_locale(locale = nil)
     I18n.locale = (locale == nil ? extract_locale_from_tld : extract_locale_from_tld(locale))
@@ -28,5 +28,9 @@ class ApplicationController < ActionController::Base
 
   def require_user
     redirect_to root_path, :alert => t('errors.messages.not_logged_in') unless current_user
+  end
+  
+  def is_dashboard
+    ["dashboard", "building"].include?(params[:controller])
   end
 end
