@@ -1,15 +1,42 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 db-background-title">
+    <div class="col-md-2 db-background-buliding">
       <div class="dashboard_top">
-        <p class="dash-title-top"><%= t('.title') %></p>
+        <p class="dash-title-top"><%= t('activerecord.attributes.company_type.' + CompanyType.find(current_building.company_type_id).name.downcase) + ': ' + current_building.shortname %></p>
       </div>
     </div>
     <div class="col-md-10 db-background-person">
-        <p class="user-show-name pull-left"><%= @current_user.visible_name %></p>
+        <p class="user-show-name pull-left"><%= @current_user.visible_name %> 
+          <span class="permission"> 
+            (<%= if @current_user.is_admin 
+                  t 'perms.admin'
+                  else
+                  t 'perms.user'
+                  end %>)
+           </span>
+        </p>
         <% if current_user %>
-          <p class="user-show-name pull-right"><%= link_to t('.logout'), logout_path, method: 'delete' %></p>
+          <p class="user-show-logout pull-right"><%= link_to t('.logout'), logout_path, method: 'delete' %></p>
         <% end %>
+        <div class="language pull-right">
+          <p class="user-show-name pull-left"><%= t('activerecord.attributes.dashboard.language')%></p>
+          <li class="dropdown pull-right"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: I18n.locale, 'data-toggle': "dropdown"} do %>
+            <i class="fa fa-caret-down"></i>
+            <% end %>
+            <ul class="dropdown-menu select_lang_list">
+              <% @locales.each do |l| %>
+                <li>
+                  <% if I18n.locale.to_s == l.to_s %>
+                      <%= link_to '#', {class: 'btn btn-primary lang active'} do l.to_s end %>
+                    <% else %>
+                      <%= link_to params.merge({:locale => l.to_s}), {class: 'btn btn-primary lang'} do l.to_s end %>
+                    <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </div>
+        <p class="user-show-last-login pull-right"><%= t('activerecord.attributes.dashboard.last_login')%> <span class="date"><%= session[:last_login].to_time.strftime('%d.%m.%Y / %H:%M') %></span> <%= t('activerecord.attributes.dashboard.last_ip')%> <span class="ip"><%= session[:last_ip] %></span></p>
     </div>
   </div>
 </div>

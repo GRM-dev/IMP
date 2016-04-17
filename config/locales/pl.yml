@@ -20,13 +20,17 @@ pl:
           city: Miasto
           street: Ulica
         dashboard:
-          
+          language: Język
+          last_login: "Ostatnie logowanie: "
+          last_ip: "z IP: "    
         user:
           email: E-mail
           visible_name: Widoczna nazwa
           password: Hasło
         company_type:
           name: Nazwa
+          school: Szkoła
+          company: Firma
     errors:
       messages:
         record_invalid: 'Negatywne sprawdzenie poprawności: %{errors}'
@@ -39,7 +43,6 @@ pl:
       close: Zamknij
       ok: Ok
     static_header:
-      hello: Hejka
       header_unsigned_text: Inwentarz sprzętu komputerowego dla twojej szkoły i firmy!
       expand: Rozwiń nawigację
       home: Strona główna

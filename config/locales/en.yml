@@ -20,13 +20,17 @@ en:
         city: City
         street: Street
       dashboard:
-      
+        language: Language
+        last_login: "Last login: "
+        last_ip: "on IP: "    
       user:
         email: E-mail
         visible_name: Visible name
         password: Password
       company_type:
         name: Name
+        school: School
+        company: Company
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
@@ -39,7 +43,6 @@ en:
       close: Close
       ok: Ok
     static_header:
-      hello: Hello
       header_unsigned_text: Inventory of computer equipment for your school and company!
       expand: Expand the navigation
       home: Home

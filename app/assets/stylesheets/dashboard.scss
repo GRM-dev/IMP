@@ -15,12 +15,13 @@ $color_header_person_info: rgba(249,249,249,1);
   #header {
     background:none !important;
     
-    .db-background-title {
+    .db-background-buliding {
       background-color: $color_header_title;
       border-bottom:2px solid rgba(45,45,52,1);
+      padding-bottom: 2px;
       
       p {
-        font-size:16px;
+        font-size:12px;
         font-family: 'Open Sans', sans-serif;
       }
     }
@@ -30,9 +31,16 @@ $color_header_person_info: rgba(249,249,249,1);
       border-bottom:2px solid rgba(201,202,207,1);
       min-height:50px;
       
-      p.user-show-name, p.user-show-logout {
+      p.user-show-name {
         color:rgba(71, 67, 67, 0.9);
         
+        span.permission {
+          font-size: 9px;
+        }
+      }
+      
+      p.user-show-logout {
+        color:rgba(71, 67, 67, 0.9);
         a {
           color:rgba(71, 67, 67, 0.9);
           @include transition;
@@ -45,15 +53,37 @@ $color_header_person_info: rgba(249,249,249,1);
           @include transition;
         }
       }
+      
+      p.user-show-last-login {
+        color:rgba(71, 67, 67, 0.9);
+         
+        span.date, span.ip {color: rgba(40, 171, 227, 0.87);}
+      }
+    }
+    
+    .language {
+      .li {list-style:none;}
+      
+      .flag {
+        width: 32px;
+        height: 32px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border-radius: 25px;
+        border: 1px solid #5D5959;
+      }
+      
+      #en {background-image:asset-url('flags/en_flag.png');}
+      #pl {background-image:asset-url('flags/pl_flag.png');}
     }
   }
   
   #content {
     margin-top: 0px;
     
-    .db-background-menu {
-      background-color:rgba(50, 50, 58, 1);
-    }
+    .db-background-menu {background-color:rgba(50, 50, 58, 1);}
   }
   
 }
