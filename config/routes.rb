@@ -9,14 +9,18 @@ Rails.application.routes.draw do
     get '/contact' => 'static_pages#contact', as: :contact
     get '/user/:id' => 'users#show', as: :account
     
-    resources :dashboard, only: [:index] do
-      resources :users
-      
+    namespace :building do
+      resources :laboratories
+      resources :workstation
     end
+  
+    resources :dashboard, only: [:index]
     get 'dashboard' => 'dashboard#index', as: :dashboard
-    
     get 'dashboard/install' => 'building#new', as: :building
     resources :building, only: [:create], as: :buildings
+  
+  
+    resources :users
     
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end

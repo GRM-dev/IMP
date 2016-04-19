@@ -15,12 +15,8 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_locales
-    @locales =  I18n.available_locales.map(&:to_s);
+    @locales = I18n.available_locales.map(&:to_s);
   end
-  
-  #def default_url_options(options = {})
-  #  { locale: I18n.locale }.merge options
-  #end
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

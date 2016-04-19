@@ -2,6 +2,7 @@ class Building < ActiveRecord::Base
   belongs_to :user
   belongs_to :dashboard
   belongs_to :company_type
+  has_many :laboratory
   
   accepts_nested_attributes_for :company_type
   

@@ -19,17 +19,16 @@
           <p class="user-show-logout pull-right"><%= link_to t('.logout'), logout_path, method: 'delete' %></p>
         <% end %>
         <div class="language pull-right">
-          <p class="user-show-name pull-left"><%= t('activerecord.attributes.dashboard.language')%></p>
-          <li class="dropdown pull-right"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: I18n.locale, 'data-toggle': "dropdown"} do %>
-            <i class="fa fa-caret-down"></i>
+          <p class="user-show-lang pull-left"><%= t('activerecord.attributes.dashboard.language')%></p>
+          <li class="current-lang dropdown pull-right"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: I18n.locale, 'data-toggle': "dropdown"} do %>
             <% end %>
             <ul class="dropdown-menu select_lang_list">
               <% @locales.each do |l| %>
                 <li>
                   <% if I18n.locale.to_s == l.to_s %>
-                      <%= link_to '#', {class: 'btn btn-primary lang active'} do l.to_s end %>
+                      <%= link_to '#', {class: 'flag lang hide'} do l.to_s end %>
                     <% else %>
-                      <%= link_to params.merge({:locale => l.to_s}), {class: 'btn btn-primary lang'} do l.to_s end %>
+                      <%= link_to params.merge({:locale => l.to_s}), {class: 'flag lang', id: l.to_s} do '' end %>
                     <% end %>
                 </li>
               <% end %>

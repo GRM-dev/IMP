@@ -1,0 +1,2 @@
+class WorkstationsController < ApplicationController
+end

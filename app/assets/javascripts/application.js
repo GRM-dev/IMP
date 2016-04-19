@@ -15,4 +15,8 @@
 //= require twitter/bootstrap
 //= require jquery_nested_form
 //= require turbolinks
+//= require interact
+//= require angular
+//= require angular-animate
+//= require angular-resource
 //= require_tree .

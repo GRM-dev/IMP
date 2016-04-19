@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :was_activated, default: false
       t.boolean :active, default: 1
       t.integer :permission_level, default: 0, null: false
+      t.string :image_file, default: 'default.png', null: false
 
       t.timestamps null: false
     end

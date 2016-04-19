@@ -12,6 +12,8 @@ $color_header_person_info: rgba(249,249,249,1);
 .body-dashboard {
   background:none !important;
   
+  .hide {display:none;}
+  
   #header {
     background:none !important;
     
@@ -35,6 +37,7 @@ $color_header_person_info: rgba(249,249,249,1);
         color:rgba(71, 67, 67, 0.9);
         
         span.permission {
+          color: $color_header_title;
           font-size: 9px;
         }
       }
@@ -57,12 +60,28 @@ $color_header_person_info: rgba(249,249,249,1);
       p.user-show-last-login {
         color:rgba(71, 67, 67, 0.9);
          
-        span.date, span.ip {color: rgba(40, 171, 227, 0.87);}
+        span.date, span.ip {color: $color_header_title}
       }
     }
     
     .language {
-      .li {list-style:none;}
+      margin-right:10px;
+      
+      ul {
+        min-width:36px;
+        
+        li {margin: 2px 5px;}
+      }
+      
+      .user-show-lang {
+        padding-right: 10px;
+        color:rgba(71, 67, 67, 0.9);
+      }
+      
+      .current-lang {
+        list-style:none; 
+        margin: 8px auto 0px;
+      }
       
       .flag {
         width: 32px;
@@ -72,7 +91,8 @@ $color_header_person_info: rgba(249,249,249,1);
         background-repeat: no-repeat;
         background-color: transparent;
         border-radius: 25px;
-        border: 1px solid #5D5959;
+        border: 1px solid #AFADAD;
+        padding:0px;
       }
       
       #en {background-image:asset-url('flags/en_flag.png');}

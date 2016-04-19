@@ -36,6 +36,12 @@ gem 'bootstrap-modal-rails'
 gem "nested_form"
 gem 'compass-rails'
 
+gem 'apotomo'
+gem 'interact-rails'
+gem 'angularjs-rails'
+
+gem 'haml'
+
 gem 'rails-i18n'
 
 # Use Unicorn as the app server
@@ -49,6 +55,7 @@ gem 'puma'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'hirb', require: 'hirb'
 end
 
 group :development do
