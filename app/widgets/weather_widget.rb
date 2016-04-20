@@ -1,7 +1,7 @@
 class WeatherWidget < Apotomo::Widget
 
   def display
-    render
+    render layout: 'portlet'
   end
 
 end

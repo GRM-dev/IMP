@@ -77,10 +77,14 @@ pl:
   dashboard:
     header:
       title: Dane szkoły
+    index:
+      home: Strona Główna
   building:
     new:
       title: Dodaj budynek
       add: Dodaj
+      
+      
   date:
     abbr_day_names:
     - nie

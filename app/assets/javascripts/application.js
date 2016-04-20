@@ -12,10 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery_nested_form
+//= require jquery-ui
+// require jquery-ui/effect.all
+
+//= require twitter/bootstrap
 //= require turbolinks
 //= require interact
+
 //= require angular
 //= require angular-animate
 //= require angular-resource

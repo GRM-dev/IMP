@@ -1,0 +1,8 @@
+<%= widget_div class: :portlet, id: "portlet-#{widget_id}" do %>
+  <div class="portlet-header">
+    <%= @title || "Widget!" %>
+    <div class="portlet-content" id="<%= widget_id %>">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>

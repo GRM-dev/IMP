@@ -77,10 +77,14 @@ en:
   dashboard:
     header:
       title: Data of school
+    index:
+      home: Home Page
   building:
     new:
       title: Add building
       add: Add
+      
+      
   date:
     abbr_day_names:
     - Sun

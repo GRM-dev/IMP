@@ -39,6 +39,7 @@ gem 'compass-rails'
 gem 'apotomo'
 gem 'interact-rails'
 gem 'angularjs-rails'
+# gem 'jquery-ui-rails'
 
 gem 'haml'
 

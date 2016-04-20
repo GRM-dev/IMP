@@ -103,7 +103,28 @@ $color_header_person_info: rgba(249,249,249,1);
   #content {
     margin-top: 0px;
     
-    .db-background-menu {background-color:rgba(50, 50, 58, 1);}
+    .db-background-menu {
+      background-color:rgba(50, 50, 58, 1);
+      
+      #dashboard_menu_list {
+        padding: 0px;
+        
+        li {
+          border-bottom:1px solid rgba(224, 225, 230, 0.41);
+          
+          a {
+            &:hover {
+              background-color:transparent !important;
+            }
+          }
+        }
+      }
+    }
   }
-  
+}
+
+#widgets {
+  .column {
+    
+  }
 }

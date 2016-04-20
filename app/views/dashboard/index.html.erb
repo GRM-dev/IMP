@@ -6,16 +6,31 @@ end %>
   <div class="row">
     <div class="col-md-2 db-background-menu">
       <div class="dashboard_menu">
-        sidebar
+        <div class="collapse navbar-collapse" id="dashboard_menu_list">
+          <ul class="nav">
+            <li class="home"><%= link_to t('.home'), dashboard_path %></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="col-md-10 db-background-person">
-      Main
-      <%= render_widget :weather %>
+    <div id="dashboard" class="col-md-10 db-background-person">
+      <div class="row" id="widgets">
+        <div class="column col-md-4">
+          <%= render_widget :weather %>
+        </div>
+        <div class="column col-md-4">
+          <%= render_widget :weather %>
+        </div>
+        <div class="column col-md-4">
+          <%= render_widget :weather %>
+        </div>
+        <div class="column col-md-4">
+          <%= render_widget :weather %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 <%= content_for :footer do
     render template: "layouts/dashboard_footer"
 end %>
