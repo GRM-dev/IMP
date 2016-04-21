@@ -5,38 +5,10 @@ end %>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 db-background-menu">
-      <div class="dashboard_menu">
-        <div class="collapse navbar-collapse" id="dashboard_menu_list">
-          <ul class="nav">
-            <li class="<% if current_page?(controller: 'dashboard') %>active<% end %> home">
-              <%= link_to dashboard_path do %>
-                <i class="fa fa-home" aria-hidden="true"><%= t('.home') %></i>
-              <% end %>  
-            </li>
-            <li class="logout">
-              <%= link_to logout_path, method: 'delete' do %>
-                <i class="fa fa-sign-out" aria-hidden="true"><%= t('.logout') %></i>
-              <% end %>  
-            </li>
-          </ul>
-        </div>
-      </div>
+      <%= render partial: 'left_menu' %>
     </div>
     <div id="dashboard" class="col-md-10 db-background-person">
-      <div class="row" id="widgets">
-        <div class="column col-md-4">
-          <%= render_widget :weather %>
-        </div>
-        <div class="column col-md-4">
-          <%= render_widget :weather %>
-        </div>
-        <div class="column col-md-4">
-          <%= render_widget :weather %>
-        </div>
-        <div class="column col-md-4">
-          <%= render_widget :weather %>
-        </div>
-      </div>
+       <%= render partial: 'widgets_panel' %>
     </div>
   </div>
 </div>

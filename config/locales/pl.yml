@@ -79,6 +79,7 @@ pl:
       title: Dane szkoły
     index:
       home: Strona Główna
+      rooms: Pomieszczenia
       logout: Wyloguj się
   building:
     new:

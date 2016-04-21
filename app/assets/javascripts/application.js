@@ -16,7 +16,10 @@
 //= require jquery-ui
 // require jquery-ui/effect.all
 
-//= require twitter/bootstrap
+//= require tether
+
+//= require bootstrap-sprockets
+
 //= require turbolinks
 //= require interact
 

@@ -79,6 +79,7 @@ en:
       title: Data of school
     index:
       home: Homepage
+      rooms: Rooms
       logout: Logout
   building:
     new:
