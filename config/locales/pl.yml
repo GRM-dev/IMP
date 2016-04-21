@@ -79,6 +79,7 @@ pl:
       title: Dane szkoły
     index:
       home: Strona Główna
+      logout: Wyloguj się
   building:
     new:
       title: Dodaj budynek

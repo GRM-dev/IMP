@@ -78,7 +78,8 @@ en:
     header:
       title: Data of school
     index:
-      home: Home Page
+      home: Homepage
+      logout: Logout
   building:
     new:
       title: Add building

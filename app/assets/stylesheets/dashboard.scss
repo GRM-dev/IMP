@@ -25,6 +25,7 @@ $color_header_person_info: rgba(249,249,249,1);
       p {
         font-size:12px;
         font-family: 'Open Sans', sans-serif;
+        text-align: center;
       }
     }
     
@@ -105,16 +106,36 @@ $color_header_person_info: rgba(249,249,249,1);
     
     .db-background-menu {
       background-color:rgba(50, 50, 58, 1);
+      padding: 0px;
       
       #dashboard_menu_list {
         padding: 0px;
         
         li {
-          border-bottom:1px solid rgba(224, 225, 230, 0.41);
+          border-bottom:1px solid rgba(60, 60, 68, 1);
+          padding:5px 0px;
+          
+          &.active {
+            background-color:rgba(0, 0, 0, 1);
+            
+            a {color:rgba(40, 171, 227, 1)}
+          }
           
           a {
-            &:hover {
+            font-size:16px;
+            color:rgba(174, 178, 183, 1);
+            text-align: center;
+            
+            &:hover, &:focus {
               background-color:transparent !important;
+            }
+            
+            i {
+              margin-left: -20px;
+              
+              &:before {
+                margin-right:10px;
+              }
             }
           }
         }

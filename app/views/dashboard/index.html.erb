@@ -8,7 +8,16 @@ end %>
       <div class="dashboard_menu">
         <div class="collapse navbar-collapse" id="dashboard_menu_list">
           <ul class="nav">
-            <li class="home"><%= link_to t('.home'), dashboard_path %></li>
+            <li class="<% if current_page?(controller: 'dashboard') %>active<% end %> home">
+              <%= link_to dashboard_path do %>
+                <i class="fa fa-home" aria-hidden="true"><%= t('.home') %></i>
+              <% end %>  
+            </li>
+            <li class="logout">
+              <%= link_to logout_path, method: 'delete' do %>
+                <i class="fa fa-sign-out" aria-hidden="true"><%= t('.logout') %></i>
+              <% end %>  
+            </li>
           </ul>
         </div>
       </div>
