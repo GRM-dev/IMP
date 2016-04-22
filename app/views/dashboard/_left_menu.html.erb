@@ -7,12 +7,25 @@
         <% end %>  
       </li>
       <li class="rooms">
-        <a href="#" data-toggle="dropdown"><%= t('.rooms') %> <i class="fa fa-caret-down"></i></a>
+        <a href="#" data-toggle="dropdown"><i class="fa fa-building-o" aria-hidden="true"><%= t('.rooms') %></i> <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i></a>
         <ul class="hide">
           <li class="add_room">
             <%= link_to t('.home'), dashboard_path %>
           </li>
         </ul>
+      </li>
+      <li class="users">
+        <a href="#" data-toggle="dropdown"><i class="fa fa-users" aria-hidden="true"><%= t('.users') %></i> <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i></a>
+        <ul class="hide">
+          <li class="add_user">
+            <%= link_to t('.home'), dashboard_path %>
+          </li>
+        </ul>
+      </li>
+      <li class="logout">
+         <a href="#">
+          <i class="fa fa-book" aria-hidden="true"><%= t('.logs') %></i>
+        </a>  
       </li>
       <li class="logout">
         <%= link_to logout_path, method: 'delete' do %>

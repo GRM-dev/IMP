@@ -26,6 +26,8 @@ $color_header_person_info: rgba(249,249,249,1);
         font-size:12px;
         font-family: 'Open Sans', sans-serif;
         text-align: center;
+        margin:0px;
+        padding:15px 0px;
       }
     }
     
@@ -33,6 +35,8 @@ $color_header_person_info: rgba(249,249,249,1);
       background-color: $color_header_person_info;
       border-bottom:2px solid rgba(201,202,207,1);
       min-height:50px;
+      
+      p {margin:0px; padding:15px 10px !important;}
       
       p.user-show-name {
         color:rgba(71, 67, 67, 0.9);
@@ -94,6 +98,8 @@ $color_header_person_info: rgba(249,249,249,1);
         border-radius: 25px;
         border: 1px solid #AFADAD;
         padding:0px;
+        
+        &:after {display:none;}
       }
       
       #en {background-image:asset-url('flags/en_flag.png');}
@@ -141,6 +147,11 @@ $color_header_person_info: rgba(249,249,249,1);
             
             i {
               margin-left: -20px;
+              
+              &.fa-dashboard-menu-dropdown {
+                margin-left: 50px;
+                position: absolute;
+              }
               
               &:before {
                 margin-right:10px;

@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require jquery-ui
-// require jquery-ui/effect.all
+//= require jquery-ui/effect.all
 
 //= require tether
 

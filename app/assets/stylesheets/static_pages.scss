@@ -47,9 +47,12 @@ body {
   #header {
         background-color: $color_header_home_page;
         
+        .navbar-nav > li > a {padding:17px 10px !important;}
+        
         .navbar {
             margin-bottom: 0px !important;
             border: none !important;
+            padding: 0px;
             
             ul {
                 li {
@@ -67,7 +70,7 @@ body {
                     }
                     
                     button.select_lang {
-                        padding: 14px;
+                        padding: 14px 10px;
                         border-radius: 0px;
                         background-color: rgb(0, 146, 203);
                         color: rgba(255,255,255,1);
@@ -89,7 +92,7 @@ body {
                 
                 &.select_lang_list {
                     padding: 0px !important;
-                    min-width: 60px !important;
+                    min-width: 67px !important;
                     
                     li {
                         a {
@@ -120,8 +123,9 @@ body {
             font-family: 'Open Sans', sans-serif;
             font-weight: 700;
             margin-bottom: 0px;
-            padding: 15px;
+            padding: 10px;
             color: $color_white;
+            margin-top: 8px;
         }
     }
     

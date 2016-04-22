@@ -77,9 +77,11 @@ pl:
   dashboard:
     header:
       title: Dane szkoły
-    index:
+    left_menu:
       home: Strona Główna
       rooms: Pomieszczenia
+      users: Użytkownicy
+      logs: Logi systemu
       logout: Wyloguj się
   building:
     new:

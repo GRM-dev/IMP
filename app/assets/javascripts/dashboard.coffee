@@ -17,7 +17,9 @@ dashboard_resize = ->
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
-$(document).on('page:load', dashboard_resize)
+document.addEventListener('page:load', dashboard_resize)
+document.addEventListener('turbolinks:load', dashboard_resize)
 
 $(document).ready dashboard_load
-$(document).on('page:load', dashboard_load)
+document.addEventListener('page:load', dashboard_load)
+document.addEventListener('turbolinks:load', dashboard_load)

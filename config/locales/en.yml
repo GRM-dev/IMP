@@ -77,9 +77,11 @@ en:
   dashboard:
     header:
       title: Data of school
-    index:
-      home: Homepage
+    left_menu:
+      home: Home
       rooms: Rooms
+      users: Users
+      logs: Logs
       logout: Logout
   building:
     new:

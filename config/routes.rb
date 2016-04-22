@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/user/:id' => 'users#show', as: :account
     
     namespace :building do
-      resources :laboratories
+      resources :laboratories, as: :labs
       resources :workstation
     end
   
