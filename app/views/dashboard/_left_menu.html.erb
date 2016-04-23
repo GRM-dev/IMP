@@ -7,11 +7,11 @@
         <% end %>  
       </li>
       <li class="rooms">
-        <button id="rooms-btn" class="btn-inventory-dashboard">
+        <button id="rooms_btn" class="btn-inventory-dashboard">
           <i class="fa fa-building-o" aria-hidden="true"><%= Laboratory.model_name.human(count: 3) %></i> 
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
-        <ul style="display:block;">
+        <ul class="submenu-rooms" style="display:none;">
           <li class="add_room">
              <button id="add_room_btn">
                 <i class="fa" aria-hidden="true"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></i>
@@ -24,7 +24,7 @@
           <i class="fa fa-users" aria-hidden="true"><%= User.model_name.human(count: 2) %></i> 
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
-        <ul style="display:block;">
+        <ul class="submenu-users" style="display:none;">
           <li class="add_user">
              <button id="add_user_btn">
               <i class="fa" aria-hidden="true"><%= t('.add_user') %></i>

@@ -16,24 +16,40 @@ dashboard_resize = ->
     return
   return
 
-sp_add_user = ->
-  console.log 'Add User click'
-  $('#widgets_section').hide()
+slide_elem = (elem) ->
+  console.log 'slide'
+  if elem.css('display') == 'block'
+    elem.slideUp 'slow'
+  else
+    elem.slideDown()
+
+sp_rooms = ->
+  console.log 'Room click'
+  slide_elem $('.submenu-rooms')
   
 sp_add_room = ->
   console.log 'Add Room click'
   $('#widgets_section').hide()
+
+sp_users = -> 
+  console.log 'User click'
+  slide_elem $('.submenu-users')
   
+sp_add_user = ->
+  console.log 'Add User click'
+  $('#widgets_section').hide()
 
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
-$(document).on('page:load', dashboard_resize)
-$(document).on('turbolinks:load', dashboard_resize)
+$(document).on 'page:load', dashboard_resize
+$(document).on 'turbolinks:load', dashboard_resize
 
 $(document).ready dashboard_load
-$(document).on('page:load', dashboard_load)
-$(document).on('turbolinks:load', dashboard_load)
+$(document).on 'page:load', dashboard_load
+$(document).on 'turbolinks:load', dashboard_load
 
+$(document).on 'click', "#rooms_btn", sp_rooms
+$(document).on 'click', "#users_btn", sp_users
 $(document).on 'click', "#add_room_btn", sp_add_room
 $(document).on 'click', "#add_user_btn", sp_add_user
