@@ -13,6 +13,9 @@ en:
       company_type:
         one: Company type
         other: Company types
+      laboratory:
+        one: Laboratory
+        other: Laboratories
     attributes:
       building:
         name: Name of building
@@ -31,6 +34,8 @@ en:
         name: Name
         school: School
         company: Company
+      laboratory:
+        name: Nazwa
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
@@ -79,6 +84,8 @@ en:
       title: Data of school
     left_menu:
       home: Home
+      add: Add
+      add_user: Add User
       rooms: Rooms
       users: Users
       logs: Logs

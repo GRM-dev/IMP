@@ -1,36 +1,55 @@
 pl:
+  formula:
+    one: "{{count}}==1 && {{count}}%100!=11"
+    few: "(2..4).include?({{count}}%10) && !(12..14).include?({{count}}%100)"
+    default: "other"
   activerecord:
     models:
       building:
         one: Budynek
-        other: Budynki
+        few: Budynki
+        other: Budynków
+        many: Budynków
       dashboard:
         one: Panel
-        other: Panele
+        few: Panele
+        other: Paneli
+        many: Paneli
       user:
-        one: Użytkonwik
-        other: Użytkownicy
+        one: Użytkownik
+        few: Użytkownicy
+        other: Użytkowników
+        many: Użytkowników
       company_type:
         one: Typ firmy
-        other: Typy firm
+        few: Typy firm
+        other: Typów firm
+        many: Typów firm
+      laboratory:
+        one: Pracownia
+        few: Pracownie
+        many: Pracowni
+        other: Pracowni
     attributes:
-        building:
-          name: Nazwa budynku
-          shortname: Skrócona nazwa
-          city: Miasto
-          street: Ulica
-        dashboard:
-          language: Język
-          last_login: "Ostatnie logowanie: "
-          last_ip: "z IP: "    
-        user:
-          email: E-mail
-          visible_name: Widoczna nazwa
-          password: Hasło
-        company_type:
-          name: Nazwa
-          school: Szkoła
-          company: Firma
+      building:
+        name: Nazwa budynku
+        shortname: Skrócona nazwa
+        city: Miasto
+        street: Ulica
+      dashboard:
+        language: Język
+        last_login: "Ostatnie logowanie: "
+        last_ip: "z IP: "    
+      user:
+        email: E-mail
+        visible_name: Widoczna nazwa
+        password: Hasło
+      company_type:
+        name: Nazwa
+        school: Szkoła
+        company: Firma
+      laboratory:
+        name: Nazwa
     errors:
       messages:
         record_invalid: 'Negatywne sprawdzenie poprawności: %{errors}'
@@ -79,7 +98,9 @@ pl:
       title: Dane szkoły
     left_menu:
       home: Strona Główna
+      add: Dodaj
       rooms: Pomieszczenia
+      add_user: Dodaj Użytkownika
       users: Użytkownicy
       logs: Logi systemu
       logout: Wyloguj się

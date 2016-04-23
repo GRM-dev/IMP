@@ -122,6 +122,20 @@ $color_header_person_info: rgba(249,249,249,1);
           padding:5px 0px;
           @include transition;
           
+           > ul {
+              padding-left:0px;
+              margin-bottom: -5px;
+               li {
+                 border-bottom:none;
+                 list-style:none;
+                 padding-left:50px;
+
+                 button {
+                   background-color:transparent;
+                 }
+               }
+             }
+          
           &.active {
             background-color:rgba(255, 255, 255, 1);
             a {color:rgba(40, 171, 227, 1)}
@@ -134,22 +148,57 @@ $color_header_person_info: rgba(249,249,249,1);
           &:hover {
             @include transition;
             background-color: rgba(0, 0, 0, 0.25);
+            
+            button {
+              background-color:transparent;
+              color:rgba(40, 171, 227, 1);
+            }
+            
+            > ul {
+              > li {
+                background-color:transparent;
+                @include transition;
+                
+                &:hover {
+                  background-color:rgba(29, 29, 32, 1) !important;
+                  @include transition;
+                }
+                
+                > button {
+                  background-color:transparent;
+                  color:rgba(174, 178, 183, 1);
+                  
+                  &:hover {
+                    color:rgba(40, 171, 227, 1);
+                  }
+                }
+              }
+            }
           }
           
-          a {
+          button {
+            margin-left:5px;
+            padding:10px;
+            border:none;
+            background-color:rgba(50, 50, 58, 1);
+            width: 96%;
+            text-align: left;
+          }
+          
+          a, button {
             font-size:16px;
             color:rgba(174, 178, 183, 1);
-            text-align: center;
             
             &:hover, &:focus {
               background-color:transparent !important;
+              color:rgba(40, 171, 227, 1)
             }
             
             i {
-              margin-left: -20px;
+              margin-left: 10px;
               
               &.fa-dashboard-menu-dropdown {
-                margin-left: 50px;
+                right: 0;
                 position: absolute;
               }
               

@@ -7,18 +7,28 @@
         <% end %>  
       </li>
       <li class="rooms">
-        <a href="#" data-toggle="dropdown"><i class="fa fa-building-o" aria-hidden="true"><%= t('.rooms') %></i> <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i></a>
-        <ul class="hide">
+        <button id="rooms-btn" class="btn-inventory-dashboard">
+          <i class="fa fa-building-o" aria-hidden="true"><%= Laboratory.model_name.human(count: 3) %></i> 
+          <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
+        </button>
+        <ul style="display:block;">
           <li class="add_room">
-            <%= link_to t('.home'), dashboard_path %>
+             <button id="add_room_btn">
+                <i class="fa" aria-hidden="true"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></i>
+              </button> 
           </li>
         </ul>
       </li>
       <li class="users">
-        <a href="#" data-toggle="dropdown"><i class="fa fa-users" aria-hidden="true"><%= t('.users') %></i> <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i></a>
-        <ul class="hide">
+        <button id="users_btn">
+          <i class="fa fa-users" aria-hidden="true"><%= User.model_name.human(count: 2) %></i> 
+          <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
+        </button>
+        <ul style="display:block;">
           <li class="add_user">
-            <%= link_to t('.home'), dashboard_path %>
+             <button id="add_user_btn">
+              <i class="fa" aria-hidden="true"><%= t('.add_user') %></i>
+             </button> 
           </li>
         </ul>
       </li>
