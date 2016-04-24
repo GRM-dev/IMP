@@ -103,11 +103,16 @@ pl:
       add_user: Dodaj Użytkownika
       users: Użytkownicy
       logs: Logi systemu
+      settings: Ustawienia
       logout: Wyloguj się
   building:
     new:
       title: Dodaj budynek
       add: Dodaj
+    laboratories:
+      form:
+        name: Nazwa Pracowni
+        create: Stwórz
       
       
   date:

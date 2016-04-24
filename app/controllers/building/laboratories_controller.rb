@@ -9,15 +9,25 @@ class Building::LaboratoriesController < ApplicationController
   end
   
   def new
-    @lab = Laboratory.new(lab_params)
+    @lab = Laboratory.new
+    render layout: false
   end
   
   def create
-    
+    @lab = Laboratory.new(lab_params)
+    if @lab.save
+      respond_to do |format|
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.js
+      end
+    end
   end
   
   private
   def lab_params
-    params.require(:laboratory).permit(:id, :name)
+    r = params.require(:laboratory).permit(:id, :name)
   end
 end

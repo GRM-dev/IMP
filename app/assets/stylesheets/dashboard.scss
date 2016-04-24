@@ -215,6 +215,25 @@ $color_header_person_info: rgba(249,249,249,1);
 
 #widgets {
   .column {
+    margin:5px 0px;
     
+    .portlet {
+      .portlet-header {
+        > span {
+          float:right;
+        }
+      }
+    }
+    
+    #portlet-weather {
+      background: none !important;
+      background-color:rgba(200, 30, 10, 1) !important;
+      border:none !important;
+      
+      > .portlet-header {
+        background-color:rgba(200, 30, 10, 1) !important;
+        padding:5px;
+      }
+    }
   }
 }

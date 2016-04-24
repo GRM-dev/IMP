@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :setup_locales
   before_action :set_locale
-  helper_method :current_user, :is_dashboard, :current_building, :current_dashboard
+  helper_method :current_locale, :current_user, :is_dashboard, :current_building, :current_dashboard
   
   def set_locale(locale = nil)
     I18n.locale = (locale == nil ? extract_locale_from_tld : extract_locale_from_tld(locale))
@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
   
   def extract_locale_from_tld(parsed_locale = params[:locale])
     @locales.include?(parsed_locale) ? parsed_locale : I18n.locale
+  end
+
+  def current_locale
+    params[:locale] || I18n.locale
   end
 
   def setup_locales

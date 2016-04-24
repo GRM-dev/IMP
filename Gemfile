@@ -41,6 +41,7 @@ gem 'angularjs-rails'
 gem 'jquery-ui-rails'
 
 gem 'haml'
+gem 'spinjs-rails'
 
 gem 'rails-i18n'
 

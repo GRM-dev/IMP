@@ -16,6 +16,9 @@
 //= require jquery-ui
 //= require jquery-ui/effect.all
 
+//= require spin
+//= require jquery.spin
+
 //= require tether
 
 //= require bootstrap-sprockets

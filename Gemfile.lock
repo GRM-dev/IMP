@@ -175,6 +175,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    spinjs-rails (1.4)
+      rails (>= 3.1)
     spring (1.7.1)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
@@ -229,6 +231,7 @@ DEPENDENCIES
   rails-i18n
   sass-rails
   sdoc (~> 0.4.0)
+  spinjs-rails
   spring
   sqlite3
   turbolinks (~> 5.0.0.beta)

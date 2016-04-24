@@ -35,7 +35,7 @@ en:
         school: School
         company: Company
       laboratory:
-        name: Nazwa
+        name: Name
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
@@ -89,11 +89,16 @@ en:
       rooms: Rooms
       users: Users
       logs: Logs
+      settings: Settings
       logout: Logout
   building:
     new:
       title: Add building
       add: Add
+    laboratories:
+      form:
+        name: Name of Lab
+        create: Create
       
       
   date:
