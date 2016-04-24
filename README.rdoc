@@ -1,4 +1,4 @@
-= \Inventory Management Platform [IMP] (Inwentarz sprzętu komputerowego)
+= \Inventory Management Platform [IMP]
 
 == Description
 
@@ -31,8 +31,8 @@ You can check a parameters such as :
 	
 == Application under construction!
 
-Version :: 0.0.4:35
+Version :: 0.0.4:36
 Website :: https://inwentarz-rodzynbwa1.c9users.io
-Supported Languages :: PL, EN
+Supported Languages :: EN, PL
 Authors :: {Rodzyn}[http://rodzyn.pl]  :: {Lukas Levvy}[https://player.me/levvy]
 Design ::  Tomasz Bryliński (mailto:tomekbrylinski.39@gmail.com)
