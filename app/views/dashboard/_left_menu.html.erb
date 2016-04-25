@@ -3,48 +3,48 @@
     <ul class="nav">
       <li class="<% if current_page?(controller: 'dashboard') %>active<% end %> home">
         <%= link_to dashboard_path do %>
-          <i class="fa fa-home" aria-hidden="true"><%= t('.home') %></i>
+          <i class="fa fa-home" aria-hidden="true"><span class="left-menu-item-font"><%= t('.home') %></span></i>
         <% end %>  
       </li>
       <li class="rooms">
-        <button id="rooms_btn" class="btn-inventory-dashboard">
-          <i class="fa fa-building-o" aria-hidden="true"><%= Laboratory.model_name.human(count: 3) %></i> 
+        <button id="rooms_btn" class="btn-inventory-dashboard menu_button">
+          <i class="fa fa-building-o" aria-hidden="true"><span class="left-menu-item-font"><%= Laboratory.model_name.human(count: 3) %></span></i> 
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-rooms" style="display:none;">
           <li class="add_room">
-             <button id="add_room_btn">
-                <i class="fa" aria-hidden="true"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></i>
+             <button id="add_room_btn" class="menu_button">
+                <i class="fa" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
               </button> 
           </li>
         </ul>
       </li>
       <li class="users">
-        <button id="users_btn">
-          <i class="fa fa-users" aria-hidden="true"><%= User.model_name.human(count: 2) %></i> 
+        <button id="users_btn" class="menu_button">
+          <i class="fa fa-users" aria-hidden="true"><span class="left-menu-item-font"><%= User.model_name.human(count: 2) %></span></i> 
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-users" style="display:none;">
           <li class="add_user">
-             <button id="add_user_btn">
-              <i class="fa" aria-hidden="true"><%= t('.add_user') %></i>
+             <button id="add_user_btn" class="menu_button">
+              <i class="fa" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_user') %></span></i>
              </button> 
           </li>
         </ul>
       </li>
       <li class="logs">
-         <a href="#">
-          <i class="fa fa-book" aria-hidden="true"><%= t('.logs') %></i>
-        </a>  
+         <button id="logs" class="menu_button">
+          <i class="fa fa-book" aria-hidden="true"><span class="left-menu-item-font"><%= t('.logs') %></span></i>
+        </button>  
       </li>
       <li class="settings">
-         <a href="#">
-          <i class="fa fa-cog" aria-hidden="true"><%= t('.settings') %></i>
-        </a>  
+         <button id="settings" class="menu_button">
+          <i class="fa fa-cog" aria-hidden="true"><span class="left-menu-item-font"><%= t('.settings') %></span></i>
+        </button>  
       </li>
       <li class="logout">
         <%= link_to logout_path, method: 'delete' do %>
-          <i class="fa fa-sign-out" aria-hidden="true"><%= t('.logout') %></i>
+          <i class="fa fa-sign-out" aria-hidden="true"><span class="left-menu-item-font"><%= t('.logout') %></span></i>
         <% end %>  
       </li>
     </ul>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418202323) do
+ActiveRecord::Schema.define(version: 20160425175832) do
 
   create_table "buildings", force: :cascade do |t|
     t.string   "shortname",       null: false
@@ -49,11 +49,18 @@ ActiveRecord::Schema.define(version: 20160418202323) do
 
   add_index "laboratories", ["building_id"], name: "index_laboratories_on_building_id"
 
+  create_table "log_types", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "visible_name",                                     null: false
     t.string   "email",                                            null: false
     t.string   "password_digest",                                  null: false
-    t.datetime "last_login",       default: '2016-04-18 20:47:43', null: false
+    t.datetime "last_login",       default: '2016-04-25 18:03:54', null: false
     t.string   "last_ip",          default: "0.0.0.0",             null: false
     t.boolean  "was_activated",    default: false
     t.boolean  "active",           default: true

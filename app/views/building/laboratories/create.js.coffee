@@ -1,1 +1,1 @@
-alert '<%=j @lab %>'
+alert '<%= @lab %>'
