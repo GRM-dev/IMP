@@ -3,7 +3,7 @@ class CreateLaboratories < ActiveRecord::Migration
     create_table :laboratories do |t|
       t.string :name, null: false
       
-      t.references :building, index: true
+      t.references :building, index: true, foreign_key: true
       
       t.timestamps null: false
     end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dashboards_id: 
+  users_id: 
+  dashboard_user_settings_id: 
+  dashboard_roles_id: 
+
+two:
+  dashboards_id: 
+  users_id: 
+  dashboard_user_settings_id: 
+  dashboard_roles_id: 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  laboratories_id: 
+  users_id: 
+  lab_roles_id: 
+
+two:
+  laboratories_id: 
+  users_id: 
+  lab_roles_id: 
