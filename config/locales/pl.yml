@@ -98,10 +98,12 @@ pl:
       title: Dane szkoły
     left_menu:
       home: Strona Główna
+      show: Wyświetl
       add: Dodaj
       remove: Usuń
       rooms: Pomieszczenia
       users: Użytkownicy
+      show_users: Wyświetl listę użytkowników
       add_user: Dodaj Użytkownika
       remove_user: Usuń Użytkownika
       logs: Logi systemu

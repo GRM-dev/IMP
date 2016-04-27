@@ -12,6 +12,11 @@
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-rooms" style="display:none;">
+          <li class="show_rooms">
+             <button id="show_rooms_btn" class="menu_button">
+                <i class="fa fa-sitemap" aria-hidden="true"><span class="left-menu-item-font"><%= t('.show') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
+              </button> 
+          </li>
           <li class="add_room">
              <button id="add_room_btn" class="menu_button">
                 <i class="fa fa-plus-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
@@ -26,10 +31,15 @@
       </li>
       <li class="users">
         <button id="users_btn" class="menu_button">
-          <i class="fa fa-users" aria-hidden="true"><span class="left-menu-item-font"><%= User.model_name.human(count: 2) %></span></i> 
+          <i class="fa fa-user-secret" aria-hidden="true"><span class="left-menu-item-font"><%= User.model_name.human(count: 2) %></span></i> 
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-users" style="display:none;">
+          <li class="show_users">
+             <button id="show_users_btn" class="menu_button">
+              <i class="fa fa-users" aria-hidden="true"><span class="left-menu-item-font"><%= t('.show_users') %></span></i>
+             </button> 
+          </li>
           <li class="add_user">
              <button id="add_user_btn" class="menu_button">
               <i class="fa fa-user-plus" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_user') %></span></i>

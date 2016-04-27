@@ -32,8 +32,23 @@ You can check a parameters such as :
 	
 == Application under construction!
 
-Version :: 0.0.5:38
+Version :: 0.0.5:40
 Website :: https://inwentarz-rodzynbwa1.c9users.io
 Supported Languages :: EN, PL
 Authors :: {Rodzyn}[http://rodzyn.pl]  :: {Lukas Levvy}[https://player.me/levvy]
 Design ::  Tomasz Bryliński (mailto:tomekbrylinski.39@gmail.com)
+
+## Badges
+
+* project build
+  [![Build Status](https://travis-ci.org/RodzynBWA/IMP.svg?branch=master)](https://travis-ci.org/RodzynBWA/IMP)
+  [![Code Climate](https://codeclimate.com/github/RodzynBWA/IMP.png)](https://codeclimate.com/github/RodzynBWA/IMP)
+  [![Coverage Status](https://coveralls.io/repos/github/RodzynBWA/IMP/badge.svg?branch=master)](https://coveralls.io/github/RodzynBWA/IMP?branch=master)
+* documentation
+  [![Inline docs](http://inch-ci.org/github/RodzynBWA/IMP.png)](http://inch-ci.org/github/RodzynBWA/IMP)
+* deps/security
+  [![Dependency Status](https://gemnasium.com/RodzynBWA/IMP.svg)](https://gemnasium.com/RodzynBWA/IMP)
+  [![Security](https://hakiri.io/github/RodzynBWA/IMP/master.svg)](https://hakiri.io/github/RodzynBWA/IMP/master)
+* design/progress
+  [![Stories in Ready](https://badge.waffle.io/RodzynBWA/IMP.png?label=ready)](https://waffle.io/RodzynBWA/IMP)
+  [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/RodzynBWA/IMP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)

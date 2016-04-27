@@ -84,8 +84,10 @@ en:
       title: Data of school
     left_menu:
       home: Home
+      show: Show
       add: Add
       remove: Remove
+      show_users: Show Users
       add_user: Add User
       remove_user: Remove User
       rooms: Rooms
