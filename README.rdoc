@@ -1,5 +1,7 @@
 = \Inventory Management Platform [IMP]
 
+{<img src="https://badges.gitter.im/RodzynBWA/IMP.svg" alt="Join the chat at https://gitter.im/RodzynBWA/IMP">}[https://gitter.im/RodzynBWA/IMP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]
+
 == Description
 
 Web Application as IMP is make possible to : 
