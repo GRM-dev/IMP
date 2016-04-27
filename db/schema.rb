@@ -59,21 +59,22 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   end
 
   create_table "dashboard_assignments", force: :cascade do |t|
-    t.integer  "dashboards_id_id",              null: false
-    t.integer  "users_id_id",                   null: false
-    t.integer  "dashboard_user_settings_id_id", null: false
-    t.integer  "dashboard_roles_id_id",         null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.integer  "dashboard_id",              null: false
+    t.integer  "user_id",                   null: false
+    t.integer  "dashboard_user_setting_id", null: false
+    t.integer  "dashboard_role_id",         null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
-  add_index "dashboard_assignments", ["dashboard_roles_id_id"], name: "index_dashboard_assignments_on_dashboard_roles_id_id"
-  add_index "dashboard_assignments", ["dashboard_user_settings_id_id"], name: "index_dashboard_assignments_on_dashboard_user_settings_id_id"
-  add_index "dashboard_assignments", ["dashboards_id_id"], name: "index_dashboard_assignments_on_dashboards_id_id"
-  add_index "dashboard_assignments", ["users_id_id"], name: "index_dashboard_assignments_on_users_id_id"
+  add_index "dashboard_assignments", ["dashboard_id"], name: "index_dashboard_assignments_on_dashboard_id"
+  add_index "dashboard_assignments", ["dashboard_role_id"], name: "index_dashboard_assignments_on_dashboard_role_id"
+  add_index "dashboard_assignments", ["dashboard_user_setting_id"], name: "index_dashboard_assignments_on_dashboard_user_setting_id"
+  add_index "dashboard_assignments", ["user_id"], name: "index_dashboard_assignments_on_user_id"
 
   create_table "dashboard_roles", force: :cascade do |t|
     t.string   "name",       null: false
+    t.integer  "rank",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -144,8 +145,9 @@ ActiveRecord::Schema.define(version: 20160425203550) do
     t.string   "email",                                           null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.datetime "age"
     t.string   "password_digest",                                 null: false
-    t.datetime "last_login",      default: '2016-04-26 16:32:48', null: false
+    t.datetime "last_login",      default: '2016-04-26 22:00:12', null: false
     t.string   "last_ip",         default: "0.0.0.0",             null: false
     t.boolean  "was_activated",   default: false,                 null: false
     t.boolean  "active",          default: true,                  null: false

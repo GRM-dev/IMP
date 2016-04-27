@@ -8,13 +8,18 @@
       </li>
       <li class="rooms">
         <button id="rooms_btn" class="btn-inventory-dashboard menu_button">
-          <i class="fa fa-building-o" aria-hidden="true"><span class="left-menu-item-font"><%= Laboratory.model_name.human(count: 3) %></span></i> 
+          <i class="fa fa-flask" aria-hidden="true"><span class="left-menu-item-font"><%= Laboratory.model_name.human(count: 3) %></span></i> 
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-rooms" style="display:none;">
           <li class="add_room">
              <button id="add_room_btn" class="menu_button">
-                <i class="fa" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
+                <i class="fa fa-plus-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
+              </button> 
+          </li>
+          <li class="remove_room">
+             <button id="remove_room_btn" class="menu_button">
+                <i class="fa fa-minus-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.remove') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
               </button> 
           </li>
         </ul>
@@ -27,7 +32,12 @@
         <ul class="submenu-users" style="display:none;">
           <li class="add_user">
              <button id="add_user_btn" class="menu_button">
-              <i class="fa" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_user') %></span></i>
+              <i class="fa fa-user-plus" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_user') %></span></i>
+             </button> 
+          </li>
+          <li class="remove_user">
+             <button id="remove_user_btn" class="menu_button">
+              <i class="fa fa-user-times" aria-hidden="true"><span class="left-menu-item-font"><%= t('.remove_user') %></span></i>
              </button> 
           </li>
         </ul>
@@ -40,6 +50,11 @@
       <li class="settings">
          <button id="settings" class="menu_button">
           <i class="fa fa-cog" aria-hidden="true"><span class="left-menu-item-font"><%= t('.settings') %></span></i>
+        </button>  
+      </li>
+      <li class="reports">
+         <button id="reports" class="menu_button">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.reports') %></span></i>
         </button>  
       </li>
       <li class="logout">

@@ -6,6 +6,9 @@
       </div>
     </div>
     <div class="col-md-10 db-background-person">
+        <div class="avatar">
+          <%= image_tag('avatars/default.png', class:'avatar-img img-circle') %>
+        </div>
         <p class="user-show-name pull-left"><%= @current_user.visible_name %> 
           <span class="permission"> 
             (<%= if @current_user.is_admin 

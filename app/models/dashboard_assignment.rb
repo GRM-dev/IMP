@@ -1,8 +1,8 @@
 class DashboardAssignment < ActiveRecord::Base
-  has_one :dashboard
-  has_one :user
-  has_one :dashboard_user_setting
-  has_one :dashboard_role
+  belongs_to :dashboard
+  belongs_to :user
+  belongs_to :dashboard_user_setting
+  belongs_to :dashboard_role
   
   validates :dashboard, presence: true
   validates :user, presence: true

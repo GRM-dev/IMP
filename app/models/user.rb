@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   belongs_to :site_role
+  has_many :buildings
   
   def is_new_user
     is_normal_user || self.site_role == SiteRole.find_by_name('new_user')
@@ -19,7 +20,7 @@ class User < ActiveRecord::Base
   end
   
   def is_admin
-    is_hadmin || self.site_role ==SiteRole.find_by_name('administrator')
+    is_hadmin || self.site_role == SiteRole.find_by_name('administrator')
   end
   
   def is_hadmin
@@ -27,8 +28,6 @@ class User < ActiveRecord::Base
   end
   
   validates :visible_name, presence: true, uniqueness: true
-  validates :first_name, presence: false, uniqueness: false
-  validates :last_name, presence: false, uniqueness: false
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :site_role, presence: true

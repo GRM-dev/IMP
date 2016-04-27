@@ -85,11 +85,14 @@ en:
     left_menu:
       home: Home
       add: Add
+      remove: Remove
       add_user: Add User
+      remove_user: Remove User
       rooms: Rooms
       users: Users
       logs: Logs
       settings: Settings
+      reports: Report a problem
       logout: Logout
   building:
     new:

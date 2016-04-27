@@ -99,11 +99,14 @@ pl:
     left_menu:
       home: Strona Główna
       add: Dodaj
+      remove: Usuń
       rooms: Pomieszczenia
-      add_user: Dodaj Użytkownika
       users: Użytkownicy
+      add_user: Dodaj Użytkownika
+      remove_user: Usuń Użytkownika
       logs: Logi systemu
       settings: Ustawienia
+      reports: Zgłoś błąd
       logout: Wyloguj się
   building:
     new:

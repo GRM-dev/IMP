@@ -21,6 +21,13 @@ r_hmod = SiteRole.create(name: 'head_moderator', rank: 3)
 r_admin = SiteRole.create(name: 'administrator', rank: 4)
 r_hadmin = SiteRole.create(name: 'head_administrator', rank: 5)
 
+DashboardRole.create(name: 'spectator', rank: 0)
+DashboardRole.create(name: 'upper_spectator', rank: 1)
+DashboardRole.create(name: 'worker', rank: 10)
+DashboardRole.create(name: 'student', rank: 11)
+DashboardRole.create(name: 'lab_admin', rank: 20)
+DashboardRole.create(name: 'lab_keeper', rank: 30)
+
 Widget.create(name: 'weather')
 Widget.create(name: 'laboratories')
 Widget.create(name: 'workstations')
@@ -32,7 +39,7 @@ avatar_def = Avatar.create()
 
 t = User.create(email: 't@t.t', visible_name: 'TestUser', password: '1234', site_role: r_nu)
 levvy = User.create(email: 'levvy@t.t', visible_name: 'Levvy', password: '1234', site_role: r_hadmin)
-rodzyn = User.create(email: 'rodzyndawid@gmail.com', visible_name: 'Dawid Tomas', password: '1234', site_role: r_admin) #tak wiem, hasło zajebiste :D
+rodzyn = User.create(email: 'rodzyndawid@gmail.com', visible_name: 'Dawid Tomas', password: '1234', site_role: r_admin) #Yea, we know. This password is awesome! :D
 grafik = User.create(email: 'tomekbrylinski.39@gmail.com', visible_name: 'Tomek Bryliński', password: '1234', site_role: r_hmod)
 
 Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl, dashboard: Dashboard.create)
