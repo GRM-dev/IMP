@@ -28,6 +28,8 @@ gem 'bcrypt'
 
 gem 'faker'
 
+gem 'coveralls', require: false
+
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
