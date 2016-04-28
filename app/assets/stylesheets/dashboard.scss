@@ -134,19 +134,19 @@ $color_header_person_info: rgba(249,249,249,1);
             font-size:15px;
           }
           
-           > ul {
-              padding-left:0px;
-              margin-bottom: -5px;
-               li {
-                 border-bottom:none;
-                 list-style:none;
-                 padding-left:50px;
+         > ul {
+            padding-left:0px;
+            margin-bottom: -5px;
+             li {
+               border-bottom:none;
+               list-style:none;
+               padding-left:50px;
 
-                 button {
-                   background-color:transparent;
-                 }
-               }
+               button {background-color:transparent;}
              }
+           }
+             
+          &.deactive {background-color:rgba(50, 50, 58, 1);}
           
           &.active {
             background-color:rgba(255, 255, 255, 1);
@@ -185,9 +185,7 @@ $color_header_person_info: rgba(249,249,249,1);
                   background-color:transparent;
                   color:rgba(174, 178, 183, 1);
                   
-                  &:hover {
-                    color:rgba(40, 171, 227, 1);
-                  }
+                  &:hover {color:rgba(40, 171, 227, 1);}
                 }
               }
             }
@@ -219,9 +217,7 @@ $color_header_person_info: rgba(249,249,249,1);
                 position: absolute;
               }
               
-              &:before {
-                margin-right:10px;
-              }
+              &:before {margin-right:10px;}
             }
           }
         }
@@ -238,9 +234,7 @@ $color_header_person_info: rgba(249,249,249,1);
     
     .portlet {
       .portlet-header {
-        > span {
-          float:right;
-        }
+        > span {float:right;}
       }
     }
     

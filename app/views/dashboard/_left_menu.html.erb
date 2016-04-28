@@ -12,17 +12,17 @@
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-rooms" style="display:none;">
-          <li class="show_rooms">
+          <li class="show_rooms deactive">
              <button id="show_rooms_btn" class="menu_button">
                 <i class="fa fa-sitemap" aria-hidden="true"><span class="left-menu-item-font"><%= t('.show') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
               </button> 
           </li>
-          <li class="add_room">
+          <li class="add_room deactive">
              <button id="add_room_btn" class="menu_button">
                 <i class="fa fa-plus-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
               </button> 
           </li>
-          <li class="remove_room">
+          <li class="remove_room deactive">
              <button id="remove_room_btn" class="menu_button">
                 <i class="fa fa-minus-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.remove') + ' ' + Laboratory.model_name.human(count: 2) %></span></i>
               </button> 
@@ -35,17 +35,17 @@
           <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
         </button>
         <ul class="submenu-users" style="display:none;">
-          <li class="show_users">
+          <li class="show_users deactive">
              <button id="show_users_btn" class="menu_button">
               <i class="fa fa-users" aria-hidden="true"><span class="left-menu-item-font"><%= t('.show_users') %></span></i>
              </button> 
           </li>
-          <li class="add_user">
+          <li class="add_user deactive">
              <button id="add_user_btn" class="menu_button">
               <i class="fa fa-user-plus" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_user') %></span></i>
              </button> 
           </li>
-          <li class="remove_user">
+          <li class="remove_user deactive">
              <button id="remove_user_btn" class="menu_button">
               <i class="fa fa-user-times" aria-hidden="true"><span class="left-menu-item-font"><%= t('.remove_user') %></span></i>
              </button> 

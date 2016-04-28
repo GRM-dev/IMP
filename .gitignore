@@ -127,3 +127,5 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 /spring-1000
+# Ignore application configuration
+/config/application.yml

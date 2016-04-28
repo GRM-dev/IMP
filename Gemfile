@@ -37,6 +37,8 @@ gem 'bootstrap-modal-rails'
 gem "nested_form"
 gem 'compass-rails'
 
+gem 'mail'
+
 gem 'apotomo'
 gem 'interact-rails'
 gem 'angularjs-rails'
@@ -46,6 +48,8 @@ gem 'haml'
 gem 'spinjs-rails'
 
 gem 'rails-i18n'
+gem "figaro"
+#gem 'gibbon'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

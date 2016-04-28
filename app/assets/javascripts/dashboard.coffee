@@ -4,7 +4,8 @@ locale = ->
 dashboard_load = ->
   $('#widgets').sortable connectWith: '.column'
   if !$('.portlet').hasClass('ui-widget-content')
-    $('.portlet').addClass('ui-widget ui-widget-content ui-helper-clearfix').find('.portlet-header').prepend('<span class="ui-icon ui-icon-minusthick"></span>').end().find '.portlet-content'
+    $('.portlet').addClass('ui-widget ui-widget-content ui-helper-clearfix').find('.portlet-header')
+      .prepend('<span class="ui-icon ui-icon-minusthick"></span>').end().find '.portlet-content'
     $('.portlet-header .ui-icon').click ->
       $(this).toggleClass('ui-icon-minusthick').toggleClass 'ui-icon-plusthick'
       $(this).parents('.portlet:first').find('.portlet-content').toggle()
@@ -23,26 +24,26 @@ dashboard_spin_show = (show = true)->
   if show
     hide_widgets()
     $("#dashboard_body").spin({
-     lines: 15
-     length: 31
-     width: 15
-     radius: 36
-     scale: 1
-     corners: 1 
-     color: '#000'
-     opacity: 0.25
-     rotate: 0
-     direction: 1
-     speed: 0.9
-     trail: 49
-     fps: 40
-     zIndex: 2e9 
-     className: 'spinner'
-     top: $(document).height()/2 + 'px'
-     left: '50%'
-     shadow: false
-     hwaccel: true
-     position: 'absolute'
+      lines: 15
+      length: 31
+      width: 15
+      radius: 36
+      scale: 1
+      corners: 1
+      color: '#000'
+      opacity: 0.25
+      rotate: 0
+      direction: 1
+      speed: 0.9
+      trail: 49
+      fps: 40
+      zIndex: 2e9
+      className: 'spinner'
+      top: $(document).height()/2 + 'px'
+      left: '50%'
+      shadow: false
+      hwaccel: true
+      position: 'absolute'
     });
   else
     $("#dashboard").spin(false)
@@ -62,7 +63,7 @@ show_widgets = ->
 menu_active_class = (menu) ->
   $('.dashboard_menu').find('li').removeClass('active')
   if ($(menu).hasClass("menu_button"))
-    $(menu).addClass('active')
+    $(menu).removeClass('deactive').addClass('active')
   $(menu).parents().addClass('active')
 
 sp_rooms = ->
@@ -76,23 +77,31 @@ sp_add_room = ->
     $('#dashboard_body').append html
     dashboard_spin_show(false)
 
-sp_users = -> 
+sp_users = ->
   slide_elem $('.submenu-users')
   
 sp_add_user = ->
-  hide_widgets()
+  $('#dashboard_body').empty()
+  dashboard_spin_show()
+  menu_active_class("#add_user_btn")
+  dashboard_spin_show(false)
   
 sp_logs = ->
-  console.log 'Logs click'
-  dashboard_spin_show()
   $('#dashboard_body').empty()
+  dashboard_spin_show()
   menu_active_class("#logs")
   dashboard_spin_show(false)
   
 sp_settings = ->
-  dashboard_spin_show()
   $('#dashboard_body').empty()
+  dashboard_spin_show()
   menu_active_class("#settings")
+  dashboard_spin_show(false)
+  
+sp_reports = ->
+  $('#dashboard_body').empty()
+  dashboard_spin_show()
+  menu_active_class("#reports")
   dashboard_spin_show(false)
   
 
@@ -113,3 +122,4 @@ $(document).on 'click', "#add_room_btn", sp_add_room
 $(document).on 'click', "#add_user_btn", sp_add_user
 $(document).on 'click', "#logs", sp_logs
 $(document).on 'click', "#settings", sp_settings
+$(document).on 'click', "#reports", sp_reports

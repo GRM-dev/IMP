@@ -2,8 +2,21 @@ language: ruby
 cache: bundler
 
 rvm:
- - 2.3.0p0
+ - 2.3.0
+ 
+gemfile:
+  - Gemfile
+
+branches:
+  only:
+    - master
 
 env:
-    RAILS_ENV=test
-
+  - RAILS_ENV=test
+  - DB=sqlite
+    
+install:
+  - bundle install
+  
+before_script:
+  - cp test/database.travis.yml test/database.yml
