@@ -6,10 +6,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.invite_user.subject
   #
-  def invite_user
+  def invite_user(user)
     @greeting = "Hi! You were invited nyga"
 
-    mail to: "rodzyndawid@gmail.com", subject: 'Invitation to IMP'
+    mail to: user.email, subject: 'Invitation to IMP'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,9 +17,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.restore_password.subject
   #
-  def restore_password
+  def restore_password(user)
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: user.email, subject: 'Reset password to IMP'
   end
 end

@@ -1,10 +1,19 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
-  # GET /users
-  # GET /users.json
-  def index
+  # GET /invite_user
+  def invite_new
+   render layout: false
+  end
+
+  # GET /user_mails
+  def user_mails
     @users = User.all
+    respond_to do |format|
+      format.json
+      format.html {redirect_to dashboard_path }
+    end
   end
 
   # GET /users/1
@@ -13,13 +22,13 @@ class UsersController < ApplicationController
   end
 
   # GET /users/new
-  # GET /login
   def new
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    
   end
 
   # POST /users

@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     self.site_role == SiteRole.find_by_name('head_administrator')
   end
   
+  def current_avatar
+    return "default.png"
+  end
+  
   validates :visible_name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true

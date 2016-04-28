@@ -21,8 +21,8 @@ Rails.application.routes.draw do
     get 'dashboard/install' => 'building#new', as: :building
     resources :building, only: [:create], as: :buildings
   
-  
-    resources :users
+    get 'invite_user' => 'users#invite_new'
+    get 'users/user_mails.json' => 'users#user_mails'
     
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end

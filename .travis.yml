@@ -19,4 +19,4 @@ install:
   - bundle install
   
 before_script:
-  - cp test/database.travis.yml test/database.yml
+  - cp test\database.travis.yml test\database.yml

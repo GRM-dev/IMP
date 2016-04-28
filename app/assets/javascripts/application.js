@@ -29,4 +29,7 @@
 //= require angular
 //= require angular-animate
 //= require angular-resource
+
+//= require jquery.easy-autocomplete.min
+
 //= require_tree .

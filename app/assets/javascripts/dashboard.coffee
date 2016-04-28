@@ -48,7 +48,7 @@ dashboard_spin_show = (show = true)->
   else
     $("#dashboard").spin(false)
 
-slide_elem = (elem) ->
+slide_menu_elem = (elem) ->
   if elem.css('display') == 'block'
     elem.slideUp 'slow'
   else
@@ -67,7 +67,7 @@ menu_active_class = (menu) ->
   $(menu).parents().addClass('active')
 
 sp_rooms = ->
-  slide_elem $('.submenu-rooms')
+  slide_menu_elem $('.submenu-rooms')
   
 sp_add_room = ->
   dashboard_spin_show()
@@ -78,13 +78,16 @@ sp_add_room = ->
     dashboard_spin_show(false)
 
 sp_users = ->
-  slide_elem $('.submenu-users')
+  slide_menu_elem $('.submenu-users')
   
 sp_add_user = ->
-  $('#dashboard_body').empty()
   dashboard_spin_show()
   menu_active_class("#add_user_btn")
-  dashboard_spin_show(false)
+  $.ajax(url: "/"+locale()+'/invite_user').done (html) ->
+    $('#dashboard_body').empty()
+    $('#dashboard_body').append html
+    get_mails()
+    dashboard_spin_show(false)
   
 sp_logs = ->
   $('#dashboard_body').empty()

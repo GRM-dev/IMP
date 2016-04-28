@@ -1,3 +1,28 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  #invite-user {
+    .main-header {
+      background-color: rgb(40, 171, 227);
+      padding: 10px;
+      text-align: center;
+      margin: 10px 0px 0px;
+      font-weight: bold;
+      color: rgba(255,255,255,1);
+      text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    }
+    
+    .second-header {
+      @extend .main-header;
+      background-color: rgb(50, 50, 58);
+      font-size: 16px;
+      margin-bottom:15px;
+    }
+    
+    .invite_user_btn {
+      margin-top:15px;
+    }
+  }
+}
