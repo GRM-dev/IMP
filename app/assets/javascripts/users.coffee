@@ -13,11 +13,18 @@ get_mails = ->
   	url: "users/user_mails.json"
   	placeholder: "Start writing email"
   	getValue: (elem) ->
-  	  elem.visible_name+elem.email
+  	  elem.visible_name + " - " + elem.email
   	list: 
   		match: 
   			enabled: true
-  	template: 
+  		onSelectItemEvent: -> 
+  		  $("#invite_user_btn").prop('disabled', false);
+  		  index = $("#email").getSelectedItemIndex()
+  		  console.log "lel: " + index
+  		  return
+  		sort:
+			  enabled: true
+		template: 
   		type: "custom"
   		method: (value, item) ->
   			return item.visible_name+" <i>"+item.email+"</i> "+""
