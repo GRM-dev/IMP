@@ -2,9 +2,13 @@
   <h1 class="main-header">Step one: enter a e-mail</h1>
   <h2 class="second-header">Write a e-mail of user to add to dashboard</h2>
   <div class="ui-widget">
-    <%= text_field_tag 'email', nil, class: 'form-control user_mail_to_add', for: :email %>
-    <small class="text-muted">We'll never share your email with anyone else.</small>
-    <br>
-    <%= button_tag 'Add', id: 'invite_user_btn', data: { disable_with: "Please wait..." }, class: 'btn btn-primary invite_user_btn', disabled: true %>
+    <%= form_tag 'users/invite_user', remote: true do%>
+      <%= text_field_tag 'invitation-email', nil, class: 'form-control user_mail_to_add' %>
+      <%= hidden_field_tag 'selected_mail_id', '-1' %>
+      <%= hidden_field_tag 'selected_mail_mail', 'NaN' %>
+      <small class="text-muted">We'll never share your email with anyone else.</small>
+      <br>
+      <%= button_tag 'Invite', id: 'invite_user_btn', data: { disable_with: "Please wait..." }, class: 'btn btn-primary invite_user_btn', disabled: true %>
+    <% end %>
   </div>
 </div>

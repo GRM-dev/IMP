@@ -83,7 +83,7 @@ sp_users = ->
 sp_add_user = ->
   dashboard_spin_show()
   menu_active_class("#add_user_btn")
-  $.ajax(url: "/"+locale()+'/invite_user').done (html) ->
+  $.ajax(type: "POST", url: "/"+locale()+'/invite_user').done (html) ->
     $('#dashboard_body').empty()
     $('#dashboard_body').append html
     get_mails()

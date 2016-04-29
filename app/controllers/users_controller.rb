@@ -1,10 +1,43 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_user
+  VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
-  # GET /invite_user
+  # POST /invite_user
   def invite_new
+    headers['Last-Modified'] = Time.now.httpdate
    render layout: false
+  end
+
+  # POST /invite_user
+  def invite_user
+    ps = inv_params
+    begin
+      @user = User.find ps[:selected_mail_id].to_i
+    rescue ActiveRecord::RecordNotFound => e
+      @user = nil
+    end
+    if @user == nil
+      if ps[:selected_mail_mail] =~ VALID_EMAIL_REGEX
+        notice = 'Invited'
+      else
+        notice = 'Wrong email format'
+      end
+      respond_to do |format|
+        format.js { flash[:notice] = notice}
+        format.html {redirect_to dashboard_path, alert: 'Page not exists' }
+      end
+    else
+      if @user.email == ps[:selected_mail_mail]
+        notice = 'Added'
+      else
+        notice = 'Smth strange happen'
+      end
+      respond_to do |format|
+        format.js { flash[:notice] = notice}
+        format.html {redirect_to dashboard_path, alert: 'Page not exists' }
+      end
+    end
   end
 
   # GET /user_mails
@@ -12,7 +45,7 @@ class UsersController < ApplicationController
     @users = User.all
     respond_to do |format|
       format.json
-      format.html {redirect_to dashboard_path }
+      format.html {redirect_to dashboard_path, alert: 'Page not exists' }
     end
   end
 
@@ -78,5 +111,9 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:visible_name, :email, :password)
+    end
+    
+    def inv_params
+      params.permit(:selected_mail_id, :selected_mail_mail)
     end
 end

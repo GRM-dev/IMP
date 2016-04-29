@@ -32,7 +32,7 @@ You can check a parameters such as :
 	
 == Application under construction!
 
-Version :: 0.0.5:44
+Version :: 0.0.5:45
 Website :: https://inwentarz-rodzynbwa1.c9users.io
 Supported Languages :: EN, PL
 Authors :: {Rodzyn}[http://rodzyn.pl]  :: {Lukas Levvy}[https://player.me/levvy]
