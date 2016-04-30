@@ -13,6 +13,3 @@ branches:
 
 env:
   - RAILS_ENV=test DB=sqlite
-    
-install:
-  - bundle install
