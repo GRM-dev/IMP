@@ -10,12 +10,16 @@ class UsersController < ApplicationController
   end
 
   # POST /invite_user
-  def invite_user
+  def invite_create
     ps = inv_params
     begin
       @user = User.find ps[:selected_mail_id].to_i
     rescue ActiveRecord::RecordNotFound => e
-      @user = nil
+      begin
+      @user = User.find_by_email ps[:selected_mail_mail].to_s
+      rescue ActiveRecord::RecordNotFound => ex
+        @user = nil
+      end
     end
     if @user == nil
       if ps[:selected_mail_mail] =~ VALID_EMAIL_REGEX
@@ -24,17 +28,22 @@ class UsersController < ApplicationController
         notice = 'Wrong email format'
       end
       respond_to do |format|
-        format.js { flash[:notice] = notice}
+        format.js {flash[:notice] = notice}
         format.html {redirect_to dashboard_path, alert: 'Page not exists' }
       end
     else
       if @user.email == ps[:selected_mail_mail]
-        notice = 'Added'
+        if current_dashboard.users.include? @user
+          notice = 'Already added'
+        else
+          notice = 'Added'
+          current_dashboard.users << @user
+        end
       else
-        notice = 'Smth strange happen'
+        notice = 'Smth strange happen. Email for user changed?'
       end
       respond_to do |format|
-        format.js { flash[:notice] = notice}
+        format.js {flash[:notice] = notice}
         format.html {redirect_to dashboard_path, alert: 'Page not exists' }
       end
     end
@@ -47,6 +56,13 @@ class UsersController < ApplicationController
       format.json
       format.html {redirect_to dashboard_path, alert: 'Page not exists' }
     end
+  end
+  
+  # GET /dashboard/users
+  def index_for_dashboard
+    @owner = current_building.user
+    @users = current_dashboard.users
+    render layout: false
   end
 
   # GET /users/1

@@ -1,4 +1,4 @@
-<div id="invite-user">
+<div id="invite-user" class="dashboard-users">
   <h1 class="main-header">Step one: enter a e-mail</h1>
   <h2 class="second-header">Write a e-mail of user to add to dashboard</h2>
   <div class="ui-widget">
@@ -8,7 +8,10 @@
       <%= hidden_field_tag 'selected_mail_mail', 'NaN' %>
       <small class="text-muted">We'll never share your email with anyone else.</small>
       <br>
-      <%= button_tag 'Invite', id: 'invite_user_btn', data: { disable_with: "Please wait..." }, class: 'btn btn-primary invite_user_btn', disabled: true %>
+      <%= button_tag t('.invite'), id: 'invite_user_btn', data: { disable_with: "Please wait...", dismiss: "modal"}, class: 'btn btn-primary invite_user_btn', disabled: true %>
     <% end %>
+  </div>
+  <div class="modal" id="user-add-modal" style="display:none;">
+   <p id="user-add-body"></p>
   </div>
 </div>

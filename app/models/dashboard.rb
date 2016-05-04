@@ -1,4 +1,5 @@
 class Dashboard < ActiveRecord::Base
-  belongs_to :building
-  belongs_to :dashboard_assignment
+  has_one :building
+  has_many :dashboard_assignments
+  has_many :users, through: :dashboard_assignments
 end

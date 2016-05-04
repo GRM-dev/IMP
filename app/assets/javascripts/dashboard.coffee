@@ -80,10 +80,18 @@ sp_add_room = ->
 sp_users = ->
   slide_menu_elem $('.submenu-users')
   
+sp_show_users = ->
+  dashboard_spin_show()
+  menu_active_class("#show_users_btn")
+  $.ajax(type: "POST", url: "/"+locale()+'/dashboard/users').done (html) ->
+    $('#dashboard_body').empty()
+    $('#dashboard_body').append html
+    dashboard_spin_show(false)
+  
 sp_add_user = ->
   dashboard_spin_show()
   menu_active_class("#add_user_btn")
-  $.ajax(type: "POST", url: "/"+locale()+'/invite_user').done (html) ->
+  $.ajax(type: "POST", url: "/"+locale()+'/users/invite_user_form').done (html) ->
     $('#dashboard_body').empty()
     $('#dashboard_body').append html
     get_mails()
@@ -122,6 +130,7 @@ $(document).on 'turbolinks:request-start', dashboard_spin_show
 $(document).on 'click', "#rooms_btn", sp_rooms
 $(document).on 'click', "#users_btn", sp_users
 $(document).on 'click', "#add_room_btn", sp_add_room
+$(document).on 'click', "#show_users_btn", sp_show_users
 $(document).on 'click', "#add_user_btn", sp_add_user
 $(document).on 'click', "#logs", sp_logs
 $(document).on 'click', "#settings", sp_settings

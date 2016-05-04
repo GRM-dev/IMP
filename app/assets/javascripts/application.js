@@ -15,9 +15,10 @@
 //= require jquery_nested_form
 //= require jquery-ui
 //= require jquery-ui/effect.all
-
 //= require spin
 //= require jquery.spin
+//= require jquery.easy-autocomplete.min
+//= require jquery.modal
 
 //= require tether
 
@@ -30,6 +31,5 @@
 //= require angular-animate
 //= require angular-resource
 
-//= require jquery.easy-autocomplete.min
 
 //= require_tree .

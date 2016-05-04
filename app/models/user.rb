@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   belongs_to :site_role
   has_many :buildings
+  has_many :dashboard_assignments
+  has_many :dashboards, through: :dashboard_assignments
   
   def is_new_user
     is_normal_user || self.site_role == SiteRole.find_by_name('new_user')

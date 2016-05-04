@@ -14,6 +14,7 @@
  *= require_self
  *= require font-awesome
  *= require jquery-ui
+ *= require jquery.modal
  *= require easy-autocomplete.min
  */
 
@@ -23,4 +24,9 @@
 
 .turbolinks-progress-bar {
   visibility:hidden;
+}
+
+.modal {
+  position:relative !important;
+  margin: 0 auto;
 }

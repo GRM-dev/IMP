@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 20160425203550) do
     t.string   "last_name"
     t.datetime "age"
     t.string   "password_digest",                                 null: false
-    t.datetime "last_login",      default: '2016-04-26 22:00:12', null: false
+    t.datetime "last_login",      default: '2016-05-04 13:55:05', null: false
     t.string   "last_ip",         default: "0.0.0.0",             null: false
     t.boolean  "was_activated",   default: false,                 null: false
     t.boolean  "active",          default: true,                  null: false

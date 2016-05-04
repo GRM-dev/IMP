@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  #invite-user {
+  .dashboard-users {
     .main-header {
       background-color: rgb(40, 171, 227);
       padding: 10px;
@@ -21,8 +21,10 @@ body {
       margin-bottom:15px;
     }
     
-    .invite_user_btn {
-      margin-top:15px;
+    #invite-user {
+      .invite_user_btn {
+        margin-top:15px;
+      }
     }
   }
 }

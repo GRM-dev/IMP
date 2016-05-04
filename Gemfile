@@ -43,6 +43,7 @@ gem 'apotomo'
 gem 'interact-rails'
 gem 'angularjs-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-modal-rails'
 
 gem 'haml'
 gem 'spinjs-rails'
@@ -62,6 +63,7 @@ gem 'puma'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

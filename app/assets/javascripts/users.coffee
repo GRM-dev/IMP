@@ -26,6 +26,7 @@ get_mails = ->
   $("#invitation-email").easyAutocomplete(options)
   $("#invitation-email").keyup ->
     change_data()
+    $("#invite_user_btn").prop('disabled', false);
   
 set_data = (id, mail) ->
   $('#selected_mail_id').val(id)

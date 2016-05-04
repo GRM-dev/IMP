@@ -15,15 +15,17 @@ Rails.application.routes.draw do
       get '/labs' => 'laboratories#index'
       resources :workstation
     end
+    resources :building, only: [:create], as: :buildings
   
     resources :dashboard, only: [:index]
     get 'dashboard' => 'dashboard#index', as: :dashboard
     get 'dashboard/install' => 'building#new', as: :building
-    resources :building, only: [:create], as: :buildings
   
-    post 'invite_user' => 'users#invite_new'
-    get 'users/user_mails.json' => 'users#user_mails'
-    post 'users/invite_user' => 'users#invite_user'
+    post 'users/invite_user_form' => 'users#invite_new'
+    get '/users/user_mails.json' => 'users#user_mails'
+    post 'users/invite_user' => 'users#invite_create'
+    
+    post 'dashboard/users' => 'users#index_for_dashboard'
     
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end
