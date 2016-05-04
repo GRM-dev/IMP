@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 20160425203550) do
     t.string   "last_name"
     t.datetime "age"
     t.string   "password_digest",                                 null: false
-    t.datetime "last_login",      default: '2016-05-04 13:55:05', null: false
+    t.datetime "last_login",      default: '2016-05-04 15:25:25', null: false
     t.string   "last_ip",         default: "0.0.0.0",             null: false
     t.boolean  "was_activated",   default: false,                 null: false
     t.boolean  "active",          default: true,                  null: false
@@ -159,15 +159,15 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   add_index "users", ["site_role_id"], name: "index_users_on_site_role_id"
 
   create_table "users_avatars", force: :cascade do |t|
-    t.boolean  "active",        default: false, null: false
-    t.integer  "users_id_id",                   null: false
-    t.integer  "avatars_id_id",                 null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.boolean  "active",     default: false, null: false
+    t.integer  "user_id",                    null: false
+    t.integer  "avatar_id",                  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "users_avatars", ["avatars_id_id"], name: "index_users_avatars_on_avatars_id_id"
-  add_index "users_avatars", ["users_id_id"], name: "index_users_avatars_on_users_id_id"
+  add_index "users_avatars", ["avatar_id"], name: "index_users_avatars_on_avatar_id"
+  add_index "users_avatars", ["user_id"], name: "index_users_avatars_on_user_id"
 
   create_table "widgets", force: :cascade do |t|
     t.string   "name",                   null: false

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  laboratories_id: 
-  users_id: 
-  lab_roles_id: 
+  laboratory_id: 1
+  user_id: 1
+  lab_role_id: 1
 
 two:
-  laboratories_id: 
-  users_id: 
-  lab_roles_id: 
+  laboratory_id: 1
+  user_id: 1
+  lab_role_id: 1

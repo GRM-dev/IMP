@@ -5,15 +5,17 @@ one:
   name: MyString
   city: MyString
   street: MyString
-  user_id: 
-  dashboard_id: 
-  company_type_id: 
+  user_id: 1
+  dashboard_id: 1
+  company_type_id: 1
+  country_id: 2
 
 two:
   shortname: MyString
   name: MyString
   city: MyString
   street: MyString
-  user_id: 
-  dashboard_id: 
-  company_type_id: 
+  user_id: 2
+  dashboard_id: 1
+  company_type_id: 1
+  country_id: 1

@@ -118,7 +118,10 @@ pl:
       form:
         name: Nazwa Pracowni
         create: Stwórz
-      
+  users:
+    index_for_dashboard:
+      main_header: Lista użytkowników przypisanych do tego panelu
+      second_header: 'Głównym administratorem tego panelu jest: ' 
       
   date:
     abbr_day_names:

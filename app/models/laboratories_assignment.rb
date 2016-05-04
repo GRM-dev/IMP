@@ -1,3 +1,3 @@
 class LaboratoriesAssignment < ActiveRecord::Base
-  belongs_to lab_role
+  belongs_to :lab_role
 end

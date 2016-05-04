@@ -1,5 +1,5 @@
 class LabRole < ActiveRecord::Base
-  belongs_to laboratory_assignment
+  has_many :laboratory_assignments
   
   validates :name, presence: true, uniqueness: true
   validates :rank, presence: true, uniqueness: true

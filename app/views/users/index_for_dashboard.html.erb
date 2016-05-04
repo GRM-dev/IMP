@@ -1,7 +1,8 @@
 <div id="show-dashboard-users" class="dashboard-users">
-  <h1 class="main-header">Here is a list of all users of this dashboard</h1>
+  <h1 class="main-header"><%= t('.main_header') %></h1>
+  <h2 class="second-header"><%= t('.second_header')%><%= @owner.visible_name %></h2>
   <ul id="page-1" class="dashboard-user-list">
-    <%= @owner.visible_name %>
+    
     <% for user in @users %>
     <li><%= user.visible_name %></li>
     <% end %>

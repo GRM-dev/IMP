@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  User_id: 
+  user_id: 
   log: MyString
   category: MyString
-  LogType_id: 
+  log_type_id: 1
 
 two:
-  User_id: 
+  user_id: 
   log: MyString
   category: MyString
-  LogType_id: 
+  log_type_id: 1

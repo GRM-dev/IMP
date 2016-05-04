@@ -3,7 +3,9 @@
 one:
   id: 1
   name: MyString
+  rank: 1
 
 two:
-  id: 1
+  id: 2
   name: MyString
+  rank: 1

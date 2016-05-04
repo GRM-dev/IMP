@@ -5,7 +5,8 @@ one:
   email: MyString
   password_digest: MyString
   was_activated: false
-  active: false
+  active: true
+  site_role_id: 1
 
 two:
   visible_name: MyString
@@ -13,3 +14,4 @@ two:
   password_digest: MyString
   was_activated: false
   active: false
+  site_role_id: 1
