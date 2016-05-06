@@ -108,6 +108,11 @@ en:
     index_for_dashboard:
       main_header: List of all users in this dashboard
       second_header: 'Owner of this dashboard is: ' 
+  site_roles:
+    administrator: Admin
+    head_administrator: Head Admin
+    moderator: Moderator
+    head_moderator: Head Moderator
       
   date:
     abbr_day_names:

@@ -37,10 +37,10 @@ c_pl = Country.create(name: 'United States', code: 'en-us')
 
 avatar_def = Avatar.create()
 
-t = User.create(email: 't@t.t', visible_name: 'TestUser', password: '1234', site_role: r_nu)
-levvy = User.create(email: 'levvy@t.t', visible_name: 'Levvy', password: '1234', site_role: r_hadmin)
-rodzyn = User.create(email: 'rodzyndawid@gmail.com', visible_name: 'Dawid Tomas', password: '1234', site_role: r_admin) #Yea, we know. This password is awesome! :D
-grafik = User.create(email: 'tomekbrylinski.39@gmail.com', visible_name: 'Tomek Bryliński', password: '1234', site_role: r_hmod)
+t = User.create(email: 't@t.t', visible_name: 'TestUser', password: '1234', site_role: r_nu, age: DateTime.new(2016,05,06))
+levvy = User.create(email: 'levvy@t.t', visible_name: 'Levvy', password: '1234', site_role: r_hadmin, age: DateTime.new(1994,05,02))
+rodzyn = User.create(email: 'rodzyndawid@gmail.com', visible_name: 'Dawid Tomas', password: '1234', site_role: r_admin, age: DateTime.new(1998,06,01)) #Yea, we know. This password is awesome! :D
+grafik = User.create(email: 'tomekbrylinski.39@gmail.com', visible_name: 'Tomek Bryliński', password: '1234', site_role: r_hmod, age: DateTime.new(1997,10,02))
 
 Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl, dashboard: Dashboard.create)
 Building.create(name: 'Zespół Szkół i Placówek Kształcenia Zawodowego w Bielawie', street: 'ul. Żeromskiego 41', city: 'Bielawa', shortname: 'ZSiPKZ w Bielawie', company_type: cp_s, user: rodzyn, country: c_pl, dashboard: Dashboard.create)

@@ -20,11 +20,31 @@ body {
       font-size: 16px;
       margin-bottom:15px;
     }
+  }
     
-    #invite-user {
-      .invite_user_btn {
-        margin-top:15px;
-      }
+  #show-dashboard-users {
+    .user-online {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background-color: rgba(35, 186, 35, 0.95);
+      margin-left: 15px;
+      border: 3px solid #56a831;
+    }
+    
+    .user-offline {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background-color: rgba(159, 30, 30, 0.9);
+      margin-left: 15px;
+      border: 3px solid #aa1c1c;
+    }
+  }
+  
+  #invite-user {
+    .invite_user_btn {
+      margin-top:15px;
     }
   }
 }

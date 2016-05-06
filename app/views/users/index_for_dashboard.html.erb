@@ -1,10 +1,39 @@
 <div id="show-dashboard-users" class="dashboard-users">
   <h1 class="main-header"><%= t('.main_header') %></h1>
   <h2 class="second-header"><%= t('.second_header')%><%= @owner.visible_name %></h2>
-  <ul id="page-1" class="dashboard-user-list">
-    
-    <% for user in @users %>
-    <li><%= user.visible_name %></li>
-    <% end %>
-  </ul>
+  
+  <div class="table-responsive-vertical shadow-z-1">
+     <table id="table" class="table table-hover table-mc-light-blue">
+       <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>E-Mail</th>
+          <th>Age</th>
+          <th>Role</th>
+          <th>Last logged</th>
+          <th>Active</th>
+        </tr>
+       </thead>
+       <tbody>
+        <% for user in @users %>
+          <tr>
+             <td data-title="ID"><%= user.id %></td>
+             <td data-title="Name"><%= user.visible_name %></td>
+             <td data-title="E-Mail"><%= user.email %></td>
+             <td data-title="Age"><%= distance_of_time_in_words_to_now(user.age) %></td>
+             <td data-title="Role"><%= t "site_roles." + current_dashboard_and_user_assigment(user).dashboard_role.name %></td>
+             <td data-title="Last logged"><%= user.last_login %></td>
+             <td data-title="Active">
+               <% if(user.active == true)%>
+                 <div class="user-online"></div>
+               <% else %>
+                 <div class="user-offline"></div>
+               <% end %>
+             </td>
+          </tr>
+        <% end %>
+       </tbody>
+    </table>
+  </div>
 </div>
