@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :setup_locales
   before_action :set_locale
+  before_action :update_user
   helper_method :current_locale, :current_user, :is_dashboard, :current_building, :current_dashboard
   
   def set_locale(locale = nil)
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_building
-      @current_building ||= Building.find_by_user_id(current_user.id)  if current_user
+      @current_building ||= Building.where(user_id: current_user.id).take  if current_user
   end
   
   def current_dashboard
@@ -42,5 +43,11 @@ class ApplicationController < ActionController::Base
   
   def is_dashboard
     ["dashboard", "building"].include?(params[:controller])
+  end
+  
+  def update_user
+    if current_user
+      current_user.touch(:last_seen)
+    end
   end
 end

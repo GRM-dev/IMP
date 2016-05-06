@@ -115,6 +115,14 @@ sp_reports = ->
   menu_active_class("#reports")
   dashboard_spin_show(false)
   
+sp_faq = ->
+  dashboard_spin_show()
+  menu_active_class("#faq")
+  $.ajax(type: "POST", url: "/"+locale()+'/dashboard/faq').done (html) ->
+    $('#dashboard_body').empty()
+    $('#dashboard_body').append html
+    dashboard_spin_show(false)
+  
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
@@ -135,3 +143,4 @@ $(document).on 'click', "#add_user_btn", sp_add_user
 $(document).on 'click', "#logs", sp_logs
 $(document).on 'click', "#settings", sp_settings
 $(document).on 'click', "#reports", sp_reports
+$(document).on 'click', "#faq", sp_faq

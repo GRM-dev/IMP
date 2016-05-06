@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_ip, default: '0.0.0.0', null: false
       t.boolean :was_activated, null: false, default: false
       t.boolean :active, null: false, default: true
+      t.datetime :last_seen, null: false, default: DateTime.now
       
       t.references :site_role, null: false, index: true, foreign_key: true
       

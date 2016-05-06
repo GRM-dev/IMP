@@ -109,6 +109,7 @@ pl:
       logs: Logi systemu
       settings: Ustawienia
       reports: Zgłoś błąd
+      faq: FAQ
       logout: Wyloguj się
   building:
     new:

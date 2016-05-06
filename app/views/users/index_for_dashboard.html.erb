@@ -17,6 +17,7 @@
        </thead>
        <tbody>
         <% for user in @users %>
+        <% ucs = user_get_current_state(user) %>
           <tr>
              <td data-title="ID"><%= user.id %></td>
              <td data-title="Name"><%= user.visible_name %></td>
@@ -25,10 +26,12 @@
              <td data-title="Role"><%= t "site_roles." + current_dashboard_and_user_assigment(user).dashboard_role.name %></td>
              <td data-title="Last logged"><%= user.last_login %></td>
              <td data-title="Active">
-               <% if(user.active == true)%>
+               <% if ucs == 1 %>
                  <div class="user-online"></div>
-               <% else %>
+               <% elsif ucs == 0 %>
                  <div class="user-offline"></div>
+               <% elsif ucs == 2 %>
+                 <div class="user-afk"></div>
                <% end %>
              </td>
           </tr>

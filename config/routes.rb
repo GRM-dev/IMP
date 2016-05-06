@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     
     post 'dashboard/users' => 'users#index_for_dashboard'
     
+    post 'dashboard/faq' => 'dashboard#faq'
+    
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end
   

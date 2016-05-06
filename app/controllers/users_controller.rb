@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = User.find ps[:selected_mail_id].to_i
     rescue ActiveRecord::RecordNotFound => e
       begin
-      @user = User.find_by_email ps[:selected_mail_mail].to_s
+      @user = User.where(email: ps[:selected_mail_mail].to_s).take
       rescue ActiveRecord::RecordNotFound => ex
         @user = nil
       end

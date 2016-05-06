@@ -36,9 +36,18 @@ body {
       width:16px;
       height:16px;
       border-radius:50%;
-      background-color: rgba(159, 30, 30, 0.9);
+      background-color: rgba(200, 15, 15, 0.9);
       margin-left: 15px;
-      border: 3px solid #aa1c1c;
+      border: 3px solid rgba(222, 42, 42, 0.92);
+    }
+    
+    .user-afk {
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background-color: rgba(215, 199, 21, 0.9);
+      margin-left: 15px;
+      border: 3px solid rgba(245, 203, 24, 0.94);
     }
   }
   

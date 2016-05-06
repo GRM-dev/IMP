@@ -6,6 +6,11 @@
           <i class="fa fa-home" aria-hidden="true"><span class="left-menu-item-font"><%= t('.home') %></span></i>
         <% end %>  
       </li>
+      <li class="profile">
+         <button id="profile" class="menu_button">
+          <i class="fa fa-graduation-cap" aria-hidden="true"><span class="left-menu-item-font"><%= t('.profile') %></span></i>
+        </button>  
+      </li>
       <li class="rooms">
         <button id="rooms_btn" class="btn-inventory-dashboard menu_button">
           <i class="fa fa-flask" aria-hidden="true"><span class="left-menu-item-font"><%= Laboratory.model_name.human(count: 3) %></span></i> 
@@ -45,6 +50,11 @@
               <i class="fa fa-user-plus" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_user') %></span></i>
              </button> 
           </li>
+          <li class="users_permission deactive">
+             <button id="users_permission" class="menu_button">
+              <i class="fa fa-key" aria-hidden="true"><span class="left-menu-item-font"><%= t('.users_permission') %></span></i>
+             </button> 
+          </li>
           <li class="remove_user deactive">
              <button id="remove_user_btn" class="menu_button">
               <i class="fa fa-user-times" aria-hidden="true"><span class="left-menu-item-font"><%= t('.remove_user') %></span></i>
@@ -65,6 +75,11 @@
       <li class="reports">
          <button id="reports" class="menu_button">
           <i class="fa fa-exclamation-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.reports') %></span></i>
+        </button>  
+      </li>
+      <li class="faq">
+         <button id="faq" class="menu_button">
+          <i class="fa fa-question-circle" aria-hidden="true"><span class="left-menu-item-font"><%= t('.faq') %></span></i>
         </button>  
       </li>
       <li class="logout">
