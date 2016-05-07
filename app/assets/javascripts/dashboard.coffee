@@ -69,60 +69,18 @@ menu_active_class = (menu) ->
 sp_rooms = ->
   slide_menu_elem $('.submenu-rooms')
   
-sp_add_room = ->
+show_subpage = (e) ->
   dashboard_spin_show()
-  menu_active_class("#add_room_btn")
-  $.ajax(url: "/"+locale()+'/building/lab/new').done (html) ->
+  menu_active_class(e.target)
+  $.ajax(type: e.data.rest_type, url: "/"+locale()+"/"+e.data.page).done (html) ->
     $('#dashboard_body').empty()
     $('#dashboard_body').append html
+    if e.target.id == "add_user_btn"
+      get_mails()
     dashboard_spin_show(false)
 
 sp_users = ->
   slide_menu_elem $('.submenu-users')
-  
-sp_show_users = ->
-  dashboard_spin_show()
-  menu_active_class("#show_users_btn")
-  $.ajax(type: "POST", url: "/"+locale()+'/dashboard/users').done (html) ->
-    $('#dashboard_body').empty()
-    $('#dashboard_body').append html
-    dashboard_spin_show(false)
-  
-sp_add_user = ->
-  dashboard_spin_show()
-  menu_active_class("#add_user_btn")
-  $.ajax(type: "POST", url: "/"+locale()+'/users/invite_user_form').done (html) ->
-    $('#dashboard_body').empty()
-    $('#dashboard_body').append html
-    get_mails()
-    dashboard_spin_show(false)
-  
-sp_logs = ->
-  $('#dashboard_body').empty()
-  dashboard_spin_show()
-  menu_active_class("#logs")
-  dashboard_spin_show(false)
-  
-sp_settings = ->
-  $('#dashboard_body').empty()
-  dashboard_spin_show()
-  menu_active_class("#settings")
-  dashboard_spin_show(false)
-  
-sp_reports = ->
-  $('#dashboard_body').empty()
-  dashboard_spin_show()
-  menu_active_class("#reports")
-  dashboard_spin_show(false)
-  
-sp_faq = ->
-  dashboard_spin_show()
-  menu_active_class("#faq")
-  $.ajax(type: "POST", url: "/"+locale()+'/dashboard/faq').done (html) ->
-    $('#dashboard_body').empty()
-    $('#dashboard_body').append html
-    dashboard_spin_show(false)
-  
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
@@ -137,10 +95,10 @@ $(document).on 'turbolinks:request-start', dashboard_spin_show
 
 $(document).on 'click', "#rooms_btn", sp_rooms
 $(document).on 'click', "#users_btn", sp_users
-$(document).on 'click', "#add_room_btn", sp_add_room
-$(document).on 'click', "#show_users_btn", sp_show_users
-$(document).on 'click', "#add_user_btn", sp_add_user
-$(document).on 'click', "#logs", sp_logs
-$(document).on 'click', "#settings", sp_settings
-$(document).on 'click', "#reports", sp_reports
-$(document).on 'click', "#faq", sp_faq
+$(document).on 'click', "#add_room_btn", {page: "building/lab/new", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#show_users_btn", {page: "dashboard/users", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#add_user_btn", {page: "users/invite_user_form", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#logs", {page: "dashboard/logs", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#settings", {page: "dashboard/settings", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#reports", {page: "dashboard/reports", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#faq", {page: "dashboard/faq", rest_type: "POST"}, show_subpage
