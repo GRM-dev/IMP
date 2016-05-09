@@ -26,13 +26,10 @@
              <td data-title="Role"><%= t "site_roles." + current_dashboard_and_user_assigment(user).dashboard_role.name %></td>
              <td data-title="Last logged"><%= user.last_login %></td>
              <td data-title="Active">
-               <% if ucs == 1 %>
-                 <div class="user-online"></div>
-               <% elsif ucs == 0 %>
-                 <div class="user-offline"></div>
-               <% elsif ucs == 2 %>
-                 <div class="user-afk"></div>
-               <% end %>
+               <div class=<%= "user-online" if ucs == 1 %>
+                  <%= "user-offline" if ucs == 0 %>
+                  <%= "user-afk" if ucs == 2 %>>
+               </div>
              </td>
           </tr>
         <% end %>

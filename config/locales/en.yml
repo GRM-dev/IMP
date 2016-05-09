@@ -114,6 +114,20 @@ en:
     head_administrator: Head Admin
     moderator: Moderator
     head_moderator: Head Moderator
+  dashboard_roles:
+    spectator: Spectator
+    upper_spectator: Upper Spectator
+    worker: Worker
+    student: Student
+    building_admin: Admin of Dashboard
+    building_keeper: Building Main Keeper
+  lab_roles:
+    spectator: Spectator
+    upper_spectator: Upper Spectator
+    worker: Worker
+    student: Student
+    lab_admin: Admin of Laboratory
+    lab_keeper: Leboratory Main Keeper  
       
   date:
     abbr_day_names:

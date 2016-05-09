@@ -18,17 +18,21 @@ Rails.application.routes.draw do
     resources :building, only: [:create], as: :buildings
   
     resources :dashboard, only: [:index]
-    get 'dashboard' => 'dashboard#index', as: :dashboard
-    get 'dashboard/install' => 'building#new', as: :building
+    get 'dashboard'                             => 'dashboard#index', as: :dashboard
+    get 'dashboard/install'                     => 'building#new', as: :building
   
-    post 'users/invite_user_form' => 'users#invite_new'
-    get '/users/user_mails.json' => 'users#user_mails'
-    post 'users/invite_user' => 'users#invite_create'
+   
+    get '/users/user_mails.json'                => 'users#user_mails'
     
-    post 'dashboard/users' => 'users#index_for_dashboard'
-    
-    post 'dashboard/faq' => 'dashboard#faq'
-    
+    scope :dashboard do
+      post '/users'                      => 'users#index_for_dashboard'
+      post '/users/invite_user_form'     => 'users#invite_new'
+      post '/users/invite_user'          => 'users#invite_create'
+      post '/users/permissions'          => 'users#edit_for_dashboard'
+      post '/users/update_for_dashboard' => 'users#update_for_dashboard'
+      
+      post '/faq'                        => 'dashboard#faq'
+    end
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end
   

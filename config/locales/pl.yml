@@ -128,6 +128,20 @@ pl:
     head_administrator: Główny Admin
     moderator: Moderator
     head_moderator: Główny moderator
+  dashboard_roles:
+    spectator: Obserwator
+    upper_spectator: Nad-Obserwator
+    worker: Pracownik
+    student: Student
+    building_admin: Zarządca Dashboardu
+    building_keeper: Właściciel Budynku
+  lab_roles:
+    spectator: Spectator
+    upper_spectator: Upper Spectator
+    worker: Worker
+    student: Student
+    lab_admin: Admin of Laboratory
+    lab_keeper: Leboratory Main Keeper  
     
   date:
     abbr_day_names:

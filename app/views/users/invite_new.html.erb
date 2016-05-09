@@ -2,7 +2,7 @@
   <h1 class="main-header">Step one: enter a e-mail</h1>
   <h2 class="second-header">Write a e-mail of user to add to dashboard</h2>
   <div class="ui-widget">
-    <%= form_tag 'users/invite_user', remote: true do%>
+    <%= form_tag 'dashboard/users/invite_user', remote: true do%>
       <%= text_field_tag 'invitation-email', nil, class: 'form-control user_mail_to_add' %>
       <%= hidden_field_tag 'selected_mail_id', '-1' %>
       <%= hidden_field_tag 'selected_mail_mail', 'NaN' %>

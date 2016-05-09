@@ -11,7 +11,7 @@ class UsersController < ApplicationController
    render layout: false
   end
 
-  # POST /invite_user
+  # POST dashboard/users/invite_user
   def invite_create
     ps = inv_params
     begin
@@ -53,18 +53,32 @@ class UsersController < ApplicationController
 
   # GET /user_mails
   def user_mails
-    @users = User.all
+    @users = User.all.order(:visible_name)
     respond_to do |format|
       format.json
       format.html {redirect_to dashboard_path, alert: 'Page not exists' }
     end
   end
   
-  # GET /dashboard/users
+  # POST /dashboard/users
   def index_for_dashboard
     @owner = current_building.user
-    @users = current_dashboard.users
+    @users = current_dashboard.users.order(:visible_name)
     render layout: false
+  end
+  
+  # POST dashboard/users/permissions
+  def edit_for_dashboard
+    @users = current_dashboard.users.order(:visible_name)
+    @roles = DashboardRole.all.order(:rank)
+    @roles.each do |role|
+      role.name = t 'dashboard_roles.' + role.name
+    end
+    render layout: false
+  end
+
+  def update_for_dashboard
+    
   end
 
   # GET /users/1

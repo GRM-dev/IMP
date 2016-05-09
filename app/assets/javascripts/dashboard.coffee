@@ -48,11 +48,12 @@ dashboard_spin_show = (show = true)->
   else
     $("#dashboard").spin(false)
 
-slide_menu_elem = (elem) ->
-  if elem.css('display') == 'block'
-    elem.slideUp 'slow'
+slide_menu_elem = (e) ->
+  le = $(e.data.list_elem)
+  if le.css('display') == 'block'
+    le.slideUp 'slow'
   else
-    elem.slideDown()
+    le.slideDown 'slow'
     
 hide_widgets = ->
   $('#widgets_section').hide()
@@ -62,13 +63,11 @@ show_widgets = ->
   
 menu_active_class = (menu) ->
   $('.dashboard_menu').find('li').removeClass('active')
-  if ($(menu).hasClass("menu_button"))
-    $(menu).removeClass('deactive').addClass('active')
-  $(menu).parents().addClass('active')
+  $('.dashboard_menu').find('li').find('ul').find('li').addClass('deactive')
+  if ($(menu).parent().hasClass("deactive"))
+    $(menu).parent().removeClass("deactive").addClass("active")
+  $(menu).parent().addClass('active')
 
-sp_rooms = ->
-  slide_menu_elem $('.submenu-rooms')
-  
 show_subpage = (e) ->
   dashboard_spin_show()
   menu_active_class(e.target)
@@ -78,9 +77,6 @@ show_subpage = (e) ->
     if e.target.id == "add_user_btn"
       get_mails()
     dashboard_spin_show(false)
-
-sp_users = ->
-  slide_menu_elem $('.submenu-users')
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
@@ -93,11 +89,14 @@ $(document).on 'turbolinks:load', dashboard_load
 
 $(document).on 'turbolinks:request-start', dashboard_spin_show
 
-$(document).on 'click', "#rooms_btn", sp_rooms
-$(document).on 'click', "#users_btn", sp_users
-$(document).on 'click', "#add_room_btn", {page: "building/lab/new", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#users_btn", {list_elem: ".submenu-users"}, slide_menu_elem
 $(document).on 'click', "#show_users_btn", {page: "dashboard/users", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#add_user_btn", {page: "users/invite_user_form", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#add_user_btn", {page: "dashboard/users/invite_user_form", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#users_permission", {page: "dashboard/users/permissions", rest_type: "POST"}, show_subpage
+
+$(document).on 'click', "#rooms_btn", {list_elem: ".submenu-rooms"}, slide_menu_elem
+$(document).on 'click', "#add_room_btn", {page: "building/lab/new", rest_type: "POST"}, show_subpage
+
 $(document).on 'click', "#logs", {page: "dashboard/logs", rest_type: "POST"}, show_subpage
 $(document).on 'click', "#settings", {page: "dashboard/settings", rest_type: "POST"}, show_subpage
 $(document).on 'click', "#reports", {page: "dashboard/reports", rest_type: "POST"}, show_subpage
