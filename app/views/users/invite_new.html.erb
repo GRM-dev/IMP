@@ -1,6 +1,6 @@
 <div id="invite-user" class="dashboard-users">
-  <h1 class="main-header">Step one: enter a e-mail</h1>
-  <h2 class="second-header">Write a e-mail of user to add to dashboard</h2>
+  <h1 class="main-header"><%= t('.main_header') %></h1>
+  <h2 class="second-header"><%= t('.second_header') %></h2>
   <div class="ui-widget">
     <%= form_tag 'dashboard/users/invite_user', remote: true do%>
       <%= text_field_tag 'invitation-email', nil, class: 'form-control user_mail_to_add' %>

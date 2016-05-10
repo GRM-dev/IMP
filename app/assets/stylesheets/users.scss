@@ -24,6 +24,11 @@ body {
     
   #show-dashboard-users {
     .table-striped {
+      thead {
+        .sorting::after, .sorting_asc:after, .sorting_desc:after {
+          margin-top:18px;
+        }
+      }
       tbody {
         tr:nth-of-type(odd) {
           background-color: rgba(89, 89, 89, 0.35) !important;

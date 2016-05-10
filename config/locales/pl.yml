@@ -105,6 +105,7 @@ pl:
       users: Użytkownicy
       show_users: Wyświetl listę użytkowników
       add_user: Dodaj Użytkownika
+      users_permission: Uprawnienia użytkowników
       remove_user: Usuń Użytkownika
       logs: Logi systemu
       settings: Ustawienia
@@ -123,7 +124,11 @@ pl:
     index_for_dashboard:
       main_header: Lista użytkowników przypisanych do tego panelu
       second_header: 'Głównym administratorem tego panelu jest: ' 
+    invite_new:
+      main_header: "Krok pierwszy: wprowadź adres E-Mail"
+      second_header: Wprowadź adres e-mail nowego użytkownika aby dodać go do tego panelu
     edit_for_dashboard:
+      main_header: Zarządzanie uprawnieniami użytkowników panelu
       save: Zapisz
   site_roles:
     administrator: Admin

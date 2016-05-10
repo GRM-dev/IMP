@@ -89,33 +89,34 @@ show_subpage = (e) ->
 menu_arr = 
   home:
     url: null
-    target: ''
+    target: null
     elems: null
+    ajax_type: null
   profile:
-    url: null
-    target: ''
+    url: 'brak'
+    target: 'brak'
     elems: null
+    ajax_type: 'POST'
   labs:
-    url: ''
+    url: '.submenu-rooms'
     target: '#rooms_btn'
-    elems: [
+    elems: 
       add:
-        url: ''
+        url: 'building/lab/new'
         target: '#add_room_btn'
-        ajax_type: 'POST'
+        ajax_type: 'GET'
       show:
         url: ''
-        target: ''
+        target: 'brak'
         ajax_type: 'POST'
       remove:
         url: ''
-        target: ''
+        target: 'brak'
         ajax_type: 'POST'
-    ]
   users:
     url: '.submenu-users'
     target: '#users_btn'
-    elems: [
+    elems: 
       add:
         url: 'dashboard/users/invite_user_form'
         target: '#add_user_btn'
@@ -132,32 +133,55 @@ menu_arr =
         url: ''
         target: '#userremove'
         ajax_type: 'POST'
-    ]
   logs:
     url: 'dashboard/logs'
     target: '#logs'
     elems: null
+    ajax_type: 'POST'
   settings:
     url: 'dashboard/settings'
     target: '#settings'
     elems: null
+    ajax_type: 'POST'
   reports:
     url: 'dashboard/reports'
     target: '#reports'
     elems: null
+    ajax_type: 'POST'
   faq:
     url: 'dashboard/faq'
     target: '#faq'
     elems: null
+    ajax_type: 'POST'
   logout:
-    url: ''
-    target: ''
+    url: null
+    target: null
     elems: null
+    ajax_type: null
     
 load_menu = ->
-  console.log 'Initializing menu'
-  for k, elem of menu_arr
-    console.log elem
+  #console.log 'Initializing menu:'
+  for k, menu_main_btn of menu_arr
+    t = menu_main_btn.target
+    if not t?
+      continue
+    #console.log '<' + k + '> initializing:'
+    url = menu_main_btn.url
+    es = menu_main_btn.elems
+    #console.log '=> <' + t + '> => [' + url + '] & art: ' + art
+    if not es?
+      art = menu_main_btn.ajax_type
+      $(document).on 'click', t, {page: url, rest_type: art}, show_subpage
+    else
+      $(document).on 'click', t, {list_elem: url}, slide_menu_elem
+      #console.log '-> sub buttons init:'
+      for ke, menu_sub_btn of es
+        t = menu_sub_btn.target
+        url = menu_sub_btn.url
+        art = menu_sub_btn.ajax_type
+        #console.log '  - <' + ke + '> => t: ' + t + ' url: ' + url + ' art: ' + art
+        $(document).on 'click', t, {page: url, rest_type: art}, show_subpage
+    #console.log 'end'
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
@@ -168,20 +192,8 @@ $(document).ready dashboard_load
 $(document).on 'page:load', dashboard_load
 $(document).on 'turbolinks:load', dashboard_load
 
-$(document).on 'turbolinks:load', load_menu
+$(document).ready load_menu
 $(document).on 'page:load', load_menu
+$(document).on 'turbolinks:load', load_menu
 
 $(document).on 'turbolinks:request-start', dashboard_spin_show
-
-$(document).on 'click', "#users_btn", {list_elem: ".submenu-users"}, slide_menu_elem
-$(document).on 'click', "#show_users_btn", {page: "dashboard/users", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#add_user_btn", {page: "dashboard/users/invite_user_form", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#users_permissions", {page: "dashboard/users/permissions", rest_type: "POST"}, show_subpage
-
-$(document).on 'click', "#rooms_btn", {list_elem: ".submenu-rooms"}, slide_menu_elem
-$(document).on 'click', "#add_room_btn", {page: "building/lab/new", rest_type: "POST"}, show_subpage
-
-$(document).on 'click', "#logs", {page: "dashboard/logs", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#settings", {page: "dashboard/settings", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#reports", {page: "dashboard/reports", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#faq", {page: "dashboard/faq", rest_type: "POST"}, show_subpage
