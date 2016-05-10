@@ -33,6 +33,15 @@ class User < ActiveRecord::Base
     return "default.png"
   end
   
+  def public_data_for_dashboard(dashboard)
+    visible_name + ' <' + email + '> - ' + I18n.t("dashboard_roles." + dashboard.dashboard_assignments.where(user: self).take.dashboard_role.name)
+  end
+  
+  def assigments_for_dashboard(dashboard)
+    as = current_dashboard_assignments
+    as.where(user: self).take
+  end
+  
   validates :visible_name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true

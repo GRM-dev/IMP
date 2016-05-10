@@ -23,6 +23,22 @@ body {
   }
     
   #show-dashboard-users {
+    .table-striped {
+      tbody {
+        tr:nth-of-type(odd) {
+          background-color: rgba(89, 89, 89, 0.35) !important;
+        }
+      }
+    }
+    #table {
+      thead {
+        background-color: rgba(15, 15, 15, 0.69);
+        tr {
+          th {color: #FFF9F9 !important;}
+        }
+      }
+    }
+    
     .user-online {
       width:16px;
       height:16px;

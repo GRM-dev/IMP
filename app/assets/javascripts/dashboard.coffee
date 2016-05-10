@@ -14,9 +14,9 @@ dashboard_load = ->
     
 dashboard_resize = ->
   $('.body-dashboard').each ->
-    getTotalHeight = $(document).height()
+    getTotalHeight = $(window).height()
     getHeaderHeight = $('#header').height()
-    $('.dashboard_menu').height getTotalHeight - getHeaderHeight
+    $('.dashboard_menu').height (getTotalHeight - getHeaderHeight)
     return
   return
     
@@ -54,6 +54,7 @@ slide_menu_elem = (e) ->
     le.slideUp 'slow'
   else
     le.slideDown 'slow'
+  return
     
 hide_widgets = ->
   $('#widgets_section').hide()
@@ -64,9 +65,14 @@ show_widgets = ->
 menu_active_class = (menu) ->
   $('.dashboard_menu').find('li').removeClass('active')
   $('.dashboard_menu').find('li').find('ul').find('li').addClass('deactive')
-  if ($(menu).parent().hasClass("deactive"))
-    $(menu).parent().removeClass("deactive").addClass("active")
-  $(menu).parent().addClass('active')
+  parent = $(menu).parent()
+  try_ = 3
+  while !parent.is('li') && try_ > 0
+    try_--
+    parent = parent.parent()
+  if (parent.hasClass("deactive"))
+    parent.removeClass("deactive").addClass("active")
+  parent.addClass('active')
 
 show_subpage = (e) ->
   dashboard_spin_show()
@@ -76,7 +82,82 @@ show_subpage = (e) ->
     $('#dashboard_body').append html
     if e.target.id == "add_user_btn"
       get_mails()
+    if e.target.id == "show_users_btn"
+      $('#table').DataTable()
     dashboard_spin_show(false)
+
+menu_arr = 
+  home:
+    url: null
+    target: ''
+    elems: null
+  profile:
+    url: null
+    target: ''
+    elems: null
+  labs:
+    url: ''
+    target: '#rooms_btn'
+    elems: [
+      add:
+        url: ''
+        target: '#add_room_btn'
+        ajax_type: 'POST'
+      show:
+        url: ''
+        target: ''
+        ajax_type: 'POST'
+      remove:
+        url: ''
+        target: ''
+        ajax_type: 'POST'
+    ]
+  users:
+    url: '.submenu-users'
+    target: '#users_btn'
+    elems: [
+      add:
+        url: 'dashboard/users/invite_user_form'
+        target: '#add_user_btn'
+        ajax_type: 'POST'
+      show:
+        url: 'dashboard/users'
+        target: '#show_users_btn'
+        ajax_type: 'POST'
+      perms:
+        url: 'dashboard/users/permissions'
+        target: '#users_permission'
+        ajax_type: 'POST'
+      remove:
+        url: ''
+        target: '#userremove'
+        ajax_type: 'POST'
+    ]
+  logs:
+    url: 'dashboard/logs'
+    target: '#logs'
+    elems: null
+  settings:
+    url: 'dashboard/settings'
+    target: '#settings'
+    elems: null
+  reports:
+    url: 'dashboard/reports'
+    target: '#reports'
+    elems: null
+  faq:
+    url: 'dashboard/faq'
+    target: '#faq'
+    elems: null
+  logout:
+    url: ''
+    target: ''
+    elems: null
+    
+load_menu = ->
+  console.log 'Initializing menu'
+  for k, elem of menu_arr
+    console.log elem
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize
@@ -87,12 +168,15 @@ $(document).ready dashboard_load
 $(document).on 'page:load', dashboard_load
 $(document).on 'turbolinks:load', dashboard_load
 
+$(document).on 'turbolinks:load', load_menu
+$(document).on 'page:load', load_menu
+
 $(document).on 'turbolinks:request-start', dashboard_spin_show
 
 $(document).on 'click', "#users_btn", {list_elem: ".submenu-users"}, slide_menu_elem
 $(document).on 'click', "#show_users_btn", {page: "dashboard/users", rest_type: "POST"}, show_subpage
 $(document).on 'click', "#add_user_btn", {page: "dashboard/users/invite_user_form", rest_type: "POST"}, show_subpage
-$(document).on 'click', "#users_permission", {page: "dashboard/users/permissions", rest_type: "POST"}, show_subpage
+$(document).on 'click', "#users_permissions", {page: "dashboard/users/permissions", rest_type: "POST"}, show_subpage
 
 $(document).on 'click', "#rooms_btn", {list_elem: ".submenu-rooms"}, slide_menu_elem
 $(document).on 'click', "#add_room_btn", {page: "building/lab/new", rest_type: "POST"}, show_subpage

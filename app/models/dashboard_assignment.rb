@@ -10,7 +10,6 @@ class DashboardAssignment < ActiveRecord::Base
   validates :dashboard_user_setting, presence: true
   validates :dashboard_role, presence: true
   
-   
   def default_values
     self.dashboard_role ||= DashboardRole.find_by_name('spectator')
     self.dashboard_user_setting ||= DashboardUserSetting.create

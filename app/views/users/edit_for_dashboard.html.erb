@@ -4,9 +4,9 @@
   <div class="table-responsive-vertical shadow-z-1">
     <%= form_tag 'users/update_for_dashboard', remote: true do %>
       <%= label_tag :selected_users, "Select one user or more: " %>
-      <%= select_tag :selected_users, options_from_collection_for_select(@users, :id, :visible_name), {multiple: true, class: 'form-control'} %>
+      <%= select_tag :selected_users, options_for_select(@users.map{|u| [u.public_data_for_dashboard(current_dashboard), u.id]}), {multiple: true, class: 'form-control'} %>
       <%= label_tag :dashboard_role, "Select role to assign to selected user(s): " %>
-      <%= select_tag :dashboard_role, options_from_collection_for_select(@roles, :id, :name), {class: 'form-control'} %>
+      <%= select_tag :dashboard_role, options_from_collection_for_select(@roles, :id, :name, 1), {class: 'form-control'} %>
       <%= button_tag t('.save'), id: 'save_pers_btn', data: { disable_with: "Please wait...", dismiss: "modal"}, class: 'btn btn-primary invite_user_btn', disabled: true %>
     <% end %>
   </div>

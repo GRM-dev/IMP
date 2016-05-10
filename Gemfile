@@ -45,6 +45,8 @@ gem 'angularjs-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-modal-rails'
 
+gem 'jquery-datatables-rails', '~> 3.3.0'
+
 gem 'haml'
 gem 'spinjs-rails'
 

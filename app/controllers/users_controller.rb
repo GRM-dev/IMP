@@ -125,11 +125,6 @@ class UsersController < ApplicationController
       end
     end
   end
-  
-  def current_dashboard_and_user_assigment(user)
-    as = current_dashboard_assignments
-    as.where(user: user).take
-  end
 
   # DELETE /users/1
   # DELETE /users/1.json

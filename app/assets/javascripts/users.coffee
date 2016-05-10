@@ -34,6 +34,5 @@ set_data = (id, mail) ->
   
 change_data = ->
   set_data(0, $("#invitation-email").val())
-      
+  
 window.get_mails = get_mails
-
