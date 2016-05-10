@@ -11,7 +11,8 @@ class DashboardController < ApplicationController
   
   private
    def dashboard_installed
-    if !Building.where(user_id: current_user.id)
+    b = Building.where(user_id: current_user.id)
+    if !b.take
       redirect_to '/'+params[:locale]+'/dashboard/install'
     end
    end

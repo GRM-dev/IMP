@@ -1,0 +1,18 @@
+#faq {
+  .main-header {
+      background-color: rgb(40, 171, 227);
+      padding: 10px;
+      text-align: center;
+      margin: 10px 0px 0px;
+      font-weight: bold;
+      color: rgba(255,255,255,1);
+      text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    }
+    
+    .second-header {
+      @extend .main-header;
+      background-color: rgb(50, 50, 58);
+      font-size: 16px;
+      margin-bottom:15px;
+    }
+}

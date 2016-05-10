@@ -5,6 +5,8 @@ class Building < ActiveRecord::Base
   belongs_to :country
   has_many :laboratory
   
+  accepts_nested_attributes_for :country
+  
   validates :name, presence: true, uniqueness: true
   validates :shortname, presence: true, uniqueness: true
   validates :company_type, presence: true

@@ -2,6 +2,7 @@ class BuildingController < ApplicationController
   
   def new
     @building = Building.new
+    @countries = Country.all
   end
   
   def create
@@ -9,6 +10,7 @@ class BuildingController < ApplicationController
     dashboard = Dashboard.create
     @building.dashboard_id = dashboard.id
     @building.user_id = current_user.id
+    @countries = Country.all
     respond_to do |format|
       if @building.save
         format.html {redirect_to dashboard_path}
@@ -22,6 +24,6 @@ class BuildingController < ApplicationController
   
   private
   def building_params
-    params.require(:building).permit(:id, :name, :street, :city, :shortname, :company_type_id)
+    params.require(:building).permit(:id, :name, :street, :city, :country_id, :shortname, :company_type_id)
   end
 end

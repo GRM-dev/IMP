@@ -15,11 +15,11 @@ Rails.application.routes.draw do
       get '/labs' => 'laboratories#index'
       resources :workstation
     end
-    resources :building, only: [:create], as: :buildings
+    resources :building, only: [:create, :new], as: :buildings
   
     resources :dashboard, only: [:index]
     get 'dashboard'                             => 'dashboard#index', as: :dashboard
-    get 'dashboard/install'                     => 'building#new', as: :building
+    get 'dashboard/install'                     => 'building#new', as: :building_install
   
    
     get '/users/user_mails.json'                => 'users#user_mails'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       post '/users/permissions'          => 'users#edit_for_dashboard'
       post '/users/update_for_dashboard' => 'users#update_for_dashboard'
       
-      post '/faq'                        => 'dashboard#faq'
+      post '/faq'                        => 'static_pages#faq'
       post '/issues'                     => 'dashboard#issues'
     end
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}

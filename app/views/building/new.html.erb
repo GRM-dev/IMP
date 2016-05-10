@@ -10,6 +10,16 @@
         <div class="alert-danger">
           <%= flash[:alert] %>
         </div>
+        <% if @building.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@building.errors.count, "error") %> prohibited this building from being saved:</h2>
+            <ul>
+              <% @building.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       </div>
       <%= bootstrap_form_for(@building, label_col: "col-sm-2", control_col: "col-sm-4", layout: :horizontal) do |f| %>
           <div class="field">
@@ -21,6 +31,7 @@
               <%= f.text_field :name, :placeholder => cc.human_attribute_name('name') %>
               <%= f.text_field :shortname, :placeholder => cc.human_attribute_name('shortname') %>
               <%= f.text_field :city, :placeholder => cc.human_attribute_name('city') %>
+              <%= f.select :country_id, options_from_collection_for_select(@countries, :id, :name, 1), {class: 'form-control'} %>
               <%= f.text_field :street, :placeholder => cc.human_attribute_name('street') %>
           </div>
           <%= f.error_summary %>

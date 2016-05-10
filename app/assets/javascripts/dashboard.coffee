@@ -80,9 +80,15 @@ show_subpage = (e) ->
   $.ajax(type: e.data.rest_type, url: "/"+locale()+"/"+e.data.page).done (html) ->
     $('#dashboard_body').empty()
     $('#dashboard_body').append html
-    if e.target.id == "add_user_btn"
+    try_ = 3
+    parent = $(e.target)
+    while !parent.is('button') && try_ > 0
+      try_--
+      parent = parent.parent()
+    pid = parent.attr('id')
+    if pid == "add_user_btn"
       get_mails()
-    if e.target.id == "show_users_btn"
+    if pid == "show_users_btn"
       $('#table').DataTable()
     dashboard_spin_show(false)
 
@@ -159,29 +165,28 @@ menu_arr =
     elems: null
     ajax_type: null
     
+menu_ready = false
+    
 load_menu = ->
-  #console.log 'Initializing menu:'
+  if menu_ready
+    return
   for k, menu_main_btn of menu_arr
     t = menu_main_btn.target
     if not t?
       continue
-    #console.log '<' + k + '> initializing:'
     url = menu_main_btn.url
     es = menu_main_btn.elems
-    #console.log '=> <' + t + '> => [' + url + '] & art: ' + art
     if not es?
       art = menu_main_btn.ajax_type
       $(document).on 'click', t, {page: url, rest_type: art}, show_subpage
     else
       $(document).on 'click', t, {list_elem: url}, slide_menu_elem
-      #console.log '-> sub buttons init:'
       for ke, menu_sub_btn of es
         t = menu_sub_btn.target
         url = menu_sub_btn.url
         art = menu_sub_btn.ajax_type
-        #console.log '  - <' + ke + '> => t: ' + t + ' url: ' + url + ' art: ' + art
         $(document).on 'click', t, {page: url, rest_type: art}, show_subpage
-    #console.log 'end'
+  menu_ready = true
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize

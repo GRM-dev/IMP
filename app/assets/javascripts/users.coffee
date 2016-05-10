@@ -15,7 +15,6 @@ get_mails = ->
   		  $("#invite_user_btn").prop('disabled', false);
   		  data = $("#invitation-email").getSelectedItemData()
   		  set_data(data.id, $("#invitation-email").val())#data.email
-  		  console.log "lel: " + data.id+" "+$("#invitation-email").val()
   		  return
   		sort:
 			  enabled: true
