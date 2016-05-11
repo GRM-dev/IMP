@@ -23,17 +23,15 @@
         <% end %>
         <div class="language pull-right">
           <p class="user-show-lang pull-left"><%= t('activerecord.attributes.dashboard.language')%></p>
-          <li class="current-lang dropdown pull-right"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: I18n.locale, 'data-toggle': "dropdown"} do %>
-            <% end %>
+          <li class="current-lang dropdown pull-right">
+            <%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: 'lang_'+I18n.locale.to_s, 'data-toggle': "dropdown"} do end %>
             <ul class="dropdown-menu select_lang_list">
               <% @locales.each do |l| %>
-                <li>
-                  <% if I18n.locale.to_s == l.to_s %>
-                      <%= link_to '#', {class: 'flag lang hide'} do l.to_s end %>
-                    <% else %>
-                      <%= link_to params.merge({:locale => l.to_s}), {class: 'flag lang', id: l.to_s} do '' end %>
-                    <% end %>
-                </li>
+                <% if I18n.locale.to_s != l.to_s %>
+                  <li>
+                    <%= link_to dashboard_path(locale: l.to_s), {class: 'flag lang', id: 'lang_'+l.to_s} do end %>
+                  </li>
+                <% end %>
               <% end %>
             </ul>
           </li>

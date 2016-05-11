@@ -78,7 +78,18 @@ class UsersController < ApplicationController
   end
 
   def update_for_dashboard
-    
+    p = upd_params
+    p[:selected_users].each do |u_id|
+      ua = DashboardAssignment.where(user_id: u_id, dashboard_id: current_dashboard.id).take
+      dr = DashboardRole.where(id: p[:dashboard_role_id]).take
+      #byebug
+      if ua != nil && dr != nil
+        ua.update_attribute(:dashboard_role, dr)
+      else
+        
+      end
+    end
+    #byebug
   end
 
   # GET /users/1
@@ -147,5 +158,9 @@ class UsersController < ApplicationController
     
     def inv_params
       params.permit(:selected_mail_id, :selected_mail_mail)
+    end
+    
+    def upd_params
+      params.permit(:dashboard_role_id, :selected_users => [])
     end
 end

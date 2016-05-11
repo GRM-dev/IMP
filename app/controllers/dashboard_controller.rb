@@ -9,6 +9,9 @@ class DashboardController < ApplicationController
   def index
   end
   
+  def widgets_panel
+  end
+  
   private
    def dashboard_installed
     b = Building.where(user_id: current_user.id)

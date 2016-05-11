@@ -33,6 +33,8 @@ Rails.application.routes.draw do
       
       post '/faq'                        => 'static_pages#faq'
       post '/issues'                     => 'dashboard#issues'
+      
+      post '/widgets'                    => 'dashboard#widgets_panel'
     end
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end

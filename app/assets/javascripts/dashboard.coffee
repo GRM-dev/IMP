@@ -1,7 +1,94 @@
+menu_arr = 
+  home:
+    url: 'dashboard/widgets'
+    target: '#home'
+    elems: null
+    ajax_type: 'POST'
+  profile:
+    url: 'brak'
+    target: 'brak'
+    elems: null
+    ajax_type: 'POST'
+  labs:
+    url: '.submenu-rooms'
+    target: '#rooms_btn'
+    elems: 
+      l_add:
+        url: 'building/lab/new'
+        target: '#add_room_btn'
+        ajax_type: 'GET'
+      l_show:
+        url: ''
+        target: 'brak'
+        ajax_type: 'POST'
+      l_remove:
+        url: ''
+        target: 'brak'
+        ajax_type: 'POST'
+  users:
+    url: '.submenu-users'
+    target: '#users_btn'
+    elems: 
+      u_add:
+        url: 'dashboard/users/invite_user_form'
+        target: '#add_user_btn'
+        ajax_type: 'POST'
+      u_show:
+        url: 'dashboard/users'
+        target: '#show_users_btn'
+        ajax_type: 'POST'
+      u_perms:
+        url: 'dashboard/users/permissions'
+        target: '#users_permission'
+        ajax_type: 'POST'
+      u_remove:
+        url: ''
+        target: '#userremove'
+        ajax_type: 'POST'
+  logs:
+    url: 'dashboard/logs'
+    target: '#logs'
+    elems: null
+    ajax_type: 'POST'
+  settings:
+    url: 'dashboard/settings'
+    target: '#settings'
+    elems: null
+    ajax_type: 'POST'
+  reports:
+    url: 'dashboard/reports'
+    target: '#reports'
+    elems: null
+    ajax_type: 'POST'
+  faq:
+    url: 'dashboard/faq'
+    target: '#faq'
+    elems: null
+    ajax_type: 'POST'
+  logout:
+    url: null
+    target: null
+    elems: null
+    ajax_type: null
+    
+menu_ready = false
+
 locale = ->
+  update_locale()
   return $("html").attr("lang")
   
 dashboard_load = ->
+  page = sessionStorage.getItem('d_page')
+  if page?
+    elem = get_menu_elem(page)
+    if elem? 
+      if elem.parent?
+        $(elem.parent.target).click()
+      $(elem.target).click()
+    else
+      sessionStorage.setItem('d_page', 'home')
+  else
+    sessionStorage.setItem('d_page', 'home')
   $('#widgets').sortable connectWith: '.column'
   if !$('.portlet').hasClass('ui-widget-content')
     $('.portlet').addClass('ui-widget ui-widget-content ui-helper-clearfix').find('.portlet-header')
@@ -54,8 +141,16 @@ slide_menu_elem = (e) ->
     le.slideUp 'slow'
   else
     le.slideDown 'slow'
-  return
+  close_other_submenus(e.data.name)
     
+close_other_submenus = (except_name) ->
+  for k, menu_main_btn of menu_arr
+    if (k == except_name) || not menu_main_btn.elems?
+      continue
+    le = $(menu_main_btn.url)
+    if le.css('display') == 'block'
+      le.slideUp 'slow'
+
 hide_widgets = ->
   $('#widgets_section').hide()
   
@@ -77,6 +172,7 @@ menu_active_class = (menu) ->
 show_subpage = (e) ->
   dashboard_spin_show()
   menu_active_class(e.target)
+  sessionStorage.setItem('d_page', e.data.name)
   $.ajax(type: e.data.rest_type, url: "/"+locale()+"/"+e.data.page).done (html) ->
     $('#dashboard_body').empty()
     $('#dashboard_body').append html
@@ -87,85 +183,12 @@ show_subpage = (e) ->
       parent = parent.parent()
     pid = parent.attr('id')
     if pid == "add_user_btn"
-      get_mails()
+      db_get_mails()
     if pid == "show_users_btn"
       $('#table').DataTable()
+    if pid == "users_permission"
+     db_add_user_perms_change_btn()
     dashboard_spin_show(false)
-
-menu_arr = 
-  home:
-    url: null
-    target: null
-    elems: null
-    ajax_type: null
-  profile:
-    url: 'brak'
-    target: 'brak'
-    elems: null
-    ajax_type: 'POST'
-  labs:
-    url: '.submenu-rooms'
-    target: '#rooms_btn'
-    elems: 
-      add:
-        url: 'building/lab/new'
-        target: '#add_room_btn'
-        ajax_type: 'GET'
-      show:
-        url: ''
-        target: 'brak'
-        ajax_type: 'POST'
-      remove:
-        url: ''
-        target: 'brak'
-        ajax_type: 'POST'
-  users:
-    url: '.submenu-users'
-    target: '#users_btn'
-    elems: 
-      add:
-        url: 'dashboard/users/invite_user_form'
-        target: '#add_user_btn'
-        ajax_type: 'POST'
-      show:
-        url: 'dashboard/users'
-        target: '#show_users_btn'
-        ajax_type: 'POST'
-      perms:
-        url: 'dashboard/users/permissions'
-        target: '#users_permission'
-        ajax_type: 'POST'
-      remove:
-        url: ''
-        target: '#userremove'
-        ajax_type: 'POST'
-  logs:
-    url: 'dashboard/logs'
-    target: '#logs'
-    elems: null
-    ajax_type: 'POST'
-  settings:
-    url: 'dashboard/settings'
-    target: '#settings'
-    elems: null
-    ajax_type: 'POST'
-  reports:
-    url: 'dashboard/reports'
-    target: '#reports'
-    elems: null
-    ajax_type: 'POST'
-  faq:
-    url: 'dashboard/faq'
-    target: '#faq'
-    elems: null
-    ajax_type: 'POST'
-  logout:
-    url: null
-    target: null
-    elems: null
-    ajax_type: null
-    
-menu_ready = false
     
 load_menu = ->
   if menu_ready
@@ -178,15 +201,27 @@ load_menu = ->
     es = menu_main_btn.elems
     if not es?
       art = menu_main_btn.ajax_type
-      $(document).on 'click', t, {page: url, rest_type: art}, show_subpage
+      $(document).on 'click', t, {name: k, page: url, rest_type: art}, show_subpage
     else
-      $(document).on 'click', t, {list_elem: url}, slide_menu_elem
+      $(document).on 'click', t, {name: k, list_elem: url}, slide_menu_elem
       for ke, menu_sub_btn of es
+        menu_sub_btn['parent'] = menu_main_btn
         t = menu_sub_btn.target
         url = menu_sub_btn.url
         art = menu_sub_btn.ajax_type
-        $(document).on 'click', t, {page: url, rest_type: art}, show_subpage
+        $(document).on 'click', t, {name: ke, page: url, rest_type: art}, show_subpage
   menu_ready = true
+
+get_menu_elem = (name) ->
+  for k, mbtn of menu_arr
+    if k == name
+      return mbtn
+    es = mbtn.elems
+    if es?
+      for ke, sbtn of es
+        if ke == name
+          return sbtn
+  return null
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize

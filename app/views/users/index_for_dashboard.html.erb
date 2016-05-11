@@ -23,10 +23,11 @@
              <td data-title="Name"><%= user.visible_name %></td>
              <td data-title="E-Mail"><%= user.email %></td>
              <td data-title="Age"><%= distance_of_time_in_words_to_now(user.age) %></td>
-             <td data-title="Role"><%= t "site_roles." + user.dashboard_assignments.where(user: user).take.dashboard_role.name %></td>
+             <td data-title="Role"><%= t "site_roles." + user.dashboard_assignments.where(dashboard: current_dashboard).take.dashboard_role.name %></td>
              <td data-title="Last logged"><%= user.last_login %></td>
              <td data-title="Active">
-               <div class=<%= "user-online" if ucs == 1 %>
+               <div class=
+                  <%= "user-online" if ucs == 1 %>
                   <%= "user-offline" if ucs == 0 %>
                   <%= "user-afk" if ucs == 2 %>>
                </div>

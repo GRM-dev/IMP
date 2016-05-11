@@ -109,8 +109,8 @@ $color_header_person_info: rgba(249,249,249,1);
         &:after {display:none;}
       }
       
-      #en {background-image:asset-url('flags/en_flag.png');}
-      #pl {background-image:asset-url('flags/pl_flag.png');}
+      #lang_en {background-image:asset-url('flags/en_flag.png');}
+      #lang_pl {background-image:asset-url('flags/pl_flag.png');}
     }
   }
   

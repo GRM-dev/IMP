@@ -2,9 +2,9 @@
   <div class="collapse navbar-collapse" id="dashboard_menu_list">
     <ul class="nav">
       <li class="<% if current_page?(controller: 'dashboard') %>active<% end %> home">
-        <%= link_to dashboard_path do %>
+        <button id="home" class="menu_button">
           <i class="fa fa-home" aria-hidden="true"><span class="left-menu-item-font"><%= t('.home') %></span></i>
-        <% end %>  
+        </button>
       </li>
       <li class="profile">
          <button id="profile" class="menu_button">

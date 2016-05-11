@@ -25,7 +25,7 @@ get_mails = ->
   $("#invitation-email").easyAutocomplete(options)
   $("#invitation-email").keyup ->
     change_data()
-    $("#invite_user_btn").prop('disabled', false);
+    $("#invite_user_btn").prop('disabled', false)
   
 set_data = (id, mail) ->
   $('#selected_mail_id').val(id)
@@ -34,4 +34,12 @@ set_data = (id, mail) ->
 change_data = ->
   set_data(0, $("#invitation-email").val())
   
-window.get_mails = get_mails
+add_user_perms_change_btn = ->
+  console.log 'lel'
+  $('#selected_users').on 'change', user_perms_change_opt
+  
+user_perms_change_opt = ->
+  $('#save_pers_btn').prop('disabled', false);
+  
+window.db_get_mails = get_mails
+window.db_add_user_perms_change_btn = add_user_perms_change_btn
