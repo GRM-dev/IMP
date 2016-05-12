@@ -52,6 +52,7 @@ gem 'spinjs-rails'
 
 gem 'rails-i18n'
 gem "figaro"
+gem 'select-multiple-rails'
 #gem 'gibbon'
 
 # Use Unicorn as the app server

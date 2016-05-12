@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'nice-select';
+
+$green: #28abe3;
+$gray: #bbbbbb;
+
 body {
   .dashboard-users {
     .main-header {
@@ -75,6 +80,87 @@ body {
   #invite-user {
     .invite_user_btn {
       margin-top:15px;
+    }
+  }
+  
+  #user-permission-dashboard {
+    * {font-family: 'Roboto', sans-serif;}
+    button {
+      outline:none;
+      height: 40px;
+      text-align: center;
+      width: 130px;
+      border-radius:40px;
+      background: #fff;
+      border: 2px solid $green;
+      color:$green;
+      letter-spacing:1px;
+      text-shadow:0;
+      font:{
+        size:12px;
+        weight:bold;
+      }
+      cursor: pointer;
+      transition: all 0.25s ease;
+      margin-top:15px;
+      
+      &:hover {
+        color:white;
+        background: $green;
+      }
+      
+      &:active {
+        letter-spacing: 2px ;
+      }
+      
+      &:after {
+        content:"SAVE";
+      }
+    }
+    
+    .onclic {
+      width: 40px;
+      border-color:$gray;
+      border-width:3px;
+      font-size:0;
+      border-left-color:$green;
+      animation: rotating 2s 0.25s linear infinite;
+    
+      &:after {
+        content:"";
+      }
+      &:hover {
+        color:$green;
+        background: white;
+      }
+    }
+    
+    .validate {
+      font-size:13px;
+      color: white;
+      background: $green;
+      &:after {
+        font-family:'FontAwesome';
+        content:"\f00c";
+      }
+    }
+
+    @keyframes rotating {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .ms-container {
+      width: auto !important;
+      .ms-selectable {
+        li.ms-elem-selectable {
+          padding:5px 10px !important;
+        }
+      }
     }
   }
 }

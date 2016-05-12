@@ -188,6 +188,8 @@ show_subpage = (e) ->
       $('#table').DataTable()
     if pid == "users_permission"
      db_add_user_perms_change_btn()
+     $('.select_users_for_role').selectMultiple()
+     $('select.select_role_dashboard').niceSelect()
     dashboard_spin_show(false)
     
 load_menu = ->

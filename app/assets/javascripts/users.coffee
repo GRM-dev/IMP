@@ -35,11 +35,33 @@ change_data = ->
   set_data(0, $("#invitation-email").val())
   
 add_user_perms_change_btn = ->
-  console.log 'lel'
   $('#selected_users').on 'change', user_perms_change_opt
+  effect_click_btn()
   
 user_perms_change_opt = ->
   $('#save_pers_btn').prop('disabled', false);
+  
+effect_click_btn = ->
+  validate = ->
+    setTimeout (->
+      $('#save_pers_btn').removeClass 'onclic'
+      $('#save_pers_btn').addClass 'validate', 450, callback
+      return
+    ), 2250
+    return
+
+  callback = ->
+    setTimeout (->
+      $('#save_pers_btn').removeClass 'validate'
+      return
+    ), 1250
+    return
+
+  $('#save_pers_btn').click ->
+    console.log "Test click button perms"
+    $('#save_pers_btn').addClass 'onclic', 250, validate
+    return
+  return
   
 window.db_get_mails = get_mails
 window.db_add_user_perms_change_btn = add_user_perms_change_btn

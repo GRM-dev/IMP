@@ -84,7 +84,7 @@ class UsersController < ApplicationController
       dr = DashboardRole.where(id: p[:dashboard_role_id]).take
       #byebug
       if ua != nil && dr != nil
-        ua.update_attribute(:dashboard_role, dr)
+        ua.update_attributes(dashboard_role: dr)
       else
         
       end

@@ -17,6 +17,7 @@
  *= require jquery.modal
  *= require easy-autocomplete.min
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require select-multiple
  */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
@@ -33,3 +34,41 @@
   width: auto !important;
   background: transparent !important;
 }
+
+#activity-popup-dialog-body::-webkit-scrollbar-track,
+.DMActivity::-webkit-scrollbar-track,
+.ThreadedPermalinkOverlay-replies::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.26)!important;
+}
+#activity-popup-dialog-body::-webkit-scrollbar-thumb,
+.DMActivity::-webkit-scrollbar-thumb,
+.ThreadedPermalinkOverlay-replies::-webkit-scrollbar-thumb {
+    background-color: #B6B4B7!important;
+    min-height: 50px;
+    border-radius: 2px;
+}
+#activity-popup-dialog-body::-webkit-scrollbar,
+.DMActivity::-webkit-scrollbar,
+.ThreadedPermalinkOverlay-replies::-webkit-scrollbar {
+    width: 8px!important;
+}
+body::-webkit-scrollbar {
+    width: 12.5px!important;
+}
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.22) url(https://pbs.twimg.com/media/CKecQtCWoAA8keI.png)!important;
+    border-radius: 8px!important;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #495E8F!important;
+    background-image: -webkit-linear-gradient(294deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    min-height: 50px;
+    border-radius: 5px!important;
+    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5)!important;
+}
+*::-moz-selection {
+    background: #939393;
+    color: #111;
+}
+
+label {margin-bottom:0px !important;}

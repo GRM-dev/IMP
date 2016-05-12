@@ -21,6 +21,7 @@
 //= require jquery.spin
 //= require jquery.easy-autocomplete.min
 //= require jquery.modal
+//= require select-multiple
 
 //= require tether
 
