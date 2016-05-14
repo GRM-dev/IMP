@@ -1,0 +1,36 @@
+<div id="remove-dashboard-users" class="dashboard-users">
+  <h1 class="main-header"><%= t('.main_header') %></h1>
+  <h2 class="second-header"><%= t('.second_header')%></h2>
+  
+  <section id="list-users">
+    <div class="container-fluid">
+      <div class="row">
+        <% count = 0 %> 
+        <% for user in @users %>
+          <div class="col-md-3">
+            <div class="background-user user-<%= user.id %> user-group-<%= user.dashboard_assignments.where(dashboard: current_dashboard).take.dashboard_role.name %>">
+              <div class="avatar">
+                <%= image_tag('avatars/default.png', class:'avatar-img') %>
+              </div>
+              <div class="info-about-user">
+                <%= user.visible_name%>
+              </div>
+            </div>
+            <button class="button" href="#" role="button">
+            	<span>remove</span>
+            	<div class="icon">
+            		<i class="fa fa-remove"></i>
+            		<i class="fa fa-check"></i>
+            	</div>
+            </button>
+          </div>
+          <% count = count + 1 %>
+          <% if(count % 4 == 0) %>
+            <% count = 0 %>
+            </div><div class="row top-space">
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

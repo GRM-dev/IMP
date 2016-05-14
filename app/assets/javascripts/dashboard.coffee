@@ -42,8 +42,8 @@ menu_arr =
         target: '#users_permission'
         ajax_type: 'POST'
       u_remove:
-        url: ''
-        target: '#userremove'
+        url: 'dashboard/users/remove_user'
+        target: '#remove_user_btn'
         ajax_type: 'POST'
   logs:
     url: 'dashboard/logs'

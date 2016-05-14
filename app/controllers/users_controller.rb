@@ -85,12 +85,21 @@ class UsersController < ApplicationController
       #byebug
       if ua != nil && dr != nil
         ua.update_attributes(dashboard_role: dr)
+        #respond_to do |format|
+        #  format.js
+        #end
       else
         
       end
     end
     #byebug
   end
+  
+  # POST dashboard/users/remove_user
+  def remove_for_dashboard
+    @users = current_dashboard.users.order(:visible_name)
+  end
+  
 
   # GET /users/1
   # GET /users/1.json

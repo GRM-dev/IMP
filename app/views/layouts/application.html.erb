@@ -16,9 +16,9 @@
    <%= yield :header %>
   </header>
   <% if params[:controller] != 'dashboard' %>
-      <section id="log_in">
+      <div id="log_in">
         <%= render partial: "sessions/new" %>
-      </section>
+      </div>
   <% end %>
   <section id="content">
     <%=content_for?(:content) ? yield(:content) : yield %>

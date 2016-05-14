@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'dashboard'                             => 'dashboard#index', as: :dashboard
     get 'dashboard/install'                     => 'building#new', as: :building_install
   
-   
+   # TO DO: Change GET to POST
     get '/users/user_mails.json'                => 'users#user_mails'
     
     scope :dashboard do
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       post '/users/invite_user'          => 'users#invite_create'
       post '/users/permissions'          => 'users#edit_for_dashboard'
       post '/users/update_for_dashboard' => 'users#update_for_dashboard'
+      post '/users/remove_user'          => 'users#remove_for_dashboard'
       
       post '/faq'                        => 'static_pages#faq'
       post '/issues'                     => 'dashboard#issues'

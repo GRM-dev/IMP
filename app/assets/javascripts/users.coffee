@@ -39,27 +39,27 @@ add_user_perms_change_btn = ->
   effect_click_btn()
   
 user_perms_change_opt = ->
-  $('#save_pers_btn').prop('disabled', false);
+  $('#save_perms_btn').prop('disabled', false);
   
 effect_click_btn = ->
   validate = ->
     setTimeout (->
-      $('#save_pers_btn').removeClass 'onclic'
-      $('#save_pers_btn').addClass 'validate', 450, callback
+      $('#save_perms_btn').removeClass 'onclick'
+      $('#save_perms_btn').addClass 'validate', 450, callback
       return
     ), 2250
     return
 
   callback = ->
     setTimeout (->
-      $('#save_pers_btn').removeClass 'validate'
+      $('#save_perms_btn').removeClass 'validate'
       return
     ), 1250
     return
 
-  $('#save_pers_btn').click ->
+  $('#save_perms_btn').click ->
     console.log "Test click button perms"
-    $('#save_pers_btn').addClass 'onclic', 250, validate
+    $('#save_perms_btn').addClass 'onclick', 250, validate
     return
   return
   
