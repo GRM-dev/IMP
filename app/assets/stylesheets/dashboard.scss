@@ -254,3 +254,13 @@ $color_header_person_info: rgba(249,249,249,1);
     }
   }
 }
+
+@media (max-width:350px) {
+  .language {float:left !important;}
+  p.user-show-last-login {
+    margin-top:-10px !important;
+    span.date {
+      margin-right:30% !important;
+    }
+  }
+}
