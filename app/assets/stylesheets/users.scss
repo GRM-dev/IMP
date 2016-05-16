@@ -173,6 +173,19 @@ body {
       .background-user {
         padding:15px;
         margin-bottom: 5px;
+        
+        .info-about-user {
+          p {
+            color:white;
+            font: {
+              size: 13px;
+            }
+            
+            &.role {
+              text-transform:capitalize;
+            }
+          }
+        }
       }
       
       .user-group-worker {background-color:$green;}

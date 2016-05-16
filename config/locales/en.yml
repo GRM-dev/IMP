@@ -113,6 +113,7 @@ en:
       main_header: "Step one: enter a e-mail"
       second_header: Write a e-mail of user to add to dashboard
     edit_for_dashboard:
+      main_header: Manage users permission for dashboard
       save: Save
     remove_for_dashboard:
       main_header: Remove users from your dashboard

@@ -9,14 +9,21 @@
         <% for user in @users %>
           <div class="col-md-3">
             <div class="background-user user-<%= user.id %> user-group-<%= user.dashboard_assignments.where(dashboard: current_dashboard).take.dashboard_role.name %>">
-              <div class="avatar">
-                <%= image_tag('avatars/default.png', class:'avatar-img') %>
-              </div>
-              <div class="info-about-user">
-                <%= user.visible_name%>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="avatar">
+                    <%= image_tag('avatars/default.png', class:'avatar-img') %>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="info-about-user">
+                    <p><%= user.visible_name %></p>
+                    <p class="role"><%= user.dashboard_assignments.where(dashboard: current_dashboard).take.dashboard_role.name %></p>
+                  </div>
+                </div>
               </div>
             </div>
-            <button class="button" href="#" role="button">
+            <button class="remove-user-approve-btn button" href="#" role="button">
             	<span>remove</span>
             	<div class="icon">
             		<i class="fa fa-remove"></i>

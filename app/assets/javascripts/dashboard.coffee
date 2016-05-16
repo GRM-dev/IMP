@@ -190,6 +190,11 @@ show_subpage = (e) ->
      db_add_user_perms_change_btn()
      $('.select_users_for_role').selectMultiple()
      $('select.select_role_dashboard').niceSelect()
+    if pid == "remove_user_btn"
+      console.log "Entered to remove submenu"
+      $(".remove-user-approve-btn").click ->
+    		$(@).addClass 'success'
+    		setTimeout removeSuccess, 5000
     dashboard_spin_show(false)
     
 load_menu = ->
@@ -224,6 +229,9 @@ get_menu_elem = (name) ->
         if ke == name
           return sbtn
   return null
+  
+removeSuccess = ->
+	$('.remove-user-approve-btn').removeClass 'success'
 
 $(document).ready dashboard_resize
 $(window).resize dashboard_resize

@@ -130,6 +130,9 @@ pl:
     edit_for_dashboard:
       main_header: Zarządzanie uprawnieniami użytkowników panelu
       save: Zapisz
+    remove_for_dashboard:
+      main_header: Usuń użytkowników z twojego panelu
+      second_header: "Lista użytkowników poniżej: "
   site_roles:
     administrator: Admin
     head_administrator: Główny Admin
