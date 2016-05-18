@@ -5,21 +5,28 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
+  username: <%= ENV['db_user'] %>
   pool: 5
   timeout: 5000
+  socket: /var/run/mysqld/mysqld.sock
+  host: localhost
+  encoding: utf8  
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: imp_dev
+  password: <%= ENV['db_pswd'] %> 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: imp_test
+  password: <%= ENV['db_pswd'] %> 
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: <%= ENV['db_name'] %>
+  password: <%= ENV['db_pswd'] %>
