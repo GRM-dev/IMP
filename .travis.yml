@@ -13,3 +13,12 @@ branches:
 
 env:
   - RAILS_ENV=test DB=sqlite
+  
+addons:
+  mariadb: '10.0'
+  
+services:
+  - mysql
+  
+before_install:
+  - mysql -e 'create database imp_test;'
