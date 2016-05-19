@@ -59,6 +59,8 @@ build/
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 
+.idea/
+
 # Gradle:
 .idea/gradle.xml
 .idea/libraries
@@ -130,3 +132,4 @@ bower.json
 /spring-1000
 # Ignore application configuration
 /config/application.yml
+/config/application.yml~
