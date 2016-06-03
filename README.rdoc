@@ -42,14 +42,14 @@ Design ::  Tomasz Bryliński (mailto:tomekbrylinski.39@gmail.com)
 == Badges
 
 ==== Project Build 
-* {<img src="https://travis-ci.org/RodzynBWA/IMP.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/RodzynBWA/IMP]
-* {<img src="https://codeclimate.com/github/RodzynBWA/IMP.png" alt="Code Climate" />}[https://codeclimate.com/github/RodzynBWA/IMP]
-* {<img src="https://coveralls.io/repos/github/RodzynBWA/IMP/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/RodzynBWA/IMP?branch=master]
+* {<img src="https://travis-ci.org/GRM-dev/IMP.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/GRM-dev/IMP]
+* {<img src="https://codeclimate.com/github/GRM-dev/IMP.png" alt="Code Climate" />}[https://codeclimate.com/github/GRM-dev/IMP]
+* {<img src="https://coveralls.io/repos/github/GRM-dev/IMP/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/GRM-dev/IMP?branch=master]
 ==== Documentation
-* {<img src="http://inch-ci.org/github/RodzynBWA/IMP.svg?branch=master" alt="Inline docs" />}[http://inch-ci.org/github/RodzynBWA/IMP]
+* {<img src="http://inch-ci.org/github/GRM-dev/IMP.svg?branch=master" alt="Inline docs" />}[http://inch-ci.org/github/GRM-dev/IMP]
 ==== Deps/Security
-* {<img src="https://gemnasium.com/RodzynBWA/IMP.svg" alt="Dependency Status" />}[https://gemnasium.com/RodzynBWA/IMP]
-* {<img src="https://hakiri.io/github/RodzynBWA/IMP/master.svg" alt="Security" />}[https://hakiri.io/github/RodzynBWA/IMP/master]
+* {<img src="https://gemnasium.com/GRM-dev/IMP.svg" alt="Dependency Status" />}[https://gemnasium.com/GRM-dev/IMP]
+* {<img src="https://hakiri.io/github/GRM-dev/IMP/master.svg" alt="Security" />}[https://hakiri.io/github/GRM-dev/IMP/master]
 ==== Design/Progress
-* {<img src="https://badge.waffle.io/RodzynBWA/IMP.png?label=ready" alt="Stories in Ready" />}[https://waffle.io/RodzynBWA/IMP]
-* {<img src="https://badges.gitter.im/JoinChat.svg" alt="Gitter" />}[https://gitter.im/RodzynBWA/IMP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge]
+* {<img src="https://badge.waffle.io/GRM-dev/IMP.png?label=ready" alt="Stories in Ready" />}[https://waffle.io/GRM-dev/IMP]
+* {<img src="https://badges.gitter.im/JoinChat.svg" alt="Gitter" />}[https://gitter.im/GRM-dev/IMP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge]
