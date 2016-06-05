@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
@@ -35,7 +34,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
 gem 'bootstrap-modal-rails'
-gem "nested_form"
+gem 'nested_form'
 gem 'compass-rails'
 
 gem 'mail'
@@ -52,7 +51,7 @@ gem 'haml'
 gem 'spinjs-rails'
 
 gem 'rails-i18n'
-gem "figaro"
+gem 'figaro'
 gem 'select-multiple-rails'
 #gem 'gibbon'
 

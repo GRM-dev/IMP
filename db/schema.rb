@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425203550) do
+ActiveRecord::Schema.define(version: 20160605195516) do
 
   create_table "active_widgets", force: :cascade do |t|
     t.integer  "dashboard_user_setting_id", limit: 4, null: false
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   add_index "dashboard_assignments", ["dashboard_user_setting_id"], name: "index_dashboard_assignments_on_dashboard_user_setting_id", using: :btree
   add_index "dashboard_assignments", ["user_id"], name: "index_dashboard_assignments_on_user_id", using: :btree
 
+  create_table "dashboard_group_assignments", force: :cascade do |t|
+    t.integer  "group_id",          limit: 4, null: false
+    t.integer  "dashboard_role_id", limit: 4, null: false
+    t.integer  "dashboard_id",      limit: 4, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "dashboard_group_assignments", ["dashboard_id"], name: "index_dashboard_group_assignments_on_dashboard_id", using: :btree
+  add_index "dashboard_group_assignments", ["dashboard_role_id"], name: "index_dashboard_group_assignments_on_dashboard_role_id", using: :btree
+  add_index "dashboard_group_assignments", ["group_id"], name: "index_dashboard_group_assignments_on_group_id", using: :btree
+
   create_table "dashboard_roles", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
     t.integer  "rank",       limit: 4,   null: false
@@ -87,6 +99,12 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "lab_roles", force: :cascade do |t|
@@ -171,6 +189,16 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   add_index "users_avatars", ["avatar_id"], name: "index_users_avatars_on_avatar_id", using: :btree
   add_index "users_avatars", ["user_id"], name: "index_users_avatars_on_user_id", using: :btree
 
+  create_table "users_groups", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4, null: false
+    t.integer  "group_id",   limit: 4, null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "users_groups", ["group_id"], name: "index_users_groups_on_group_id", using: :btree
+  add_index "users_groups", ["user_id"], name: "index_users_groups_on_user_id", using: :btree
+
   create_table "widgets", force: :cascade do |t|
     t.string   "name",       limit: 255,             null: false
     t.integer  "widgetscol", limit: 4,   default: 0, null: false
@@ -198,6 +226,9 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   add_foreign_key "dashboard_assignments", "dashboard_user_settings"
   add_foreign_key "dashboard_assignments", "dashboards"
   add_foreign_key "dashboard_assignments", "users"
+  add_foreign_key "dashboard_group_assignments", "dashboard_roles"
+  add_foreign_key "dashboard_group_assignments", "dashboards"
+  add_foreign_key "dashboard_group_assignments", "groups"
   add_foreign_key "laboratories", "buildings"
   add_foreign_key "laboratories_assignments", "lab_roles"
   add_foreign_key "laboratories_assignments", "laboratories"
@@ -207,5 +238,7 @@ ActiveRecord::Schema.define(version: 20160425203550) do
   add_foreign_key "users", "site_roles"
   add_foreign_key "users_avatars", "avatars"
   add_foreign_key "users_avatars", "users"
+  add_foreign_key "users_groups", "groups"
+  add_foreign_key "users_groups", "users"
   add_foreign_key "workstations", "laboratories"
 end
