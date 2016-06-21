@@ -1,5 +1,13 @@
+#log_in {
+  position:absolute;
+
+  #login_modal {
+    box-shadow: none !important;
+  }
+}
+
 @media (max-width:768px) {
   #log_in {
-    margin-left: 7% !important;
+    margin-left: -4% !important;
   }
 }
