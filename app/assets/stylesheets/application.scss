@@ -24,9 +24,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
 @import "bootstrap";
 
-.turbolinks-progress-bar {
-  visibility:hidden;
-}
+ul {list-style:none;}
+
+.turbolinks-progress-bar {visibility:hidden;}
 
 .modal {
   position:relative !important;

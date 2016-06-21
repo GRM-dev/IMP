@@ -11,3 +11,5 @@ fix_login = ->
   return
 
 $(document).ready fix_login
+$(document).on 'page:load', fix_login
+$(document).on 'turbolinks:load', fix_login

@@ -7,7 +7,7 @@
       <div class="row">
         <% count = 0 %> 
         <% for user in @users %>
-          <div class="col-md-3">
+          <div class="col-md-3 button">
             <div class="background-user user-<%= user.id %> user-group-<%= user.dashboard_assignments.where(dashboard: current_dashboard).take.dashboard_role.name %>">
               <div class="row">
                 <div class="col-md-4">
@@ -23,7 +23,7 @@
                 </div>
               </div>
             </div>
-            <button class="remove-user-approve-btn button" href="#" role="button">
+            <button class="remove-user-approve-btn bottom-button" href="#" role="button">
             	<span>remove</span>
             	<div class="icon">
             		<i class="fa fa-remove"></i>
