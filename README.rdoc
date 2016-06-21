@@ -32,7 +32,7 @@ You can check a parameters such as :
 * Bootstrap
 	
 == Application under construction!
-
+{<img alt='Throughput Graph' src='https://graphs.waffle.io/GRM-dev/IMP/throughput.svg' />}[https://waffle.io/GRM-dev/IMP/metrics/throughput]
 Version :: 0.0.6:60
 Website :: https://inwentarz-rodzynbwa1.c9users.io
 Supported Languages :: EN, PL
