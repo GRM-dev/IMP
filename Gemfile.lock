@@ -157,6 +157,8 @@ GEM
     pkg-config (1.1.7)
     puma (3.4.0)
     rack (1.6.4)
+    rack-attack (4.4.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.6)
@@ -271,6 +273,7 @@ DEPENDENCIES
   mysql2
   nested_form
   puma
+  rack-attack
   rails
   rails-assets-tether (>= 1.1.0)!
   rails-i18n
