@@ -79,4 +79,6 @@ Rails.application.configure do
     
   # localization
   # config.i18n.available_locales = ['pl', :pl]
+
+  GA.tracker = "UA-79943389-1"
 end

@@ -12,6 +12,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= analytics_init if GoogleAnalytics.valid_tracker? %>
 </head>
 <body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= is_dashboard ? ' body-dashboard' : ''  %>">
   <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">

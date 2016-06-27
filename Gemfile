@@ -33,7 +33,9 @@ gem 'angularjs-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-modal-rails'
 
-gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'jquery-datatables-rails', '~> 3.4.0'
+
+gem 'google-analytics-rails', '1.1.0'
 
 gem 'rack-attack'
 
