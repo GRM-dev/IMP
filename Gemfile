@@ -6,13 +6,15 @@ gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 
+gem 'tzinfo-data'
 
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.0.0.beta'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bcrypt'
+gem 'bcrypt', '3.1.11'
+gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 
 gem 'faker'
 
