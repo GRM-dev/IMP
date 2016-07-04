@@ -26,7 +26,10 @@
 
 ul {list-style:none;}
 
-.turbolinks-progress-bar {visibility:hidden;}
+.turbolinks-progress-bar {
+  visibility:hidden;
+  color:rgba(200,200,1,1);
+}
 
 .modal {
   position:relative !important;

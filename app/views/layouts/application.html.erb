@@ -14,61 +14,62 @@
   <%= csrf_meta_tags %>
   <%= analytics_init if GoogleAnalytics.valid_tracker? %>
 </head>
-<body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= is_dashboard ? ' body-dashboard' : ''  %>">
-  <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
-   <%= yield :header %>
-  </header>
-  <% if params[:controller] != 'dashboard' %>
-      <div id="log_in">
-        <%= render partial: "sessions/new" %>
-      </div>
-  <% end %>
-  <section id="content">
-    <%=content_for?(:content) ? yield(:content) : yield %>
-  </section>
-  <footer id="footer">
-    <%= yield :footer %>
-  </footer>
-  <div id="modals">
-    <% if flash[:alert] || content_for?(:alertbody) %>
-      <div class="modal fade" id="modalinfo" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg">
-           <div class="modal-content">
-             <div class="modal-header">
-              <h4 class="modal-title">
-              <%= if content_for?(:alerttitle)
-                    yield :alerttitle
-                  else
-                    t 'errors.no_access_title'
-                  end %></h4>
-             </div>
-             <div class="modal-body">
-               <p><%= yield :alertbody %></p>
-               <p><%= flash[:alert] %></p>
-             </div>
-             
-           </div>
-        </div>
-      </div>
-      <% end %>
-      <% if content_for?(:noticebody) %>
+<% if is_login_panel %>
+  <body class="login_page">
+    <%= render :template => 'sessions/new' %>
+  </body>
+<% else %>
+  <body class=  "<%= current_user ? 'body_signed' : 'body_unsigned' %><%= is_dashboard ? ' body-dashboard' : ''  %>">
+    <header id="header" class="<%= params[:controller] == 'dashboard' ? 'header-dashboard' : 'navbar-fixed-top'  %>">
+     <%= yield :header %>
+    </header>
+    <section id="content">
+      <%=content_for?(:content) ? yield(:content) : yield %>
+    </section>
+    <footer id="footer">
+      <%= yield :footer %>
+    </footer>
+    <div id="modals">
+      <% if flash[:alert] || content_for?(:alertbody) %>
         <div class="modal fade" id="modalinfo" tabindex="-1" role="dialog">
           <div class="modal-dialog modal-lg">
-           <div class="modal-content">
-             <div class="modal-header">
-              <h4 class="modal-title"><%= yield :noticetitle %></h4>
+             <div class="modal-content">
+               <div class="modal-header">
+                <h4 class="modal-title">
+                <%= if content_for?(:alerttitle)
+                      yield :alerttitle
+                    else
+                      t 'errors.no_access_title'
+                    end %></h4>
+               </div>
+               <div class="modal-body">
+                 <p><%= yield :alertbody %></p>
+                 <p><%= flash[:alert] %></p>
+               </div>
+
              </div>
-             <div class="modal-body">
-               <p><%= yield :noticebody %></p>
-             </div>
-             <div class="modal-footer">
-               <button type="button" class="btn btn-white" ng-click="cancel()"><%= t '.close' %></button>
-               <button type="button" class="btn btn-primary" ng-click="ok()"><%= t '.ok' %></button>
-             </div>
-           </div>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-</body>
+        <% end %>
+        <% if content_for?(:noticebody) %>
+          <div class="modal fade" id="modalinfo" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+             <div class="modal-content">
+               <div class="modal-header">
+                <h4 class="modal-title"><%= yield :noticetitle %></h4>
+               </div>
+               <div class="modal-body">
+                 <p><%= yield :noticebody %></p>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-white" ng-click="cancel()"><%= t '.close' %></button>
+                 <button type="button" class="btn btn-primary" ng-click="ok()"><%= t '.ok' %></button>
+               </div>
+             </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </body>
+<% end %>
 </html>
