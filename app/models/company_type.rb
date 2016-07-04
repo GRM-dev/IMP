@@ -1,5 +1,5 @@
 class CompanyType < ActiveRecord::Base
-  belongs_to :building
+  has_many :building
   
   validates :name, presence: true, uniqueness: true
 end
