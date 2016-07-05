@@ -45,6 +45,26 @@ menu_arr =
         url: 'dashboard/users/remove_user'
         target: '#remove_user_btn'
         ajax_type: 'POST'
+  groups:
+    url: '.submenu-groups'
+    target: '#grous_btn'
+    elems:
+      g_manage:
+        url: 'dashboard/groups/manage'
+        target: '#manage_group_btn'
+        ajax_type: 'POST'
+      g_add:
+        url: 'dashboard/groups/add_group'
+        target: '#add_group_btn'
+        ajax_type: 'POST'
+      g_show:
+        url: 'dashboard/groups'
+        target: '#show_groups_btn'
+        ajax_type: 'POST'
+      g_remove:
+        url: 'dashboard/groups/remove_group'
+        target: '#remove_group_btn'
+        ajax_type: 'POST'
   logs:
     url: 'dashboard/logs'
     target: '#logs'
