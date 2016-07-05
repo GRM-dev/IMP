@@ -1,0 +1,26 @@
+<div class="labs_list">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="table-responsive-vertical shadow-z-1 table-striped">
+          <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for lab in @labs %>
+                <tr>
+                  <td data-title="ID"><%= lab.id %></td>
+                  <td data-title="Name"><%= lab.name %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

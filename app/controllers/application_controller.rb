@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :setup_locales
   before_action :set_locale
   before_action :update_user
-  helper_method :current_locale, :current_user, :is_dashboard, :current_building, :current_dashboard
+  helper_method :current_locale, :current_user, :is_dashboard, :is_login_panel, :current_building, :current_dashboard
   
   def set_locale(locale = nil)
     I18n.locale = (locale == nil ? extract_locale_from_tld : extract_locale_from_tld(locale))
@@ -43,6 +43,10 @@ class ApplicationController < ActionController::Base
   
   def is_dashboard
     ["dashboard", "building"].include?(params[:controller])
+  end
+
+  def is_login_panel
+    ["sessions"].include?(params[:controller])
   end
   
   def update_user

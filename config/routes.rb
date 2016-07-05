@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     get '/user/:id' => 'users#show', as: :account
     
     namespace :building do
-      get '/lab/new' => 'laboratories#new', as: :new_lab
+      post '/lab/new' => 'laboratories#new', as: :new_lab
       post 'lab/new' => 'laboratories#create'
-      get '/labs' => 'laboratories#index'
+      post '/labs' => 'laboratories#index'
       resources :workstation
     end
     resources :building, only: [:create, :new], as: :buildings

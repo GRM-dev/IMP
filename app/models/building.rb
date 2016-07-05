@@ -3,7 +3,7 @@ class Building < ActiveRecord::Base
   belongs_to :dashboard
   belongs_to :company_type
   belongs_to :country
-  has_many :laboratory
+  has_many :laboratories
   
   accepts_nested_attributes_for :country
   

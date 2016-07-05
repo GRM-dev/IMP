@@ -1,7 +1,7 @@
 class Building::LaboratoriesController < ApplicationController
   
   def index
-    @laboratories = Laboratory.where(building_id: current_building).take
+    @labs = current_building.laboratories
     respond_to do |format|
       format.html {render layout: false}
       format.json

@@ -52,5 +52,11 @@ grafik = User.create(email: 'tomekbrylinski.39@gmail.com', visible_name: 'Tomek 
 hammerek = User.create(email: 'anakin165@wp.pl', visible_name: 'Hammerek', password: '1234', site_role: r_hmod, age: DateTime.new(1998,06,22))
 hirashi = User.create(email: 'tmilosel@gmail.com', visible_name: 'Hirashi', password: '1234', site_role: r_hmod, age: DateTime.new(1988,10,11))
 
-Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl, dashboard: Dashboard.create)
-Building.create(name: 'Zespół Szkół i Placówek Kształcenia Zawodowego w Bielawie', street: 'ul. Żeromskiego 41', city: 'Bielawa', shortname: 'ZSiPKZ w Bielawie', company_type: cp_s, user: rodzyn, country: c_pl, dashboard: Dashboard.create)
+b1 = Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl, dashboard: Dashboard.create)
+b2 = Building.create(name: 'Zespół Szkół i Placówek Kształcenia Zawodowego w Bielawie', street: 'ul. Żeromskiego 41', city: 'Bielawa', shortname: 'ZSiPKZ w Bielawie', company_type: cp_s, user: rodzyn, country: c_pl, dashboard: Dashboard.create)
+
+Laboratory.create(name: 'Lab1', building: b1)
+Laboratory.create(name: 'Lab2a', building: b1)
+Laboratory.create(name: 'Lab2b', building: b1)
+Laboratory.create(name: 'Lab1', building: b2)
+Laboratory.create(name: 'Lab3', building: b2)

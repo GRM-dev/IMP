@@ -16,10 +16,10 @@ menu_arr =
       l_add:
         url: 'building/lab/new'
         target: '#add_room_btn'
-        ajax_type: 'GET'
+        ajax_type: 'POST'
       l_show:
-        url: ''
-        target: 'brak'
+        url: 'building/labs'
+        target: '#show_rooms_btn'
         ajax_type: 'POST'
       l_remove:
         url: ''
