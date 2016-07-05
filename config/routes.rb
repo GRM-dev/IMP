@@ -1,42 +1,50 @@
 Rails.application.routes.draw do
   
   scope '/:locale', :locale => /#{I18n.available_locales.join("|")}/ do
-    get '/login'  => 'sessions#new'
-    post '/login' => 'sessions#create'
-    delete '/logout' => 'sessions#destroy'
-    get '/home' => 'home_pages#index', as: :home
-    get '/about' => 'static_pages#about', as: :about
-    get '/galery' => 'static_pages#galery', as: :galery
-    get '/contact' => 'static_pages#contact', as: :contact
-    get '/user/:id' => 'users#show', as: :account
+    get '/login'                          => 'sessions#new'
+    post '/login'                         => 'sessions#create'
+    delete '/logout'                      => 'sessions#destroy'
+    get '/home'                           => 'home_pages#index', as: :home
+    get '/about'                          => 'static_pages#about', as: :about
+    get '/galery'                         => 'static_pages#galery', as: :galery
+    get '/contact'                        => 'static_pages#contact', as: :contact
+    get '/user/:id'                       => 'users#show', as: :account
     
     namespace :building do
-      post '/lab/new' => 'laboratories#new', as: :new_lab
-      post 'lab/create' => 'laboratories#create'
-      post '/labs' => 'laboratories#index'
+      post '/lab/new'                     => 'laboratories#new', as: :new_lab
+      post 'lab/create'                   => 'laboratories#create'
+      post '/labs'                        => 'laboratories#index'
       resources :workstation
     end
     resources :building, only: [:create, :new], as: :buildings
   
-    resources :dashboard, only: [:index] 
-    get 'dashboard'                             => 'dashboard#index', as: :dashboard
-    get 'dashboard/install'                     => 'building#new', as: :building_install
-  
+    get 'dashboard'                       => 'dashboard#index', as: :dashboard
+    get 'dashboard/install'               => 'building#new', as: :building_install
+    resources :dashboard, only: [:index]
+
    # TO DO: Change GET to POST
-    get '/users/user_mails.json'                => 'users#user_mails'
-    
+    get '/users/user_mails.json'          => 'users#user_mails'
+
     scope :dashboard do
-      post '/users'                      => 'users#index_for_dashboard'
-      post '/users/invite_user_form'     => 'users#invite_new'
-      post '/users/invite_user'          => 'users#invite_create'
-      post '/users/permissions'          => 'users#edit_for_dashboard'
-      post '/users/update_for_dashboard' => 'users#update_for_dashboard'
-      post '/users/remove_user'          => 'users#remove_for_dashboard'
+      post '/users'                       => 'users#index_for_dashboard'
+      scope :users do
+        post '/invite_user_form'          => 'users#invite_new'
+        post '/invite_user'               => 'users#invite_create'
+        post '/permissions'               => 'users#edit_for_dashboard'
+        post '/update_for_dashboard'      => 'users#update_for_dashboard'
+        post '/remove_user'               => 'users#remove_for_dashboard'
+      end
+      post '/groups'                      => 'groups#index_for_dashboard'
+      scope :groups do
+        post '/manage'                    => 'groups#manage'
+        post '/add_group'                 => 'groups#add_group'
+        post '/remove_group'              => 'groups#remove_group'
+      end
+
+      post '/faq'                         => 'static_pages#faq'
+      post '/issues'                      => 'dashboard#issues'
       
-      post '/faq'                        => 'static_pages#faq'
-      post '/issues'                     => 'dashboard#issues'
-      
-      post '/widgets'                    => 'dashboard#widgets_panel'
+      post '/widgets'                     => 'dashboard#widgets_panel'
     end
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end
