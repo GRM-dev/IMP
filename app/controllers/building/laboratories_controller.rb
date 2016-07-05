@@ -15,6 +15,7 @@ class Building::LaboratoriesController < ApplicationController
   
   def create
     @lab = Laboratory.new(lab_params)
+    @lab.building = current_building
     if @lab.save
       respond_to do |format|
         format.js

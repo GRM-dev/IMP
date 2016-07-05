@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     
     namespace :building do
       post '/lab/new' => 'laboratories#new', as: :new_lab
-      post 'lab/new' => 'laboratories#create'
+      post 'lab/create' => 'laboratories#create'
       post '/labs' => 'laboratories#index'
       resources :workstation
     end
