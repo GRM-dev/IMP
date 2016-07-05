@@ -1,0 +1,125 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Dosis:300|Lato:300,400,600,700|Roboto+Condensed:300,700|Open+Sans+Condensed:300,600|Open+Sans:400,300,600,700|Maven+Pro:400,700);
+
+$textColor: white;
+$greyColor: #BBB;
+
+* {
+  @include box-sizing(border-box);
+}
+
+body.login_page {
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: $textColor !important;
+  background: rgba(0,0,0,1) !important;
+
+  .logo-responive {
+    margin: auto;
+  }
+
+  .container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 2% auto;
+  }
+
+  .content {
+    padding: 40px;
+    @include border-radius(4px);
+    @include box-shadow(0 0 10px rgba(255, 255, 255, 1));
+
+    .title {
+
+      text-align: center;
+      font-size: 2.0rem;
+      font-weight: 600;
+
+      padding-bottom: 30px;
+
+    }
+    // .title
+
+    input {
+      width: 100%;
+      font-size: 1.2rem;
+      font-family: "Open Sans";
+
+      margin: 10px 0px;
+
+      border: none;
+      padding: 10px;
+
+      @include border-radius(4px);
+
+    }
+    // input
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+
+      cursor: pointer;
+      position: relative;
+
+      margin-left: 5px;
+      margin-right: 10px;
+      top: 5px;
+
+      &:before {
+        content: "";
+        display: inline-block;
+
+        width: 20px;
+        height: 20px;
+
+        @include border-radius(3px);
+
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background-color: #aaa;
+        @include box-shadow(inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8));
+      }
+    }
+    // label
+
+    input[type=checkbox]:checked + label:before {
+      content: "\2713";
+      @include text-shadow(1px 1px 1px rgba(0, 0, 0, .2));
+      font-size: 20px;
+      color: Black;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    span {
+      font-size: 0.9rem;
+    }
+
+    button {
+      width: 100%;
+      font-size: 1.1rem;
+      padding: 10px;
+      margin: 20px 0px;
+
+      background-color: #66A756;
+      color: $textColor;
+      border: none;
+
+      @include border-radius(4px);
+    }
+  }
+}
+
+
+

@@ -21,7 +21,7 @@
                       <li <%= 'class=active' if current_page?(controller: 'static_pages', action: 'contact') %>><%= link_to t('.contact'), contact_path %> </li>
                       <li class="login">
                         <% if !current_user %>
-                        <%= link_to t('.login'),"#", {'id': "log_into_dashboard", 'data-toggle': "modal", 'data-target': "#login_modal"} %>
+                        <%= link_to t('.login'), login_path %>
                         <% else %>
                         <%= link_to t('.panel'), dashboard_index_path %>
                         <% end %>

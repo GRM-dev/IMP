@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   scope '/:locale', :locale => /#{I18n.available_locales.join("|")}/ do
+    get '/login'  => 'sessions#new'
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
     get '/home' => 'home_pages#index', as: :home
