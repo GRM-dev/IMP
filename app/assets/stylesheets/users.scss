@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'nice-select';
+@import "compass/css3";
 
 $green: #28abe3;
 $gray: #bbbbbb;
@@ -10,6 +11,9 @@ $color: #c0392b;
 $color-dark: #a53125;
 $speed: "0.25s";
 $transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
+
+$button-bg-color: #348AA7;
+$button-border-color: #166E84;
 
 body {
   .dashboard-users {
@@ -83,7 +87,34 @@ body {
   
   #invite-user {
     .invite_user_btn {
-      margin-top:15px;
+      display: inline-block;
+      padding: 10px;
+      margin-right: 5px;
+      height: 50px;
+      min-width: 100px;
+      background: $button-bg-color;
+      border: none;
+      outline: none;
+      color: white;
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 20px;
+      border-radius: 3px;
+      box-shadow: 0 5px 0px darken($button-bg-color,0%);
+      border-bottom: 2px solid darken($button-bg-color,3%);
+
+      &:hover{
+        background: darken($button-bg-color,5%);
+        box-shadow: 0 4px 1px darken($button-bg-color,5%);
+        border-bottom: 2px solid darken($button-bg-color,8%);
+        transition: all 0.1s ease-in;
+      }
+
+      &:active{
+        transform:translateY(4px);
+        border-bottom-width: 2px;
+        box-shadow: none;
+      }
     }
   }
   

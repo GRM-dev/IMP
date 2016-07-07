@@ -62,6 +62,34 @@
           </li>
         </ul>
       </li>
+      <li class="groups">
+        <button id="groups_btn" class="menu_button">
+          <i class="fa fa-user-secret" aria-hidden="true"><span class="left-menu-item-font"><%= Group.model_name.human(count: 2) %></span></i>
+          <i class="fa fa-caret-right fa-dashboard-menu-dropdown"></i>
+        </button>
+        <ul class="submenu-groups" style="display:none;">
+          <li class="show_groups deactive">
+            <button id="show_groups_btn" class="menu_button">
+              <i class="fa fa-users" aria-hidden="true"><span class="left-menu-item-font"><%= t('.show_groups') %></span></i>
+            </button>
+          </li>
+          <li class="add_group deactive">
+            <button id="add_group_btn" class="menu_button">
+              <i class="fa fa-user-plus" aria-hidden="true"><span class="left-menu-item-font"><%= t('.add_group') %></span></i>
+            </button>
+          </li>
+          <li class="manage_groups deactive">
+            <button id="manage_group_btn" class="menu_button">
+              <i class="fa fa-key" aria-hidden="true"><span class="left-menu-item-font"><%= t('.manage_groups') %></span></i>
+            </button>
+          </li>
+          <li class="remove_group deactive">
+            <button id="remove_group_btn" class="menu_button">
+              <i class="fa fa-user-times" aria-hidden="true"><span class="left-menu-item-font"><%= t('.remove_group') %></span></i>
+            </button>
+          </li>
+        </ul>
+      </li>
       <li class="logs">
          <button id="logs" class="menu_button">
           <i class="fa fa-book" aria-hidden="true"><span class="left-menu-item-font"><%= t('.logs') %></span></i>

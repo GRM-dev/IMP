@@ -47,7 +47,7 @@ menu_arr =
         ajax_type: 'POST'
   groups:
     url: '.submenu-groups'
-    target: '#grous_btn'
+    target: '#groups_btn'
     elems:
       g_manage:
         url: 'dashboard/groups/manage'

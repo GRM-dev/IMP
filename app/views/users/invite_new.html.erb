@@ -8,7 +8,7 @@
       <%= hidden_field_tag 'selected_mail_mail', 'NaN' %>
       <small class="text-muted">We'll never share your email with anyone else.</small>
       <br>
-      <%= button_tag t('.invite'), id: 'invite_user_btn', data: { disable_with: "Please wait...", dismiss: "modal"}, class: 'btn btn-primary invite_user_btn', disabled: true %>
+      <%= button_tag t('.invite'), id: 'invite_user_btn', data: { disable_with: "Please wait...", dismiss: "modal"}, class: 'invite_user_btn', disabled: true %>
     <% end %>
   </div>
   <div class="modal" id="user-add-modal" style="display:none;">
