@@ -3,35 +3,30 @@
   <ID>RailsDependency</ID>
   <OriginalElement>#IMP</OriginalElement>
   <nodes>
-    <node x="1867.948424068768" y="493.46704871060183">DashboardRole</node>
-    <node x="216.77268385864363" y="367.9163291221673">Country</node>
-    <node x="1560.6318051575931" y="409.3316618911174">DashboardAssignment</node>
-    <node x="1569.0448901623688" y="613.3971118780933">DashboardGroupAssignment</node>
-    <node x="502.0850047755492" y="862.4429571502997">LaboratoriesAssignment</node>
-    <node x="141.06494746895896" y="-26.269554788573416">LogType</node>
-    <node x="310.3003820439349" y="865.7762904836329">LabRole</node>
-    <node x="2059.235912129895" y="204.1212989493792">ActiveWidget</node>
-    <node x="369.62464183381087" y="547.4472551445689">CompanyType</node>
-    <node x="328.26026743075454" y="-28.513849092645685">Log</node>
-    <node x="839.4871060171919" y="852.2691228184423">Laboratory</node>
-    <node x="1160.3209169054442" y="357.88326278544787">UsersGroup</node>
-    <node x="1279.090735434575" y="-52.79820808370232">UsersAvatar</node>
-    <node x="1172.8925501432666" y="564.747871624555">Dashboard</node>
-    <node x="723.404489016237" y="435.3372981245117">Building</node>
-    <node x="1345.8376313276024" y="367.3904261092302">Group</node>
-    <node x="1090.994269340974" y="852.2691228184425">Workstation</node>
-    <node x="1500.5912129894937" y="-61.530299774246714">Avatar</node>
-    <node x="2147.854345749761" y="61.34646609360047">Widget</node>
-    <node x="717.6494746895895" y="-33.937176565077834">User</node>
-    <node x="451.9565425023878" y="141.7877518016844">SiteRole</node>
-    <node x="1696.8094555873927" y="219.2855778414518">DashboardUserSetting</node>
+    <node x="1672.2273161413564" y="393.5243553008597">DashboardRole</node>
+    <node x="-89.30181470869161" y="138.88099005817503">Country</node>
+    <node x="1377.4035339063994" y="351.0317574021011">DashboardAssignment</node>
+    <node x="1429.7870105062082" y="742.0824031865941">LaboratoriesAssignment</node>
+    <node x="-196.24164278892067" y="-361.4940056004168">LogType</node>
+    <node x="1703.2516714422154" y="738.7657842754193">LabRole</node>
+    <node x="1784.3935052531044" y="154.14995224450814">ActiveWidget</node>
+    <node x="-88.4460362941739" y="258.029872145524">CompanyType</node>
+    <node x="-9.046322827125096" y="-363.73829990448905">Log</node>
+    <node x="414.7306590257879" y="623.23378375445">Laboratory</node>
+    <node x="954.1891117478508" y="-43.96965029955692">UsersGroup</node>
+    <node x="816.8557784145178" y="-242.27289767300508">UsersAvatar</node>
+    <node x="768.9574976122256" y="204.53774746027614">Dashboard</node>
+    <node x="321.5515759312323" y="129.26279955717644">Building</node>
+    <node x="1156.773638968481" y="-51.70890531388363">Group</node>
+    <node x="403.8882521489967" y="862.6798200486242">Workstation</node>
+    <node x="1023.7812798471823" y="-240.59429213336801">Avatar</node>
+    <node x="1848.0262655205347" y="-15.692693409742475">Widget</node>
+    <node x="309.9608404966573" y="-373.91520903881235">User</node>
+    <node x="818.4130850047757" y="-360.0078546930625">SiteRole</node>
+    <node x="1455.2812798471825" y="156.82139446036302">DashboardUserSetting</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="DashboardGroupAssignment" target="DashboardRole">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
     <edge source="LaboratoriesAssignment" target="Laboratory">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
@@ -48,11 +43,11 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="LaboratoriesAssignment" target="User">
+    <edge source="DashboardRole" target="DashboardAssignment">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="DashboardRole" target="DashboardAssignment">
+    <edge source="User" target="LaboratoriesAssignment">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -64,11 +59,11 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="Dashboard" target="Building">
+    <edge source="DashboardAssignment" target="DashboardUserSetting">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="DashboardAssignment" target="DashboardUserSetting">
+    <edge source="Dashboard" target="Building">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -76,7 +71,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="DashboardGroupAssignment" target="Group">
+    <edge source="Group" target="DashboardAssignment">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -84,7 +79,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="DashboardGroupAssignment" target="Dashboard">
+    <edge source="Group" target="LaboratoriesAssignment">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -132,11 +127,11 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="Building" target="CompanyType">
+    <edge source="Laboratory" target="Workstation">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="Laboratory" target="Workstation">
+    <edge source="Building" target="CompanyType">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -145,10 +140,6 @@
       <point x="0.0" y="0.0" />
     </edge>
     <edge source="CompanyType" target="Building">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="Dashboard" target="User">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -161,11 +152,11 @@
       <point x="0.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.48027522935779815" x="1080.0" y="515.9723018147087" />
+  <settings layout="Hierarchic Group" zoom="0.48027522935779815" x="1080.0764087870105" y="440.1489971346705" />
   <SelectedNodes />
   <Categories>
-    <Category>Association fields</Category>
     <Category>Migration fields</Category>
+    <Category>Association fields</Category>
   </Categories>
 </Diagram>
 

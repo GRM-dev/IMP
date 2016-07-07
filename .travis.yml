@@ -19,6 +19,11 @@ addons:
   
 services:
   - mysql
-  
+
+before_script:
+  - "bundle exec rake prepare_test_env"
+
 before_install:
   - mysql -e 'create database imp_test;'
+
+script: "bundle exec rspec"
