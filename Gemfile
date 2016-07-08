@@ -9,12 +9,17 @@ gem 'coffee-rails'
 gem 'tzinfo-data'
 
 gem 'jquery-rails'
+gem 'angularjs-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-modal-rails'
+gem 'jquery-datatables-rails', '~> 3.4.0'
+gem 'spinjs-rails'
+
 gem 'turbolinks', '~> 5.0.0.beta'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt', '3.1.11'
-gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 
 gem 'faker'
 
@@ -31,19 +36,12 @@ gem 'mail'
 
 gem 'apotomo'
 gem 'interact-rails'
-gem 'angularjs-rails'
-gem 'jquery-ui-rails'
-gem 'jquery-modal-rails'
-
-gem 'jquery-datatables-rails', '~> 3.4.0'
 
 gem 'google-analytics-rails', '1.1.0'
 
 gem 'rack-attack'
 
 gem 'haml'
-gem 'spinjs-rails'
-
 gem 'rails-i18n'
 gem 'figaro'
 gem 'select-multiple-rails'
@@ -58,6 +56,7 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'hirb', require: 'hirb'
+  gem 'rspec-rails', '~> 3.4'
 end
 
 group :development do
