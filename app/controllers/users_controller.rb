@@ -80,7 +80,7 @@ class UsersController < ApplicationController
   def update_for_dashboard
     p = upd_params
     p[:selected_users].each do |u_id|
-      ua = DashboardAssignment.where(user_id: u_id, dashboard_id: current_dashboard.id).take
+      ua = current_dashboard.dashboard_assignments.where(assignable: User.find(u_id)).take
       dr = DashboardRole.where(id: p[:dashboard_role_id]).take
       #byebug
       if ua != nil && dr != nil

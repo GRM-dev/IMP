@@ -50,10 +50,10 @@ levvy = User.create(email: 'levvy@t.t', visible_name: 'Levvy', password: '1234',
 rodzyn = User.create(email: 'rodzyndawid@gmail.com', visible_name: 'Dawid Tomas', password: '1234', site_role: r_admin, age: DateTime.new(1998,06,01)) #Yea, we know. This password is awesome! :D
 grafik = User.create(email: 'tomekbrylinski.39@gmail.com', visible_name: 'Tomek Bryliński', password: '1234', site_role: r_hmod, age: DateTime.new(1997,10,02))
 hammerek = User.create(email: 'anakin165@wp.pl', visible_name: 'Hammerek', password: '1234', site_role: r_hmod, age: DateTime.new(1998,06,22))
-hirashi = User.create(email: 'tmilosel@gmail.com', visible_name: 'Hirashi', password: '1234', site_role: r_hmod, age: DateTime.new(1988,10,11))
+hisashi = User.create(email: 'tmilosel@gmail.com', visible_name: 'Hirashi', password: '1234', site_role: r_hmod, age: DateTime.new(1988,10,11))
 
-b1 = Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl, dashboard: Dashboard.create)
-b2 = Building.create(name: 'Zespół Szkół i Placówek Kształcenia Zawodowego w Bielawie', street: 'ul. Żeromskiego 41', city: 'Bielawa', shortname: 'ZSiPKZ w Bielawie', company_type: cp_s, user: rodzyn, country: c_pl, dashboard: Dashboard.create)
+b1 = Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl)
+b2 = Building.create(name: 'Zespół Szkół i Placówek Kształcenia Zawodowego w Bielawie', street: 'ul. Żeromskiego 41', city: 'Bielawa', shortname: 'ZSiPKZ w Bielawie', company_type: cp_s, user: rodzyn, country: c_pl)
 
 Laboratory.create(name: 'Lab1', building: b1)
 Laboratory.create(name: 'Lab2a', building: b1)

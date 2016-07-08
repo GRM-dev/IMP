@@ -7,10 +7,9 @@ class BuildingController < ApplicationController
   
   def create
     @building = Building.new(building_params)
-    dashboard = Dashboard.create
-    @building.dashboard_id = dashboard.id
     @building.user_id = current_user.id
-    @countries = Country.all
+
+    @countries = Country.all #todo: probably to delete
     respond_to do |format|
       if @building.save
         format.html {redirect_to dashboard_path}

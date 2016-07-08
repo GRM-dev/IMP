@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   belongs_to :site_role
   has_many :buildings
-  has_many :dashboard_assignments
+  has_many :dashboard_assignments, as: :assignable, class_name: 'DashboardAssignment'
+  has_many :laboratories_assignments, as: :lab_assignable
   has_many :dashboards, through: :dashboard_assignments
   
   def is_new_user
@@ -34,7 +35,8 @@ class User < ActiveRecord::Base
   end
   
   def public_data_for_dashboard(dashboard)
-    visible_name + ' <' + email + '> - ' + I18n.t("dashboard_roles." + dashboard.dashboard_assignments.where(user: self).take.dashboard_role.name)
+    da=dashboard.dashboard_assignments
+    visible_name + ' <' + email + '> - ' + I18n.t("dashboard_roles." + dashboard.dashboard_assignments.where(assignable: self).take.dashboard_role.name)
   end
   
   def assigments_for_dashboard(dashboard)
