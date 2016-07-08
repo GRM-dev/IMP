@@ -34,17 +34,17 @@ Rails.application.routes.draw do
         post '/update_for_dashboard'      => 'users#update_for_dashboard'
         post '/remove_user'               => 'users#remove_for_dashboard'
       end
-      post '/groups'                      => 'groups#index_for_dashboard'
+      post '/groups'                      => 'groups#index_for_dashboard', as: :groups
       scope :groups do
         post '/manage'                    => 'groups#manage'
-        post '/add_group'                 => 'groups#add_group'
+        post '/add_group'                 => 'groups#new'
         post '/remove_group'              => 'groups#remove_group'
       end
 
-      post '/faq'                         => 'static_pages#faq'
-      post '/issues'                      => 'dashboard#issues'
+      post '/faq'                         => 'static_pages#faq', as: :faq
+      post '/issues'                      => 'dashboard#issues', as: :issues
       
-      post '/widgets'                     => 'dashboard#widgets_panel'
+      post '/widgets'                     => 'dashboard#widgets_panel', as: :widgets
     end
     root to: redirect(status: 302) {|_,params, _| "/#{params[:locale]}/home"}
   end
