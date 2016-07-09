@@ -3,160 +3,221 @@
   <ID>RailsDependency</ID>
   <OriginalElement>#IMP</OriginalElement>
   <nodes>
-    <node x="1672.2273161413564" y="393.5243553008597">DashboardRole</node>
-    <node x="-89.30181470869161" y="138.88099005817503">Country</node>
-    <node x="1377.4035339063994" y="351.0317574021011">DashboardAssignment</node>
-    <node x="1429.7870105062082" y="742.0824031865941">LaboratoriesAssignment</node>
-    <node x="-196.24164278892067" y="-361.4940056004168">LogType</node>
-    <node x="1703.2516714422154" y="738.7657842754193">LabRole</node>
-    <node x="1784.3935052531044" y="154.14995224450814">ActiveWidget</node>
-    <node x="-88.4460362941739" y="258.029872145524">CompanyType</node>
-    <node x="-9.046322827125096" y="-363.73829990448905">Log</node>
-    <node x="414.7306590257879" y="623.23378375445">Laboratory</node>
-    <node x="954.1891117478508" y="-43.96965029955692">UsersGroup</node>
-    <node x="816.8557784145178" y="-242.27289767300508">UsersAvatar</node>
-    <node x="768.9574976122256" y="204.53774746027614">Dashboard</node>
-    <node x="321.5515759312323" y="129.26279955717644">Building</node>
-    <node x="1156.773638968481" y="-51.70890531388363">Group</node>
-    <node x="403.8882521489967" y="862.6798200486242">Workstation</node>
-    <node x="1023.7812798471823" y="-240.59429213336801">Avatar</node>
-    <node x="1848.0262655205347" y="-15.692693409742475">Widget</node>
-    <node x="309.9608404966573" y="-373.91520903881235">User</node>
-    <node x="818.4130850047757" y="-360.0078546930625">SiteRole</node>
-    <node x="1455.2812798471825" y="156.82139446036302">DashboardUserSetting</node>
+    <node x="1266.0" y="178.09305555555557">DashboardRole</node>
+    <node x="416.0" y="686.8333333333333">Country</node>
+    <node x="1733.0" y="268.6780555555554">DashboardAssignment</node>
+    <node x="883.0" y="798.575">LaboratoriesAssignment</node>
+    <node x="1369.5" y="882.325">LabRole</node>
+    <node x="444.0" y="128.83333333333331">LogType</node>
+    <node x="1279.0" y="65.09305555555557">ActiveWidget</node>
+    <node x="1355.5" y="621.5749999999999">CompanyType</node>
+    <node x="0.0" y="137.5">Log</node>
+    <node x="1345.5" y="746.325">Laboratory</node>
+    <node x="32.5" y="874.4680555555556">UsersGroup</node>
+    <node x="2111.0" y="381.1780555555554">DashboardPermission</node>
+    <node x="22.0" y="1.5">UsersAvatar</node>
+    <node x="1335.5" y="360.79611111111103">Dashboard</node>
+    <node x="815.0" y="526.075">Building</node>
+    <node x="341.5" y="912.8333333333333">Group</node>
+    <node x="286.0" y="264.8333333333333">User</node>
+    <node x="1756.5" y="794.8333333333333">Workstation</node>
+    <node x="1689.0" y="24.343055555555566">Widget</node>
+    <node x="460.5" y="0.0">Avatar</node>
+    <node x="927.5" y="306.09305555555557">SiteRole</node>
+    <node x="2111.0" y="105.97499999999997">DashboardUserSetting</node>
   </nodes>
   <notes />
   <edges>
     <edge source="LaboratoriesAssignment" target="Laboratory">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="117.5" y="-35.0" />
+      <point x="1186.0" y="833.575" />
+      <point x="1266.0" y="818.325" />
+      <point x="-92.0" y="24.0" />
     </edge>
     <edge source="User" target="SiteRole">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="224.5" y="-23.875" />
+      <point x="815.0" y="378.09305555555557" />
+      <point x="-73.0" y="24.0" />
     </edge>
     <edge source="User" target="Dashboard">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="224.5" y="-119.375" />
+      <point x="815.0" y="295.59305555555557" />
+      <point x="1186.0" y="295.59305555555557" />
+      <point x="1266.0" y="372.49611111111096" />
+      <point x="-102.0" y="-46.80000000000001" />
     </edge>
     <edge source="Log" target="User">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="103.0" y="39.33333333333334" />
+      <point x="-224.5" y="-0.0" />
     </edge>
     <edge source="DashboardRole" target="DashboardAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="171.5" y="-0.0" />
+      <point x="1689.0" y="291.6780555555554" />
+      <point x="-127.0" y="-69.0" />
     </edge>
     <edge source="User" target="LaboratoriesAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="224.5" y="167.125" />
+      <point x="815.0" y="833.575" />
+      <point x="-117.5" y="-35.0" />
     </edge>
     <edge source="Dashboard" target="DashboardAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="102.0" y="-0.0" />
+      <point x="1609.0" y="419.29611111111103" />
+      <point x="1689.0" y="383.6780555555554" />
+      <point x="-127.0" y="23.0" />
     </edge>
     <edge source="Building" target="Dashboard">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="DashboardAssignment" target="DashboardUserSetting">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="185.5" y="-45.60000000000002" />
+      <point x="1266.0" y="466.096111111111" />
+      <point x="-102.0" y="46.80000000000001" />
     </edge>
     <edge source="Dashboard" target="Building">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="-102.0" y="23.399999999999977" />
+      <point x="1266.0" y="442.696111111111" />
+      <point x="185.5" y="-91.20000000000005" />
+    </edge>
+    <edge source="DashboardAssignment" target="DashboardUserSetting">
+      <point x="127.0" y="-23.0" />
+      <point x="2031.0" y="337.6780555555554" />
+      <point x="-149.0" y="19.125" />
     </edge>
     <edge source="SiteRole" target="User">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="-73.0" y="-24.0" />
+      <point x="815.0" y="330.09305555555557" />
+      <point x="224.5" y="-71.625" />
     </edge>
     <edge source="Group" target="DashboardAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="169.0" y="24.0" />
+      <point x="735.0" y="984.8333333333333" />
+      <point x="815.0" y="1013.5530555555554" />
+      <point x="1609.0" y="1013.5530555555554" />
+      <point x="1689.0" y="429.6780555555554" />
+      <point x="-127.0" y="69.0" />
     </edge>
     <edge source="Country" target="Building">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="94.5" y="-0.0" />
+      <point x="735.0" y="734.8333333333333" />
+      <point x="-185.5" y="57.0" />
     </edge>
     <edge source="Group" target="LaboratoriesAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="169.0" y="-24.0" />
+      <point x="735.0" y="936.8333333333333" />
+      <point x="815.0" y="903.575" />
+      <point x="-117.5" y="35.0" />
     </edge>
     <edge source="Log" target="LogType">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="103.0" y="-0.0" />
+      <point x="286.0" y="200.83333333333331" />
+      <point x="-66.5" y="24.0" />
     </edge>
     <edge source="LaboratoriesAssignment" target="LabRole">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="117.5" y="35.0" />
+      <point x="1186.0" y="903.575" />
+      <point x="1266.0" y="918.825" />
+      <point x="-68.0" y="-0.0" />
     </edge>
     <edge source="UsersGroup" target="Group">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="70.5" y="18.25" />
+      <point x="206.0" y="929.2180555555556" />
+      <point x="286.0" y="960.8333333333333" />
+      <point x="-169.0" y="-0.0" />
     </edge>
     <edge source="User" target="DashboardAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="224.5" y="-167.125" />
+      <point x="815.0" y="284.59305555555557" />
+      <point x="1609.0" y="284.59305555555557" />
+      <point x="1689.0" y="337.6780555555554" />
+      <point x="-127.0" y="-23.0" />
     </edge>
     <edge source="DashboardUserSetting" target="DashboardAssignment">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="-149.0" y="6.375" />
+      <point x="2031.0" y="291.6780555555554" />
+      <point x="127.0" y="-69.0" />
     </edge>
     <edge source="Building" target="Laboratory">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="185.5" y="91.19999999999993" />
+      <point x="1266.0" y="770.325" />
+      <point x="-92.0" y="-24.0" />
     </edge>
     <edge source="LogType" target="Log">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="-66.5" y="-24.0" />
+      <point x="286.0" y="152.83333333333331" />
+      <point x="103.0" y="-39.333333333333314" />
     </edge>
     <edge source="UsersAvatar" target="Avatar">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="81.0" y="-24.0" />
+      <point x="-50.0" y="-0.0" />
     </edge>
     <edge source="User" target="Building">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="224.5" y="119.375" />
+      <point x="-185.5" y="-57.0" />
     </edge>
     <edge source="UsersAvatar" target="User">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="81.0" y="24.0" />
+      <point x="206.0" y="73.5" />
+      <point x="-224.5" y="-127.33333333333331" />
     </edge>
     <edge source="Widget" target="DashboardUserSetting">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="Laboratory" target="Workstation">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="171.0" y="-0.0" />
+      <point x="-149.0" y="-19.125" />
     </edge>
     <edge source="Building" target="CompanyType">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="185.5" y="45.59999999999991" />
+      <point x="1266.0" y="677.0749999999999" />
+      <point x="-82.0" y="18.5" />
+    </edge>
+    <edge source="DashboardPermission" target="DashboardAssignment">
+      <point x="-149.0" y="-12.75" />
+      <point x="2031.0" y="383.6780555555554" />
+      <point x="127.0" y="23.0" />
+    </edge>
+    <edge source="DashboardAssignment" target="DashboardPermission">
+      <point x="127.0" y="69.0" />
+      <point x="2031.0" y="429.6780555555554" />
+      <point x="-149.0" y="12.75" />
+    </edge>
+    <edge source="Laboratory" target="Workstation">
+      <point x="92.0" y="-0.0" />
+      <point x="1609.0" y="794.325" />
+      <point x="1689.0" y="842.8333333333333" />
+      <point x="-103.5" y="-0.0" />
     </edge>
     <edge source="ActiveWidget" target="Widget">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="158.5" y="-18.25" />
+      <point x="1609.0" y="83.34305555555557" />
+      <point x="-171.0" y="-0.0" />
     </edge>
     <edge source="CompanyType" target="Building">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="-82.0" y="-18.5" />
+      <point x="185.5" y="-0.0" />
+    </edge>
+    <edge source="Dashboard" target="User">
+      <point x="-102.0" y="-0.0" />
+      <point x="1266.0" y="419.29611111111103" />
+      <point x="1186.0" y="452.5833333333333" />
+      <point x="815.0" y="452.5833333333333" />
+      <point x="224.5" y="71.625" />
     </edge>
     <edge source="UsersGroup" target="User">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="70.5" y="-18.25" />
+      <point x="206.0" y="892.7180555555556" />
+      <point x="-224.5" y="127.33333333333337" />
     </edge>
     <edge source="ActiveWidget" target="DashboardUserSetting">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="158.5" y="18.25" />
+      <point x="1609.0" y="119.84305555555557" />
+      <point x="1689.0" y="130.84305555555557" />
+      <point x="2031.0" y="130.84305555555557" />
+      <point x="-149.0" y="-6.375" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.48027522935779815" x="1080.0764087870105" y="440.1489971346705" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.43474680938657884" x="1204.5" y="407.83570075757575" />
+  <SelectedNodes>
+    <node>DashboardUserSetting</node>
+  </SelectedNodes>
   <Categories>
-    <Category>Migration fields</Category>
     <Category>Association fields</Category>
+    <Category>Migration fields</Category>
   </Categories>
 </Diagram>
 

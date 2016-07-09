@@ -43,7 +43,7 @@ c_pl = Country.create(name: 'Poland', code: 'pl')
 c_enus = Country.create(name: 'United States', code: 'en-us')
 c_se = Country.create(name: 'Sweden', code: 'se')
 
-avatar_def = Avatar.create()
+avatar_def = Avatar.create
 
 t = User.create(email: 't@t.t', visible_name: 'TestUser', password: '1234', site_role: r_nu, age: DateTime.new(2016,05,06))
 levvy = User.create(email: 'levvy@t.t', visible_name: 'Levvy', password: '1234', site_role: r_hadmin, age: DateTime.new(1994,05,02))

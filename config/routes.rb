@@ -39,6 +39,7 @@ Rails.application.routes.draw do
         post '/manage'                    => 'groups#manage'
         post '/add_group'                 => 'groups#new'
         post '/remove_group'              => 'groups#remove_group'
+        post '/create'                    => 'groups#create'
       end
 
       post '/faq'                         => 'static_pages#faq', as: :faq

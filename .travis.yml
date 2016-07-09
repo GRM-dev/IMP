@@ -21,7 +21,7 @@ services:
   - mysql
 
 before_script:
-  - "rake db:setup"
+  - "bundle exec rake db:setup"
 
 before_install:
   - mysql -e 'create database imp_test;'

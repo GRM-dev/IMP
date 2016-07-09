@@ -1,3 +1,25 @@
-<div>
+<div id="show-dashboard-groups" class="dashboard-groups">
+  <h1 class="main-header"><%= t('.main_header') %></h1>
+  <h2 class="second-header"><%= t('.second_header')%></h2>
 
+  <div class="table-responsive-vertical shadow-z-1 table-striped">
+    <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Users</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% for group in @groups %>
+          <tr>
+            <td data-title="ID"><%= group.id %></td>
+            <td data-title="Name"><%= group.name %></td>
+            <td data-title="Users"><%= group.users.count %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

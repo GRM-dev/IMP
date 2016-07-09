@@ -10,13 +10,12 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.dashboard_assignment = DashboardAssignment.new(dashboard: current_dashboard, assignable: @group)
     respond_to do |format|
       if @group.save
-        format.html { redirect_to controller: :groups, action: :index_for_dashboard, id: group.id, notice: 'Group was successfully created.', locale: I18n.locale }
-        format.json { render :index_for_dashboard, status: :created, location: @group }
+        format.js
       else
-        format.html { render :new }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -26,7 +25,6 @@ class GroupsController < ApplicationController
   end
 
   def update
-
     respond_to do |format|
       if group.update(group_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -70,6 +68,6 @@ class GroupsController < ApplicationController
     end
 
     def group_params
-      @params.require(:group).permit(:name)
+      params.require(:group).permit(:name)
     end
 end
