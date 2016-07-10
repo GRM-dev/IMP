@@ -105,6 +105,8 @@ en:
       form:
         name: Name of Lab
         create: Create
+      index:
+        main-header: List of all laboratories at dashboard
   users:
     index_for_dashboard:
       main_header: List of all users in this dashboard

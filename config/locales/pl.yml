@@ -120,6 +120,8 @@ pl:
       form:
         name: Nazwa Pracowni
         create: Stwórz
+      index:
+        main-header: Lista wszystkich laboratoriów
   users:
     index_for_dashboard:
       main_header: Lista użytkowników przypisanych do tego panelu

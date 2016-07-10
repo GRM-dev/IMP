@@ -1,26 +1,24 @@
-<div class="labs_list">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10">
-        <div class="table-responsive-vertical shadow-z-1 table-striped">
-          <table id="table" class="table table-hover table-mc-light-blue">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-            </tr>
-            </thead>
-            <tbody>
-            <% for lab in @labs %>
-                <tr>
-                  <td data-title="ID"><%= lab.id %></td>
-                  <td data-title="Name"><%= lab.name %></td>
-                </tr>
-            <% end %>
-            </tbody>
-          </table>
-        </div>
+<div id="show-labs" class="dashboard-lab">
+  <h1 class="main-header"><%= t('.main-header') %></h1>
+
+  <section id="list-of-labs">
+    <div class="container-fluid">
+      <div class="row">
+        <% count_labs = 0 %>
+        <% @labs.each do |lab| %>
+          <div class="col-md-3 lab">
+            <div class="bg-color">
+              <%= lab.id %>
+              <%= lab.name %>
+            </div>
+          </div>
+          <% count_labs = count_labs+1 %>
+          <% if count_labs % 4 == 0 %>
+            </div>
+            <div class="row">
+          <% end %>
+        <% end %>
       </div>
     </div>
-  </div>
+  </section>
 </div>

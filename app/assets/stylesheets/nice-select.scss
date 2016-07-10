@@ -64,7 +64,6 @@ $arrow_color: $gray !default;
   }
   
   &.open {
-    @extend :active;
     &:after {
       transform: rotate(-135deg);
     }
