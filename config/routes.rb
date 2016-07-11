@@ -11,14 +11,14 @@ Rails.application.routes.draw do
     get 'user/:id'                       => 'users#show', as: :account
     
     namespace :building do
-      namespace :laboratory do
+      resources :laboratory do
         get 'reassign'                    => 'workstation#reassign'
         post 'move'                       => 'workstation#move'
         resources :workstation
       end
-      post 'lab/new'                     => 'laboratories#new', as: :new_lab
+      post 'lab/new'                      => 'laboratories#new', as: :new_lab
       post 'lab/create'                   => 'laboratories#create'
-      post 'labs'                        => 'laboratories#index'
+      post 'labs'                         => 'laboratories#index'
     end
     resources :building, only: [:create, :new]
   

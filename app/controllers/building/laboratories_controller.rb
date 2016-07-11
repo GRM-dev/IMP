@@ -26,6 +26,14 @@ class Building::LaboratoriesController < ApplicationController
       end
     end
   end
+
+  def edit
+
+  end
+
+  def update
+
+  end
   
   private
   def lab_params

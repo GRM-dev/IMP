@@ -1,3 +1,4 @@
+<% m = Laboratory %>
 <div id="show-labs" class="dashboard-lab">
   <h1 class="main-header"><%= t('.main-header') %></h1>
 
@@ -8,8 +9,15 @@
         <% @labs.each do |lab| %>
           <div class="col-md-3 lab">
             <div class="bg-color">
-              <%= lab.id %>
-              <%= lab.name %>
+              <div class="row">
+                <%= m.human_attribute_name(:id).to_s + ': ' + lab.id.to_s %>
+              </div>
+              <div class="row">
+                <%= m.human_attribute_name(:name) + ': ' + lab.name.to_s %>
+              </div>
+              <div class="row">
+                <%= Workstation.model_name.human(count: 2) + ': ' + lab.workstations.count.to_s %>
+              </div>
             </div>
           </div>
           <% count_labs = count_labs+1 %>

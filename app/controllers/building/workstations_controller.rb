@@ -1,4 +1,4 @@
-class WorkstationsController < ApplicationController
+class Building::WorkstationsController < ApplicationController
 
   def index
 

@@ -30,6 +30,11 @@ pl:
         few: Pracownie
         many: Pracowni
         other: Pracowni
+      workstation:
+        one: Stanowisko pracy
+        few: Stanowiska pracy
+        many: Stanowisk pracy
+        other: Stanowisko pracy
     attributes:
       building:
         name: Nazwa budynku
@@ -50,6 +55,7 @@ pl:
         company: Firma
       laboratory:
         name: Nazwa
+        number: Numer
     errors:
       messages:
         record_invalid: 'Negatywne sprawdzenie poprawności: %{errors}'

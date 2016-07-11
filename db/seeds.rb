@@ -55,8 +55,13 @@ hisashi = User.create(email: 'tmilosel@gmail.com', visible_name: 'Hirashi', pass
 b1 = Building.create(name: 'GRM Office', street: 'orla', city: 'Poznan', shortname: 'GRM', company_type: cp_c, user: levvy, country: c_pl)
 b2 = Building.create(name: 'Zespół Szkół i Placówek Kształcenia Zawodowego w Bielawie', street: 'ul. Żeromskiego 41', city: 'Bielawa', shortname: 'ZSiPKZ w Bielawie', company_type: cp_s, user: rodzyn, country: c_pl)
 
-Laboratory.create(name: 'Lab1', building: b1)
-Laboratory.create(name: 'Lab2a', building: b1)
-Laboratory.create(name: 'Lab2b', building: b1)
-Laboratory.create(name: 'Lab1', building: b2)
-Laboratory.create(name: 'Lab3', building: b2)
+l1 = Laboratory.create(name: 'Lab1', building: b1)
+l2 = Laboratory.create(name: 'Lab2a', building: b1)
+l3 = Laboratory.create(name: 'Lab2b', building: b1)
+l4 = Laboratory.create(name: 'Lab1', building: b2)
+l5 = Laboratory.create(name: 'Lab3', building: b2)
+
+Workstation.create(name: 'Stanowisko 1', number: 1, laboratory: l1)
+Workstation.create(name: 'Stanowisko 2', number: 2, laboratory: l1)
+Workstation.create(name: 'Stanowisko 1', number: 1, laboratory: l2)
+Workstation.create(name: 'MainW', number: 0, laboratory: l2)

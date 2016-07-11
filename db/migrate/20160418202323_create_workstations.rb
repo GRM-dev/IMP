@@ -2,7 +2,7 @@ class CreateWorkstations < ActiveRecord::Migration
   def change
     create_table :workstations do |t|
       t.string :name, null: false
-      t.integer :number, null: false, default: 0
+      t.integer :number, null: false
       
       t.references :laboratory, index: true, foreign_key: true
 

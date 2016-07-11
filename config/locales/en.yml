@@ -16,6 +16,9 @@ en:
       laboratory:
         one: Laboratory
         other: Laboratories
+      workstation:
+        one: Workstation
+        other: Workstations
     attributes:
       building:
         name: Name of building
@@ -36,6 +39,7 @@ en:
         company: Company
       laboratory:
         name: Name
+        number: Number
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
