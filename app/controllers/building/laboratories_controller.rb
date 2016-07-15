@@ -37,6 +37,6 @@ class Building::LaboratoriesController < ApplicationController
   
   private
   def lab_params
-    r = params.require(:laboratory).permit(:id, :name)
+    params.require(:laboratory).permit(:id, :name)
   end
 end
