@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      bulding:
+      building:
         one: Building
         other: Buildings
       dashboard:
