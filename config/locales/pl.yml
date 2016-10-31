@@ -154,12 +154,20 @@ pl:
     building_admin: Zarządca Dashboardu
     building_keeper: Właściciel Budynku
   lab_roles:
-    spectator: Spectator
-    upper_spectator: Upper Spectator
-    worker: Worker
+    spectator: Obserwator
+    upper_spectator: Nad-Obserwator
+    worker: Pracownik
     student: Student
-    lab_admin: Admin of Laboratory
-    lab_keeper: Leboratory Main Keeper  
+    lab_admin: Administrator pracownii
+    lab_keeper: Właściciel pracownii
+  log:
+    show:
+      main-header: Logi twojego panelu
+      person-name: Imię i nazwisko
+      what-did: Co zrobił?
+      when: Kiedy?
+      type-of-log: Typ ruchu
+      categorie: Kategoria logu
     
   date:
     abbr_day_names:

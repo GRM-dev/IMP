@@ -24,7 +24,7 @@
         <div class="language pull-right">
           <p class="user-show-lang pull-left"><%= t('activerecord.attributes.dashboard.language')%></p>
           <li class="current-lang dropdown pull-right">
-            <%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: 'lang_'+I18n.locale.to_s, 'data-toggle': "dropdown"} do end %>
+            <%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang flag", id: 'lang_'+I18n.locale.to_s, data: {toggle: "dropdown"}} do end %>
             <ul class="dropdown-menu select_lang_list">
               <% @locales.each do |l| %>
                 <% if I18n.locale.to_s != l.to_s %>

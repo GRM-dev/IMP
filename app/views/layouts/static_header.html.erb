@@ -29,8 +29,9 @@
                       <% if current_user %>
                       <li><%= link_to t('.logout'), logout_path, method: 'delete' %></li>
                       <% end %>
-                      <li class="dropdown"><%= button_tag "#", {class: "btn btn-dropdown dropdown-toggle select_lang", 'data-toggle': "dropdown"} do %>
-                        <%= I18n.locale %> 
+                      <li class="dropdown">
+                        <%= button_tag "#", class: "btn btn-dropdown dropdown-toggle select_lang", data: {toggle: "dropdown"} do %>
+                          <%= I18n.locale %>
                         <% end %>
                         <ul class="dropdown-menu select_lang_list">
                           <% @locales.each do |l| %>

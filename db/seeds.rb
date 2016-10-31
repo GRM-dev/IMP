@@ -10,7 +10,7 @@ cp_s = CompanyType.create(name: 'school')
 cp_c = CompanyType.create(name: 'company')
 
 LogType.create(name: "Trace", rank: 1)
-LogType.create(name: "Info", rank: 2)
+lt1 = LogType.create(name: "Info", rank: 2)
 LogType.create(name: "Warning", rank: 3)
 LogType.create(name: "Error", rank: 4)
 
@@ -65,3 +65,6 @@ Workstation.create(name: 'Stanowisko 1', number: 1, laboratory: l1)
 Workstation.create(name: 'Stanowisko 2', number: 2, laboratory: l1)
 Workstation.create(name: 'Stanowisko 1', number: 1, laboratory: l2)
 Workstation.create(name: 'MainW', number: 0, laboratory: l2)
+
+Log.create(log: "Włamał się do systemu", user: rodzyn, log_type_id: 1)
+Log.create(log: "Zalogował się do systemu", user: levvy, log_type_id: 2, category: "Log in")

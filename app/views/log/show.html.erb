@@ -1,0 +1,29 @@
+<div class="dashboard-users">
+  <h1 class="main-header"><%= t('.main-header') %></h1>
+  <div class="table-responsive-vertical shadow-z-1 table-striped">
+    <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th><%= t('.person-name') %></th>
+        <th><%= t('.what-did') %></th>
+        <th><%= t('.when') %></th>
+        <th><%= t('.type-of-log') %></th>
+        <th><%= t('.categorie') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% for log in @logs %>
+          <tr>
+            <td data-title="ID"><%= log.id %></td>
+            <td data-title="<%= t('.person-name') %>"><%= log.user.visible_name %></td>
+            <td data-title="<%= t('.what-did') %>>"><%= log.log %></td>
+            <td data-title="<%= t('.when') %>"><%= log.updated_at %></td>
+            <td data-title="<%= t('.type-of-log') %>"><%= log.log_type.name %></td>
+            <td data-title="<%= t('.categorie') %>"><%= log.category %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

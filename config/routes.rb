@@ -46,6 +46,7 @@ Rails.application.routes.draw do
         post 'create'                    => 'groups#create'
       end
 
+      post 'logs'                        => 'log#show', as: :logs
       post 'faq'                         => 'static_pages#faq', as: :faq
       post 'issues'                      => 'dashboard#issues', as: :issues
       

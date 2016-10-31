@@ -142,7 +142,15 @@ en:
     worker: Worker
     student: Student
     lab_admin: Admin of Laboratory
-    lab_keeper: Leboratory Main Keeper  
+    lab_keeper: Leboratory Main Keeper
+  log:
+    show:
+      main-header: Logs of your dashboard
+      person-name: Name and surname
+      what-did: What this person did?
+      when: When?
+      type-of-log: Type of log
+      categorie: Categorie of log
       
   date:
     abbr_day_names:

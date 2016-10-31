@@ -163,11 +163,11 @@ ActiveRecord::Schema.define(version: 20160605191956) do
     t.string   "last_name",       limit: 255
     t.datetime "age"
     t.string   "password_digest", limit: 255,                                 null: false
-    t.datetime "last_login",                  default: '2016-07-10 23:45:48', null: false
+    t.datetime "last_login",                  default: '2016-10-31 13:33:42', null: false
     t.string   "last_ip",         limit: 255, default: "0.0.0.0",             null: false
     t.boolean  "was_activated",               default: false,                 null: false
     t.boolean  "active",                      default: true,                  null: false
-    t.datetime "last_seen",                   default: '2016-07-10 23:45:48', null: false
+    t.datetime "last_seen",                   default: '2016-10-31 13:33:42', null: false
     t.integer  "site_role_id",    limit: 4,                                   null: false
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false
